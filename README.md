@@ -11,9 +11,3 @@
    1. <script src="/path/to/script.js"></script>
       We can give a full URL as well. For instance:
    2. <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
-
-
-
-# Image
-
-<img src = "/operatorJS.jpg" width="500" height="500"/>

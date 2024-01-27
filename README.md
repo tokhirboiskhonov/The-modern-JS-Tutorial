@@ -16,4 +16,4 @@
 
 # Image
 
-<img src = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdasha.ai%2Fen-us%2Fblog%2Fbeginners-guide-js-operators-part-1&psig=AOvVaw1hHZ92k1C_3cxgG4JhfiFx&ust=1706454504333000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNCM3sfs_YMDFQAAAAAdAAAAABAJ" width="500" height="500"/>
+<img src = "/operatorJS.jpg" width="500" height="500"/>

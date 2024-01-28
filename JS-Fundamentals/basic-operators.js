@@ -210,3 +210,52 @@ let n = 2;
 n *= 3 + 5; // right part evaluated first, same as n *= 8
 
 alert(n); // 16
+
+//* Increment/decrement
+
+// Increasing or decreasing a number by one is among the most common numerical operations.
+// So, there are special operators for it:
+
+//! Increment ++ increases a variable by 1:
+
+let counter = 2;
+
+counter++;
+
+console.log(counter);
+
+//! Decrement -- increases a variable by 1:
+
+let count = 2;
+count--;
+console.log(count);
+
+//!!!!! Important:
+
+//? Increment/decrement can only be applied to variables. Trying to use it on a value like 5++ will give an error.
+
+// The operators ++ and -- can be placed either before or after a variable.
+// When the operator goes after the variable, it is in “postfix form”: counter++.
+// The “prefix form” is when the operator goes before the variable: ++counter.
+
+//?1
+let counter1 = 1;
+
+let counter1Num = ++counter1;
+
+console.log(counter1Num); // 2
+
+//?2
+
+let counter2 = 1;
+let counterNum = counter2++;
+console.log(counterNum); // 1
+
+//! Increment/decrement among other operators
+
+let num = 1;
+
+// console.log(2 * ++num); // 4
+
+console.log(2 * num++); // 2
+

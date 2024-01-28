@@ -126,3 +126,10 @@ alert(null == undefined); // true
 
 // null/undefined are converted to numbers: null becomes 0, while undefined becomes NaN.
 
+//* Strange result: null vs 0
+
+// Let’s compare null with a zero:
+
+alert(null > 0); // (1) false
+alert(null == 0); // (2) false
+alert(null >= 0); // (3) true

@@ -11,7 +11,7 @@
 let x1 = 1;
 
 x1 = -x1;
-alert(x); // -1, unary negation was applied
+alert(x1); // -1, unary negation was applied
 
 //? An operator is binary if it has two operands. The same minus exists in binary form as well:
 

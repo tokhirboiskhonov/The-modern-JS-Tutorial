@@ -152,3 +152,15 @@ alert(undefined == 0); // false (3)
 
 // Don’t use comparisons >= > < <= with a variable which may be null/undefined, unless you’re really sure of what you’re doing. If a variable can have these values, check for them separately.
 
+//* Summary
+
+// Comparison operators return a boolean value.
+
+// Strings are compared letter-by-letter in the “dictionary” order.
+
+// When values of different types are compared, they get converted to numbers (with the exclusion of a strict equality check).
+
+// The values null and undefined equal == each other and do not equal any other value.
+
+// Be careful when using comparisons like > or < with variables that can occasionally be null/undefined. Checking for null/undefined separately is a good idea.
+

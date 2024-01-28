@@ -49,3 +49,60 @@ let result = 5 > 4;
 
 // For instance, case matters. A capital letter "A" is not equal to the lowercase "a". Which one is greater? The lowercase "a".
 
+//* Comparison of different types
+
+// When comparing values of different types, JavaScript converts the values to numbers.
+
+// For example
+
+alert("2" > 1); // true, string '2' becomes a number 2
+alert("01" == 1); // true, string '01' becomes a number 1
+
+// For boolean values, true becomes 1 and false becomes 0.
+
+// For example
+
+alert(true == 1); // true
+alert(false == 0); // true
+
+//! A funny consequence
+
+// It is possible that at the same time:
+
+//1. Two values are equal.
+//2. One of them is true as a boolean and the other one is false as boolean.
+
+// For example
+
+let a = 0;
+alert(Boolean(a)); // false
+
+let b = "0";
+alert(Boolean(b)); // true
+
+alert(a == b); // true!
+
+// From JavaScript’s standpoint, this result is quite normal. An equality check converts values using the numeric conversion (hence "0" becomes 0), while the explicit Boolean conversion uses another set of rules.
+
+//* Strict equality
+
+// A regular equality check == has a problem. It cannot differentiate 0 from false;
+
+alert(0 == false); // true;
+
+// The same thing happens with an empty string:
+
+alert("" == false); // true;
+
+// This happens because operands of different types are converted to numbers by the equality operator ==. An empty string, just like false, becomes a zero.
+
+//! A strict equality operator === checks the equality without type conversion.
+
+// In other words, if a and b are of different types, then a === b immediately returns false without an attempt to convert them.
+
+// Let’s try it:
+
+alert(0 === false); // false, because the types are different
+
+// There is also a “strict non-equality” operator !== analogous to !=.
+

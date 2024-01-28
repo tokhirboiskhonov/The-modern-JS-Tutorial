@@ -1,3 +1,5 @@
+//! Comparisons
+
 // We know many comparison operators from maths.
 
 // In JS they are written like this:
@@ -141,4 +143,12 @@ alert(null >= 0); // (3) true
 alert(undefined > 0); // false (1)
 alert(undefined < 0); // false (2)
 alert(undefined == 0); // false (3)
+
+//* Avoid problems
+
+// Why did we go over these examples? Should we remember these peculiarities all the time? Well, not really. Actually, these tricky things will gradually become familiar over time, but there’s a solid way to avoid problems with them:
+
+// Treat any comparison with undefined/null except the strict equality === with exceptional care.
+
+// Don’t use comparisons >= > < <= with a variable which may be null/undefined, unless you’re really sure of what you’re doing. If a variable can have these values, check for them separately.
 

@@ -296,3 +296,44 @@ alert(a); // 7 (the result of 3 + 4)
 
 //? Without them: a = 1 + 2, 3 + 4 evaluates + first, summing the numbers into a = 3, 7, then the assignment operator = assigns a = 3, and the rest is ignored. It’s like (a = 1 + 2), 3 + 4.
 
+//! Tasks
+
+//! 1 --> The postfix and prefix forms
+
+let numA = 1,
+  numB = 1;
+
+let numC = ++numA; // 2
+let numD = numB++; // 1
+
+//! 2 --> Assignment result
+
+let a1 = 2;
+
+let numX1 = 1 + (a1 *= 2); // 5
+
+//! 3 --> Type conversions
+
+// What are results of these expressions?
+
+"" + 1 + 0; // 10 string
+"" - 1 + 0; // -1
+true + false; // 1
+6 / "3"; // 2
+"2" * "3"; // 6
+4 + 5 + "px"; // 45px
+"$" + 4 + 5; // $45
+"4" - 2; // 2
+"4px" - 2; //NaN
+"  -9  " + 5; // -95
+"  -9  " - 5; // -14
+null + 1; // 1
+undefined + 1; // NaN
+" \t \n" - 2; // -2
+
+//! 4 --> Fix the addition
+
+let promptA = +prompt("First number?", 1);
+let promptB = +prompt("Second number?", 2);
+
+console.log(promptA + promptB);

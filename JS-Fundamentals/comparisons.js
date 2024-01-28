@@ -106,3 +106,23 @@ alert(0 === false); // false, because the types are different
 
 // There is also a “strict non-equality” operator !== analogous to !=.
 
+//* Comparison with null and undefined
+
+// There’s a non-intuitive behavior when null or undefined are compared to other values.
+
+// For a strict equality check ===
+
+// These values are different, because each of them is a different type.
+
+alert(null === undefined); // false
+
+// For a non-strict check ==
+
+// There’s a special rule. These two are a “sweet couple”: they equal each other (in the sense of ==), but not any other value.
+
+alert(null == undefined); // true
+
+// For maths and other comparisons < > <= >=
+
+// null/undefined are converted to numbers: null becomes 0, while undefined becomes NaN.
+

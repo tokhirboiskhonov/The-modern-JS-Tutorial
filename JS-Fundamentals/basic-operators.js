@@ -277,3 +277,22 @@ console.log(2 * num++); // 2
 
 // These operators are used very rarely, when we need to fiddle with numbers on the very lowest (bitwise) level. We won’t need these operators any time soon, as web development has little use of them, but in some special areas, such as cryptography, they are useful. You can read the Bitwise Operators chapter on MDN when a need arises.
 
+//* Comma
+
+// The comma operator , is one of the rarest and most unusual operators. Sometimes, it’s used to write shorter code, so we need to know it in order to understand what’s going on.
+
+// The comma operator allows us to evaluate several expressions, dividing them with a comma ,. Each of them is evaluated but only the result of the last one is returned.
+
+// For example:
+
+let a = (1 + 2, 3 + 4);
+
+alert(a); // 7 (the result of 3 + 4)
+
+// Here, the first expression 1 + 2 is evaluated and its result is thrown away. Then, 3 + 4 is evaluated and returned as the result.
+
+//! Comma has a very low precedence
+//! Please note that the comma operator has very low precedence, lower than =, so parentheses are important in the example above.
+
+//? Without them: a = 1 + 2, 3 + 4 evaluates + first, summing the numbers into a = 3, 7, then the assignment operator = assigns a = 3, and the rest is ignored. It’s like (a = 1 + 2), 3 + 4.
+

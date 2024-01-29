@@ -137,3 +137,21 @@
 //   message = "What an unusual age!";
 // }
 
+//* Non-traditional use of "?"
+
+// Sometimes the question mark ? is used as a replacement for if:
+
+// let company = prompt("Which company created JavaScript?", "");
+
+// company == "Netscape" ? alert("Right!") : alert("Wrong.");
+
+// Here is the same code using if for comparison:
+
+// let company = prompt("Which company created JavaScript?", "");
+
+// if (company == "Netscape") {
+//   alert("Right!");
+// } else {
+//   alert("Wrong.");
+// }
+

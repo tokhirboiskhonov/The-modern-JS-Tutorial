@@ -155,3 +155,69 @@
 //   alert("Wrong.");
 // }
 
+//* Tasks
+
+//! 1. Will alert be shown?
+
+// if ("0") {
+//   alert("Hello"); // output is Hello
+// }
+
+//! 2. The name of JavaScript
+
+// let output = prompt("What's the “official” name of JavaScript?", "");
+
+// if (output == "ECMAScript") {
+//   alert("Right!");
+// } else {
+//   alert("You don't know? “ECMAScript”!");
+// }
+
+//! 3. Show the sign
+
+// let num = +prompt("Type a number", "0");
+
+// if (num > 0) {
+//   alert(1);
+// } else if (num < 0) {
+//   alert(-1);
+// } else {
+//   alert(0);
+// }
+
+//! 4. Rewrite "if" into "?"
+
+// Rewrite this if using the conditional operator '?':
+
+// let result;
+
+// if (a + b < 4) {
+//   result = "Below";
+// } else {
+//   result = "Over";
+// }
+
+let result = a + b < 4 ? "Below" : "Over";
+
+//! 5. Rewrite "if...else" into "?"
+
+// let message;
+
+// if (login == "Employee") {
+//   message = "Hello";
+// } else if (login == "Director") {
+//   message = "Greetings";
+// } else if (login == "") {
+//   message = "No login";
+// } else {
+//   message = "";
+// }
+
+let message =
+  login == "Employee"
+    ? "Hello"
+    : login == "Director"
+    ? "Greetings"
+    : login == ""
+    ? "No login"
+    : "";

@@ -86,3 +86,27 @@
 //   alert("Exactly!");
 // }
 
+//* Conditional operator "?"
+
+// let accessAllowed;
+
+// let age = +prompt("How old are you?", "");
+
+// if (age > 18) {
+//   accessAllowed = true;
+// } else {
+//   accessAllowed = false;
+// }
+
+// alert(accessAllowed);
+
+// The so-called “conditional” or “question mark” operator lets us do that in a shorter and simpler way.
+
+// The operator is represented by a question mark ?. Sometimes it’s called “ternary”, because the operator has three operands. It is actually the one and only operator in JavaScript which has that many.
+
+//? The syntax is:
+
+//? let result = condition ? value1 : value2;
+
+// let accessAllowed = age > 18 ? true : false;
+

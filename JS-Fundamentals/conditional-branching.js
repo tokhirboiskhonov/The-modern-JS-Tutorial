@@ -67,3 +67,22 @@
 //   alert("How can you be so wrong?"); // any value except 2015
 // }
 
+//* Several conditions: “else if”
+
+// Sometimes, we’d like to test several variants of a condition. The else if clause lets us do that.
+
+// For example:
+
+// let year = prompt(
+//   "In which year was the ECMAScript-2015 specification published?",
+//   ""
+// );
+
+// if (year < 2015) {
+//   alert("Too early...");
+// } else if (year > 2015) {
+//   alert("Too late");
+// } else {
+//   alert("Exactly!");
+// }
+

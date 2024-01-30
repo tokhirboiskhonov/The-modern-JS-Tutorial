@@ -184,3 +184,28 @@ if (x1 > 0) console.log("Greater than zero!");
 
 // Although, the variant with && appears shorter, if is more obvious and tends to be a little bit more readable. So we recommend using every construct for its purpose: use if if we want if and use && if we want AND.
 
+//* ! (NOT)
+
+// The boolean NOT operator is represented with an exclamation sing !.
+
+// The syntax is pretty simple:
+
+// result = !value;
+
+//! The operator accepts a single argument and does the following:
+
+//? 1. Converts the operand to boolean type: true/false
+//? 2. Returns the inverse value.
+
+// For instance:
+
+console.log(!true); // false
+console.log(!0); // true
+
+// A double NOT !! is sometimes used for converting a value to boolean type:
+
+console.log(!!"non-empty string"); // true
+console.log(!!null); // false
+
+// The precedence of NOT ! is the highest of all logical operators, so it always executes first, before && or ||.
+

@@ -209,3 +209,79 @@ console.log(!!null); // false
 
 // The precedence of NOT ! is the highest of all logical operators, so it always executes first, before && or ||.
 
+//* Tasks
+
+//! 1. What's the result of OR?
+// What is the code below going to output?
+
+console.log(null || 2 || undefined); // output is 2
+
+//! 2. What's the result of OR'ed alerts?
+// What will the code below output?
+
+// alert(alert(1) || 2 || alert(3)); //first 1 and then 2
+
+//! 3. What is the result of AND?
+// What is this code going to show?
+
+// alert(1 && null && 2); // output is null
+
+//! 4. What is the result of AND'ed alerts?
+// What will this code show?
+
+// alert(alert(1) && alert(2));
+
+//! 5. The result of OR AND OR
+// What will the result be?
+
+// alert(null || (2 && 3) || 4); // output is 3
+
+//! 6. Check the range between
+
+// Write an if condition to check that age is between 14 and 90 inclusively. “Inclusively” means that age can reach the edges 14 or 90.
+
+// let age = +prompt("How old are you?");
+
+// if (age > 14 && age < 90) console.log("Inclusively");
+
+//! 7. Check the range outside
+
+// Write an if condition to check that age is NOT between 14 and 90 inclusively. Create two variants: the first one using NOT !, the second one – without it.
+
+// let ourAge = +prompt("How old are you?");
+
+// if (!(age >= 14 && age <= 90)) alert("Inclusively");
+
+// if (age < 14 || age > 90) alert("Inclusively");
+
+//! 8. A question about "if"
+
+// Which of these alerts are going to execute?
+
+// What will the results of the expressions be inside if(...)?
+
+// if (-1 || 0) alert( 'first' ); // first
+// if (-1 && 0) alert( 'second' ); // -
+// if (null || -1 && 1) alert( 'third' ); // third
+
+//! 9. Check the login.
+
+let login = prompt("Who's there?", "");
+
+if (login === "Admin") {
+  let pass = prompt("Type your password!", "");
+
+  if (pass === "The master") {
+    alert("Welcome!");
+  } else if (pass === "Other") {
+    alert("Wrong password");
+  } else if (pass === "" || pass === null) {
+    alert("Canceled");
+  } else {
+    alert("Something wrong!");
+  }
+} else if (login === "" || login === null) {
+  alert("Canceled");
+} else {
+  alert("I don't know you");
+}

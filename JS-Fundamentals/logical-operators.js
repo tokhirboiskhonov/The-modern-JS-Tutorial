@@ -50,3 +50,50 @@
 //   console.log("The office is opened!");
 // }
 
+//* OR "||" finds the first truthy value
+
+// The logic described above is somewhat classical. Now let's bring in the "extra" features of JS.
+
+// The extended algorithm works as follows.
+
+// Given multiple OR'ed values:
+
+//? result = value1 || value2 || value3;
+
+// The OR || operator does the following:
+
+//? 1. Evaluates operands from left to right.
+//? 2.  For each operand, converts it to boolean. If the result is true, stops and returns the original value of that operand.
+//? 3. If all operands have been evaluated (i.e. all were false), returns the last operand.
+
+// A value is returned in its original form, without the conversion.
+
+// In other words, a chain of OR || returns the first truthy value or the last one if no truthy value is found.
+
+// For instance:
+
+// alert(1 || 0); // 1 (1 is truthy)
+
+// alert(null || 1); // 1 (1 is the first truthy value)
+// alert(null || 0 || 1); // 1 (the first truthy value)
+
+// alert(undefined || null || 0); // 0 (all falsy, returns the last value)
+
+//! 1. Getting the first truthy value from a list of variables or expressions.
+
+// let firstName = "";
+// let lastName = "";
+// let nickName = "SuperCoder";
+
+// console.log(firstName || lastName || nickName || "Anonymous"); // output is SuperCoder.
+
+// If all variables were falsy, "Anonymous" would show up.
+
+//! 2. Short-circuit evaluation.
+
+// true || alert("not printed");
+// false || alert("printed");
+
+// In the first line, the OR || operator stops the evaluation immediately upon seeing true, so the alert isn’t run.
+// Sometimes, people use this feature to execute commands only if the condition on the left part is falsy.
+

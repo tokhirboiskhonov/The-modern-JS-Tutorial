@@ -103,3 +103,19 @@ let area = (height ?? 100) * (width ?? 50);
 
 alert(area); // 5000
 
+//* Using ?? with && or ||
+
+// Due to safety reasons, JavaScript forbids using ?? together with && and || operators, unless the precedence is explicitly specified with parentheses.
+
+// The code below triggers a syntax error:
+
+// let x = 1 && 2 ?? 3; // Syntax error
+
+// The limitation is surely debatable, it was added to the language specification with the purpose to avoid programming mistakes, when people start to switch from || to ??.
+
+// Use explicit parentheses to work around it:
+
+let x = (1 && 2) ?? 3; // Works
+
+alert(x); // 2
+

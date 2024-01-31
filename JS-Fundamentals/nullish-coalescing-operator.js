@@ -87,3 +87,19 @@ console.log(firstName || lastName || nickName || "Anonymous");
 
 // In practice, the zero height is often a valid value, that shouldn’t be replaced with the default. So ?? does just the right thing.
 
+//* Precedence
+
+// The precedence of the ?? operator is the same as ||. They both equal 3 in the MDN table.
+
+// That means that, just like ||, the nullish coalescing operator ?? is evaluated before = and ?, but after most other operations, such as +, *.
+
+// So we may need to add parentheses in expressions like this:
+
+let height = null;
+let width = null;
+
+// important: use parentheses
+let area = (height ?? 100) * (width ?? 50);
+
+alert(area); // 5000
+

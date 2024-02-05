@@ -111,41 +111,23 @@
 
 // Please note that the two for semicolons ; must be present. Otherwise, there would be a syntax error.
 
-//* Continue to the next iteration
+//* Labels for break/continue
 
-// The continue directive is a “lighter version” of break. It doesn’t stop the whole loop. Instead, it stops the current iteration and forces the loop to start a new one (if the condition allows
-
-// We can use it if we’re done with the current iteration and would like to move on to the next one.
-
-// The loop below uses continue to output only odd values:
-
-// for (let i = 0; i < 10; i++) {
-//   if (i % 2 === 0) continue;
-
-//   alert(i);
-// }
-
-// for (let i = 0; i < 10; i++) {
-//   if (i % 2) {
-//     alert(i);
+// for (let i = 0; i < 3; i++) {
+//   for (let j = 0; j < 3; j++) {
+//     let input = +prompt(`Value at coords (${i}, ${j})`, "");
 //   }
 // }
 
-//! No break/continue to the right side of ‘?’
-//? Please note that syntax constructs that are not expressions cannot be used with the ternary operator ?. In particular, directives such as break/continue aren’t allowed there.
+// alert("Done!");
 
-//? For example, if we take this code:
+tashqi: for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+    let input = +prompt(`Value at coords (${i}, ${j})`, "");
 
-// if (i > 5) {
-//   alert(i);
-// } else {
-//   continue;
-// }
-// …and rewrite it using a question mark:
+    if (!input || typeof input !== "number") break tashqi;
+  }
+}
 
-// (i > 5) ? alert(i) : continue; // continue isn't allowed here
-
-// …it stops working: there’s a syntax error.
-
-// This is just another reason not to use the question mark operator ? instead of if.
+alert("Done!");
 

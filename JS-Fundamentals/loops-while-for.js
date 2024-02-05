@@ -169,6 +169,25 @@
 
 // This is just another reason not to use the question mark operator ? instead of if.
 
+//* Labels for break/continue
+
+// for (let i = 0; i < 3; i++) {
+//   for (let j = 0; j < 3; j++) {
+//     let input = +prompt(`Value at coords (${i}, ${j})`, "");
+//   }
+// }
+
+// alert("Done!");
+
+tashqi: for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+    let input = +prompt(`Value at coords (${i}, ${j})`, "");
+
+    if (!input || typeof input !== "number") break tashqi;
+  }
+}
+
+alert("Done!");
 
 //* Summary
 

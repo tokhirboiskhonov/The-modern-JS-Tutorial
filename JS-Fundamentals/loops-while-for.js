@@ -81,3 +81,33 @@
 
 // alert(i); // 3
 
+//* Skipping parts
+
+// Any part of for can be skipped.
+
+// For example, we can omit begin if we don’t need to do anything at the loop start.
+
+// Like here:
+
+// let i = 0;
+
+// for (; i < 3; i++) {
+//   console.log(i);
+// }
+
+// We can also remove the step part:
+
+// let idx = 0;
+
+// for (; idx < 3; ) {
+//   console.log(idx++);
+// }
+
+// We can actually remove everything, creating an infinite loop:
+
+// for (;;) {
+//   // repeats without limits
+// }
+
+// Please note that the two for semicolons ; must be present. Otherwise, there would be a syntax error.
+

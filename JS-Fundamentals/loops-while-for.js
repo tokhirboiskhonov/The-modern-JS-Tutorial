@@ -111,23 +111,17 @@
 
 // Please note that the two for semicolons ; must be present. Otherwise, there would be a syntax error.
 
-//* Labels for break/continue
+//* Summary
 
-// for (let i = 0; i < 3; i++) {
-//   for (let j = 0; j < 3; j++) {
-//     let input = +prompt(`Value at coords (${i}, ${j})`, "");
-//   }
-// }
+//! We covered 3 types of loops:
 
-// alert("Done!");
+//? while – The condition is checked before each iteration.
+//? do..while – The condition is checked after each iteration.
+//? for (;;) – The condition is checked before each iteration, additional settings available.
 
-tashqi: for (let i = 0; i < 3; i++) {
-  for (let j = 0; j < 3; j++) {
-    let input = +prompt(`Value at coords (${i}, ${j})`, "");
+// To make an “infinite” loop, usually the while(true) construct is used. Such a loop, just like any other, can be stopped with the break directive.
 
-    if (!input || typeof input !== "number") break tashqi;
-  }
-}
+// If we don’t want to do anything in the current iteration and would like to forward to the next one, we can use the continue directive.
 
-alert("Done!");
+// break/continue support labels before the loop. A label is the only way for break/continue to escape a nested loop to go to an outer one.
 

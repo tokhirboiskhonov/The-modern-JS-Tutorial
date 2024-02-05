@@ -81,3 +81,26 @@ switch (num) {
     console.log("The result is strange. Really!!!");
 }
 
+//* Type matters
+
+// Let’s emphasize that the equality check is always strict. The values must be of the same type to match.
+
+// For example, let’s consider the code:
+
+let arg = prompt("Enter a value?");
+switch (arg) {
+  case "0":
+  case "1":
+    console.log("One or zero");
+    break;
+
+  case "2":
+    console.log("Two");
+    break;
+
+  case 3:
+    console.log("Never executes!");
+    break;
+  default:
+    console.log("An unknown value");
+}

@@ -111,23 +111,41 @@
 
 // Please note that the two for semicolons ; must be present. Otherwise, there would be a syntax error.
 
-//* Breaking the loop
+//* Continue to the next iteration
 
-//Normally, a loop exits when its condition becomes falsy.
+// The continue directive is a “lighter version” of break. It doesn’t stop the whole loop. Instead, it stops the current iteration and forces the loop to start a new one (if the condition allows
 
-// But we can force the exit at any time using the special break directive.
+// We can use it if we’re done with the current iteration and would like to move on to the next one.
 
-// For example, the loop below asks the user for a series of numbers, “breaking” when no number is entered:
+// The loop below uses continue to output only odd values:
 
-// let sum = 0;
+// for (let i = 0; i < 10; i++) {
+//   if (i % 2 === 0) continue;
 
-// while (true) {
-//   let value = +prompt("Enter a number", "");
-
-//   if (!value) break;
-
-//   sum += value;
+//   alert(i);
 // }
 
-// alert(`Sum: ${sum}`);
+// for (let i = 0; i < 10; i++) {
+//   if (i % 2) {
+//     alert(i);
+//   }
+// }
+
+//! No break/continue to the right side of ‘?’
+//? Please note that syntax constructs that are not expressions cannot be used with the ternary operator ?. In particular, directives such as break/continue aren’t allowed there.
+
+//? For example, if we take this code:
+
+// if (i > 5) {
+//   alert(i);
+// } else {
+//   continue;
+// }
+// …and rewrite it using a question mark:
+
+// (i > 5) ? alert(i) : continue; // continue isn't allowed here
+
+// …it stops working: there’s a syntax error.
+
+// This is just another reason not to use the question mark operator ? instead of if.
 

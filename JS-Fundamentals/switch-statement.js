@@ -60,3 +60,24 @@ switch (+c) {
 }
 // Here +c gives 1, that’s compared with d + 1 in case, and the corresponding code is executed.
 
+//* Grouping of "case"
+
+// Several variants of case which share the same code can be grouped.
+
+// For example, if we want the same code to run for case 3 and case 5:
+
+let num = 3;
+
+switch (num) {
+  case 4:
+    console.log("Right!");
+    break;
+  case 3:
+  case 5:
+    console.log("Wrong!");
+    console.log("Why don't you take a math class?");
+    break;
+  default:
+    console.log("The result is strange. Really!!!");
+}
+

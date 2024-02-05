@@ -202,4 +202,3 @@ alert("Done!");
 // If we don’t want to do anything in the current iteration and would like to forward to the next one, we can use the continue directive.
 
 // break/continue support labels before the loop. A label is the only way for break/continue to escape a nested loop to go to an outer one.
-

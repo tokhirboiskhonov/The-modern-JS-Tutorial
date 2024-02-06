@@ -139,3 +139,74 @@ showMessage(from, "Hello"); // output: *Ann*: Hello
 
 console.log(from);
 
+//* Default values
+
+function showMessage(from, text = "no text given.") {
+  console.log(`${from}: ${text}`);
+}
+
+// showMessage("Ann"); //output: Ann: no text given.
+showMessage("Ann", "Hello!"); //output: Ann: Hello!
+// showMessage("Ann", undefined); //output: Ann: no text given.
+
+function showMessage(from, text = anotherFunc()) {
+  // anotherFunction() only executed if no text given
+  // its result becomes the value of text
+
+  console.log(`${from}: ${text}`);
+}
+
+function anotherFunc() {
+  return "Hello everyone!";
+}
+
+showMessage("Tokhir");
+
+//? Evaluation of default parameters
+// In JavaScript, a default parameter is evaluated every time the function is called without the respective parameter.
+// In the example above, anotherFunction() isn’t called at all, if the text parameter is provided.
+// On the other hand, it’s independently called every time when text is missing.
+
+//! Default parameters in old JavaScript code
+
+// Several years ago, JavaScript didn’t support the syntax for default parameters. So people used other ways to specify them.
+
+// Nowadays, we can come across them in old scripts.
+
+//? For example, an explicit check for undefined:
+
+function showMessage(from, text) {
+  if (text === undefined) {
+    text = "no text given";
+  }
+
+  console.log(from + ": " + text);
+}
+
+showMessage("Anna"); // output: Anna: no text given
+showMessage("Anna", "Hello everyone!"); // output: Anna: Hello everyone!
+
+//? …Or using the || operator:
+
+function showMessage(from, text) {
+  text = text || "no text given";
+
+  console.log(`${from}: ${text}`);
+}
+
+showMessage("Maxim"); //output: Maxim: no text given
+
+showMessage("Maxim", "Hi there!"); //output: Maxim: Hi there!
+
+//? …Nullish coalescing operator using the ??:
+
+function showCount(count) {
+  //if count is undefined or null, show "uknown"
+
+  console.log(count ?? "unknown");
+}
+
+showCount(0); // 0
+showCount(null); // unknown
+showCount(); //unknown
+

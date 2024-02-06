@@ -109,3 +109,33 @@ console.log(userName);
 
 // It’s a good practice to minimize the use of global variables. Modern code has few or no globals. Most variables reside in their functions. Sometimes though, they can be useful to store project-level data.
 
+//* Parameters
+
+// We can pass arbitary data to a functions using parameters.
+
+// In the example below, the function has two parameters: from and text.
+
+// function showMessage(from, text) {
+// parameters: from, text
+//   console.log(`${from}: ${text}`);
+// }
+
+// showMessage("Ann", "Hello!"); // Ann: Hello! (*)
+// showMessage("Ann", "What's up?"); // Ann: What's up? (**)
+
+// When the function is called in lines (*) and (**), the given values are copied to local variables from and text. Then the function uses them.
+
+// Here’s one more example: we have a variable from and pass it to the function. Please note: the function changes from, but the change is not seen outside, because a function always gets a copy of the value:
+
+function showMessage(from, text) {
+  from = `*${from}*`; //make "from" look nicer
+
+  console.log(`${from}: ${text}`);
+}
+
+let from = "Ann";
+
+showMessage(from, "Hello"); // output: *Ann*: Hello
+
+console.log(from);
+

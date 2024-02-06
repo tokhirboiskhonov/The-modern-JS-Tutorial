@@ -318,3 +318,68 @@ console.log(result);
 
 // Functions are the main building blocks of scripts. Now we’ve covered the basics, so we actually can start creating and using them. But that’s only the beginning of the path. We are going to return to them many times, going more deeply into their advanced features.
 
+//* Tasks
+
+//! 1. Is "else" required?
+
+// The following function returns true if the parameter age is greater than 18.
+
+// Otherwise it asks for a confirmation and returns its result:
+
+// function checkAge(age) {
+//   if (age > 18) {
+//     return true;
+//   } else {
+//     // ...
+//     return confirm("Did parents allow you?");
+//   }
+// }
+
+// function checkAge(age) {
+//   if (age > 18) {
+//     return true;
+//   }
+
+//   let isAllow = confirm("Did parents allow you?");
+//   console.log(isAllow);
+// }
+
+// checkAge(17);
+
+//! 2. Rewrite the function using '?' or '||'
+
+// The following function returns true if the parameter age is greater than 18.
+
+// Otherwise it asks for a confirmation and returns its result.
+
+// function checkAge(age) {
+//   if (age > 18) {
+//     return true;
+//   } else {
+//     return confirm("Did parents allow you?");
+//   }
+// }
+
+// function checkAge(age) {
+//   return age > 18 ? true : confirm("Did parents allow you?");
+// }
+
+// function checkAge(age) {
+//   return age > 18 || confirm("Did parents allow you?");
+// }
+
+//! 3. Function min(a, b)
+
+function min(a, b) {
+  return a < b ? a : b;
+}
+
+min(2, 5);
+
+//! 4. Function pow(a, b)
+
+function pow(a, b) {
+  return a ** b;
+}
+
+console.log(pow(10, 2)); // 100

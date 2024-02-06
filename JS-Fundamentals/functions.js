@@ -39,3 +39,18 @@
 
 // If we ever need to change the message or the way it is shown, it’s enough to modify the code in one place: the function which outputs it.
 
+//* Local variables
+
+// A variable declared inside a function is only visible inside that function.
+
+// For example:
+
+// function showMessage() {
+//   let message = "Hello, I'm Tokhir";
+//   console.log(message);
+// }
+
+// showMessage(); // Hello, I'm Tokhir
+
+// alert(message); // <-- Error! The variable is local to the function
+

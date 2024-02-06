@@ -54,3 +54,50 @@
 
 // alert(message); // <-- Error! The variable is local to the function
 
+//* Outer variables
+
+// A function can access an outer variable as well, for example:
+
+// let userName = "Tokhir";
+
+// function showMessage() {
+//   let message = `Hello ${userName}!`;
+//   console.log(message);
+// }
+
+// showMessage(); // Hello Tokhir!
+
+// The function has full access to the outer variable. It can modify it as well.
+
+// let userName = "John";
+
+// function showMessage() {
+//   userName = "Steve";
+//   let message = `Hello ${userName}`;
+//   alert(message);
+// }
+
+// alert(userName);
+
+// showMessage();
+
+// alert(userName);
+
+//? The outer variable is only used if there’s no local one.
+
+// If a same-named variable is declared inside the function then it shadows the outer one. For instance, in the code below the function uses the local userName. The outer one is ignored:
+
+let userName = "John";
+
+function showMessage() {
+  let userName = "Bob";
+  let message = `Hello ${userName}`;
+  console.log(message);
+}
+
+console.log(userName);
+
+showMessage();
+
+console.log(userName);
+

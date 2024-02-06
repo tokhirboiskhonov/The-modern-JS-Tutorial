@@ -210,3 +210,64 @@ showCount(0); // 0
 showCount(null); // unknown
 showCount(); //unknown
 
+//* Returing a value
+
+// A function can return a value back into the calling code as the result.
+
+// The simplest example would be a function that sums two values:
+
+function sum(a, b) {
+  return a + b;
+}
+
+let result = sum(3, 4);
+
+console.log(result);
+
+// The directive return can be in any place of the function. When the execution reaches it, the function stops, and the value is returned to the calling code (assigned to result above).
+// There may be many occurrences of return in a single function. For instance:
+
+// function checkAge(age) {
+//   if (age >= 18) {
+//     return true;
+//   } else {
+//     return confirm("Do you have permission from your parents?");
+//   }
+// }
+
+// function showMovie(age) {
+//   if (!checkAge(age)) {
+//     return;
+//   }
+
+//   alert("Showing you the movie"); // (*)
+// }
+
+// let age = +prompt("How old are you?", 18);
+
+// if (checkAge(age)) {
+//   alert("Access granted!");
+// } else {
+//   alert("Access denied.");
+// }
+
+// showMovie();
+
+//! A function with an empty return or without it returns undefined
+
+//? If a function does not return a value, it is the same as if it returns undefined:
+
+// function doNothing() {
+/* empty */
+// }
+
+// alert(doNothing() === undefined); // true
+
+//? An empty return is also the same as return undefined:
+
+// function doNothing() {
+//   return;
+// }
+
+// alert(doNothing() === undefined); // true
+

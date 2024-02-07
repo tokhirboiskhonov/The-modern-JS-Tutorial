@@ -425,3 +425,38 @@ console.log(pow(10, 2)); // 100
 // func();
 // sayHi();
 
+//* Callback functions
+
+//? 1
+
+// function ask(question, yes, no) {
+//   confirm(question) ? yes() : no();
+// }
+
+// function showOK() {
+//   alert("You agreed!");
+// }
+
+// function showCancel() {
+//   alert("You canceled the execution.");
+// }
+
+// ask("Do you agree?", showOK, showCancel);
+
+//? 2
+
+// function ask(question, agree, disagree) {
+//   confirm(question) ? agree() : disagree();
+// }
+
+// ask(
+//   "Do you agree?",
+//   function () {
+//     alert("You agreed!");
+//   },
+//   function () {
+//     alert("You disagreed!");
+//   }
+// );
+
+

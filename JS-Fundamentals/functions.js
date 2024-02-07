@@ -587,3 +587,13 @@ let yourWelcome =
 
 yourWelcome();
 
+//* Multiline arrow functions
+
+let calcSum = (a, b) => {
+  let res = a + b;
+
+  return res;
+};
+
+console.log(calcSum(3, 2));
+

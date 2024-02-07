@@ -604,3 +604,29 @@ console.log(calcSum(3, 2));
 //? 1. Without curly braces: (...args) => expression – the right side is an expression: the function evaluates it and returns the result. Parentheses can be omitted, if there’s only a single argument, e.g. n => n*2.
 //? 2. With curly braces: (...args) => { body } – brackets allow us to write multiple statements inside the function, but we need an explicit return to return something.
 
+//* Tasks for Arrow-fucntioncs-basics.
+
+//! Rewrite with arrow functions
+// Replace Function Expressions with arrow functions in the code below:
+
+// function ask(question, yes, no) {
+//   if (confirm(question)) yes();
+//   else no();
+// }
+
+// ask(
+//   "Do you agree?",
+//   function() { alert("You agreed."); },
+//   function() { alert("You canceled the execution."); }
+// );
+
+// const ask10 = (question, yes, no) => {
+//   if (confirm(question)) yes();
+//   else no();
+// };
+
+// ask10(
+//   "Do you agree with me?",
+//   () => alert("Yes, I'm agreed with you!"),
+//   () => alert("No sir, I'm disagereed with you!")
+// );

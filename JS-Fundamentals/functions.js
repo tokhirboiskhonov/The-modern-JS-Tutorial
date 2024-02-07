@@ -383,3 +383,13 @@ function pow(a, b) {
 }
 
 console.log(pow(10, 2)); // 100
+
+//* Function expression
+
+// Syntax:
+
+// let sayHi = function () {
+//   console.log("Hello!");
+// };
+
+// sayHi();

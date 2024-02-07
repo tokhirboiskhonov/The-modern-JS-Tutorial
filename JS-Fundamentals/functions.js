@@ -471,11 +471,11 @@ console.log(pow(10, 2)); // 100
 
 //? While we use function expression, we can't invoke the function before the itself.
 
-sum(1, 3); // Uncaught ReferenceError: Cannot access 'sum' before initialization
+// sum(1, 3); // Uncaught ReferenceError: Cannot access 'sum' before initialization
 
-let sum = function (a, b) {
-  console.log(a + b);
-};
+// let sum = function (a, b) {
+//   console.log(a + b);
+// };
 
 // sum(1, 3);
 
@@ -507,25 +507,25 @@ welcome(); // Error: welcome is not defined
 
 let age1 = prompt("What is your age?", 18);
 
-let welcome;
+let welcome1;
 
 if (age1 < 18) {
-  welcome = function () {
+  welcome1 = function () {
     alert("Hello!");
   };
 } else {
-  welcome = function () {
+  welcome1 = function () {
     alert("Greetings!");
   };
 }
 
-welcome();
+welcome1();
 
 // Or we could simplify it even further using a question mark operator ?:
 
 let age2 = prompt("What is your age?", 18);
 
-let welcome =
+let welcome2 =
   age2 < 18
     ? function () {
         alert("Hello!");
@@ -534,7 +534,7 @@ let welcome =
         alert("Greetings!");
       };
 
-welcome(); // ok now
+welcome2(); // ok now
 
 //* Summary for FE (function expression)
 

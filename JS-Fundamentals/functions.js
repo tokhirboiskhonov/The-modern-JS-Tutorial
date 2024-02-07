@@ -459,4 +459,12 @@ console.log(pow(10, 2)); // 100
 //   }
 // );
 
+//! A function is a value representing an “action”
+
+//? 1. Regular values like strings or numbers represent the data.
+
+//? 2. A function can be perceived as an action.
+
+//? 3. We can pass it between variables and run when we want.
+
 

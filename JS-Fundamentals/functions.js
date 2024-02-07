@@ -294,7 +294,7 @@ showCount(); //unknown
 //? createForm(..)      // creates a form (and usually returns it)
 //? checkPermission(..) // checks a permission, returns true/false
 
-//* Summary
+//* Summary for FD(function decalration).
 
 // A function declaration looks like this:
 

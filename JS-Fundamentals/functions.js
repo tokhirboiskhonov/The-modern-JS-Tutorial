@@ -547,3 +547,43 @@ welcome2(); // ok now
 
 // So we should use a Function Expression only when a Function Declaration is not fit for the task. We’ve seen a couple of examples of that in this chapter, and will see more in the future.
 
+//* Arrow functions, the basics.
+
+// There’s another very simple and concise syntax for creating functions, that’s often better than Function Expressions.
+
+// It’s called “arrow functions”, because it looks like this:
+
+// let func = (arg1, arg2, ..., argN) => expression;
+
+// Let's see a concrete example:
+
+let sum = (a, b) => a + b;
+
+console.log(sum(2, 10));
+
+// As you can see, (a, b) => a + b means a function that accepts two arguments named a and b. Upon the execution, it evaluates the expression a + b and returns the result.
+
+//? 1. If we have only one argument, then parentheses around parameters can be omitted, making that even shorter.
+
+// For example:
+
+let double = (n) => n * 2;
+console.log(double(10));
+
+//? 2. If there are no arguments, parentheses are empty, but they must be present:
+
+let sayHi = () => console.log("Hello!");
+
+sayHi();
+
+// Arrow functions can be used in the same way as Function Expressions.
+
+// For instance, to dynamically create a function:
+
+let yourAge = +prompt("What's your age?", 18);
+
+let yourWelcome =
+  age < 18 ? () => console.log("Hello!") : () => console.log("Greetings!");
+
+yourWelcome();
+

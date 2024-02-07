@@ -467,4 +467,16 @@ console.log(pow(10, 2)); // 100
 
 //? 3. We can pass it between variables and run when we want.
 
+//* Function Expression vs Function Declaration
+
+//? While we use function expression, we can't invoke the function before the itself.
+
+sum(1, 3); // Uncaught ReferenceError: Cannot access 'sum' before initialization
+
+let sum = function (a, b) {
+  console.log(a + b);
+};
+
+// sum(1, 3);
+
 

@@ -479,4 +479,61 @@ let sum = function (a, b) {
 
 // sum(1, 3);
 
+//! Another special feature of Function Declarations is their block scope.
+
+// In strict mode, when a Function Declaration is within a code block, it’s visible everywhere inside that block. But not outside of it.
+
+// For instance, let’s imagine that we need to declare a function welcome() depending on the age variable that we get during runtime. And then we plan to use it some time later.
+
+// If we use Function Declaration, it won’t work as intended:
+
+let age = prompt("What is your age?", 18);
+
+// conditionally declare a function
+if (age < 18) {
+  function welcome() {
+    alert("Hello!");
+  }
+} else {
+  function welcome() {
+    alert("Greetings!");
+  }
+}
+
+// ...use it later
+welcome(); // Error: welcome is not defined
+
+// That’s because a Function Declaration is only visible inside the code block in which it resides.
+
+let age1 = prompt("What is your age?", 18);
+
+let welcome;
+
+if (age1 < 18) {
+  welcome = function () {
+    alert("Hello!");
+  };
+} else {
+  welcome = function () {
+    alert("Greetings!");
+  };
+}
+
+welcome();
+
+// Or we could simplify it even further using a question mark operator ?:
+
+let age2 = prompt("What is your age?", 18);
+
+let welcome =
+  age2 < 18
+    ? function () {
+        alert("Hello!");
+      }
+    : function () {
+        alert("Greetings!");
+      };
+
+welcome(); // ok now
+
 

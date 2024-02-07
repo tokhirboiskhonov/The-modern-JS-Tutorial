@@ -216,13 +216,13 @@ showCount(); //unknown
 
 // The simplest example would be a function that sums two values:
 
-function sum(a, b) {
-  return a + b;
-}
+// function sum(a, b) {
+//   return a + b;
+// }
 
-let result = sum(3, 4);
+// let result = sum(3, 4);
 
-console.log(result);
+// console.log(result);
 
 // The directive return can be in any place of the function. When the execution reaches it, the function stops, and the value is returned to the calling code (assigned to result above).
 // There may be many occurrences of return in a single function. For instance:

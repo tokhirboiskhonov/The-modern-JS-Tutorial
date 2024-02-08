@@ -210,3 +210,21 @@ let obj3 = {};
 obj3.__proto__ = 5; // assign a number
 alert(obj3.__proto__); // [object Object] - the value is an object, didn't work as intended
 
+//* Property existence test, “in” operator
+
+// There’s also a special operator "in" for that.
+
+// The syntax is:
+
+// "key" in object
+
+let myUser = { name: "John", age: 30 };
+
+alert("age" in myUser); // true, myUser.age exists
+alert("blabla" in myUser); // false, myUser.blabla doesn't exist
+
+let user4 = { age: 30 };
+
+let key2 = "age";
+alert(key in user4); // true, property "age" exists
+

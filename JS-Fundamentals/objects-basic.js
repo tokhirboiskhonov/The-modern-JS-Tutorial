@@ -55,3 +55,59 @@
 //   "likes birds": true, // multiword property name must be quoted
 // };
 
+//* Square brackets
+
+// For multiword properties, the dot access doesn’t work:
+
+// this would give a syntax error
+// user.likes birds = true
+
+// JavaScript doesn’t understand that. It thinks that we address user.likes, and then gives a syntax error when comes across unexpected birds.
+
+// There’s an alternative “square bracket notation” that works with any string:
+
+// let user = {};
+
+// set
+// user["likes birds"] = true;
+
+// get
+// console.log(user["likes birds"]); // true
+
+// delete
+// delete user["likes birds"];
+
+// console.log(user); // {}
+
+// Square brackets also provide a way to obtain the property name as the result of any expression – as opposed to a literal string – like from a variable as follows:
+
+// let key = "likes birds";
+
+// same as user["likes birds"] = true;
+// user[key] = true;
+
+// console.log(user);
+
+//? Here, the variable key may be calculated at run-time or depend on the user input. And then we use it to access the property. That gives us a great deal of flexibility.
+
+// For instance:
+
+// let user = {
+//   name: "John",
+//   age: 30,
+// };
+
+// let key = prompt("What do you want to know about the user?", "name");
+
+// console.log(user[key]); // John (if enter "name")
+
+//? The dot notation cannot be used in a similar way:
+
+let user = {
+  name: "John",
+  age: 30,
+};
+
+let key = "name";
+alert(user.key); // undefined
+

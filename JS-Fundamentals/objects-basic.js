@@ -145,3 +145,33 @@ bag[fruit] = 5;
 // Square brackets are much more powerful than dot notation. They allow any property names and variables. But they are also more cumbersome to write.
 // So most of the time, when property names are known and simple, the dot is used. And if we need something more complex, then we switch to square brackets.
 
+//* Property value shorthand
+
+// In real code, we often use existing variables as values for property names.
+
+// function makeUser(name, age) {
+//   return {
+//  name: name,
+//  age: age,
+// ...other properties
+//   };
+// }
+
+// let user = makeUser("John", 30);
+// alert(user.name); // John
+
+// In the example above, properties have the same names as variables. The use-case of making a property from a variable is so common, that there’s a special property value shorthand to make it shorter.
+
+// Instead of name:name we can just write name, like this:
+
+function makeUser(name, age) {
+  return {
+    name, // same as name: name
+    age, // same as age: age
+    // ...
+  };
+}
+
+let obj = makeUser("Tokhirkhuja", 24);
+console.log(obj.name); // Tokhirkhuja
+

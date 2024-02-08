@@ -175,3 +175,38 @@ function makeUser(name, age) {
 let obj = makeUser("Tokhirkhuja", 24);
 console.log(obj.name); // Tokhirkhuja
 
+//* Property names limitations
+
+// As we already know, a variable cannot have a name equal to one of the language-reserved words like “for”, “let”, “return” etc.
+
+// But for an object property, there’s no such restriction:
+
+// these properties are all right
+let obj1 = {
+  for: 1,
+  let: 2,
+  return: 3,
+};
+
+console.log(obj1.for + obj1.let + obj1.return); // 6
+
+// In short, there are no limitations on property names. They can be any strings or symbols (a special type for identifiers, to be covered later).
+
+// Other types are automatically converted to strings.
+
+// For instance, a number 0 becomes a string "0" when used as a property key:
+
+let obj2 = {
+  0: "test", // same as "0": "test"
+};
+
+// both alerts access the same property (the number 0 is converted to string "0")
+console.log(obj2["0"]); // test
+console.log(obj2[0]); // test (same property)
+
+// There’s a minor gotcha with a special property named __proto__. We can’t set it to a non-object value:
+
+let obj3 = {};
+obj3.__proto__ = 5; // assign a number
+alert(obj3.__proto__); // [object Object] - the value is an object, didn't work as intended
+

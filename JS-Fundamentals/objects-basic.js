@@ -10,3 +10,48 @@
 
 // let user = {}; // "object literal" syntax
 
+//* Literals and properties
+
+// We can immediately put some properties into {...} as “key: value” pairs:
+
+// let user = {
+// an object
+//   name: "Tokhir", // by key "name" store value "Tokhir"
+//   age: 24, // by key "age" store value 24
+// };
+
+// A property has a key (also known as “name” or “identifier”) before the colon ":" and a value to the right of it.
+
+// In the user object, there are two properties:
+
+// The first property has the name "name" and the value "Tokhir".
+// The second one has the name "age" and the value 24.
+
+// We can add, remove and read files from it at any time.
+
+//? Property values are accessible using the dot notation:
+
+// get property values of the object:
+// console.log(user.name); // Tokhir
+// console.log(user.age); // 24
+
+// The value can be of any type. Let’s add a boolean one:
+
+// user.isAdmin = true;
+
+// console.log(user); // {name: "Tokhir", age: 24, isAdmin: true}
+
+//? To remove a property, we can use the delete operator:
+
+// delete user.age;
+
+// console.log(user); // {name: "Tokhir", isAdmin: true}
+
+//? We can also use multiword property names, but then they must be quoted:
+
+// let user = {
+//   name: "John",
+//   age: 30,
+//   "likes birds": true, // multiword property name must be quoted
+// };
+

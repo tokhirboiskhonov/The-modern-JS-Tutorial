@@ -133,3 +133,17 @@ Object.assign(obj, { name: "Jakhongir" });
 
 console.log(obj.name);
 
+//! We also can use Object.assign to perform a simple object cloning:
+
+let object1 = {
+  name: "Steve Jobs",
+  age: 55,
+};
+
+let newObject1 = Object.assign({}, object1);
+
+newObject1.name = "Bill Gates";
+
+console.log(newObject1);
+console.log(object1);
+

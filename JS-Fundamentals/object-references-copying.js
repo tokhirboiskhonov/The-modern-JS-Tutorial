@@ -74,3 +74,31 @@ user1.name = "Pete";
 
 console.log(user1.name);
 
+//* Cloning and merging, Object.assign
+
+// So, copying an object variable creates one more reference to the same object.
+
+// But what if we need to duplicate an object?
+
+// We can create a new object and replicate the structure of the existing one, by iterating over its properties and copying them on the primitive level.
+
+let myUser = {
+  name: "Tokhir",
+  age: 24,
+  isMarried: false,
+  job: "Frontend developer",
+};
+
+let clone = {};
+
+for (let key in myUser) {
+  clone[key] = myUser[key];
+}
+
+clone.name = "Khusan";
+clone.age = 26;
+clone.isMarried = true;
+clone.job = "Unemployement";
+
+console.log(myUser);
+

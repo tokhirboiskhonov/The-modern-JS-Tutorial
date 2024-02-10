@@ -102,3 +102,34 @@ clone.job = "Unemployement";
 
 console.log(myUser);
 
+//! We can also use the method Object.assign.
+
+//? The syntax is:
+// Object.assign(dest, ...sources)
+
+//? The first argument dest is a target object.
+//? Further arguments is a list of source objects.
+
+// It copies the properties of all source objects into the target dest, and then returns it as the result.
+
+// For example, we have user object, let’s add a couple of permissions to it:
+
+let user2 = { name: "Johnibek" };
+
+let permissions1 = { canView: true };
+let permissions2 = { canEdit: true };
+
+let newUser = Object.assign(user2, permissions1, permissions2);
+
+console.log(newUser);
+
+console.log(user2.name === newUser.name);
+
+// If the copied property name already exists, it gets overwritten:
+
+let obj = { name: "Abdusaid" };
+
+Object.assign(obj, { name: "Jakhongir" });
+
+console.log(obj.name);
+

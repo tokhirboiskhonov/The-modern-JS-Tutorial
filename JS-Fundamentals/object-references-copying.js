@@ -147,3 +147,37 @@ newObject1.name = "Bill Gates";
 console.log(newObject1);
 console.log(object1);
 
+//* Nested cloning
+
+// Until now we assumed that all properties of user are primitive. But properties can be references to other objects.
+
+let newObj = {
+  name: "John",
+  sizes: {
+    height: 182,
+    width: 50,
+  },
+};
+
+alert(newObj.sizes.height); // 182
+
+// Now it’s not enough to copy clone.sizes = user.sizes, because user.sizes is an object, and will be copied by reference, so clone and user will share the same sizes:
+
+let user10 = {
+  name: "John",
+  sizes: {
+    height: 182,
+    width: 50,
+  },
+};
+
+let clone = Object.assign({}, user10);
+
+alert(user10.sizes === clone.sizes); // true, same object
+
+// user and clone share sizes
+user10.sizes.width = 60; // change a property from one place
+alert(clone.sizes.width); // 60, get the result from the other one
+
+// To fix that and make user and clone truly separate objects, we should use a cloning loop that examines each value of user[key] and, if it’s an object, then replicate its structure as well. That is called a “deep cloning” or “structured cloning”. There’s structuredClone method that implements deep cloning.
+

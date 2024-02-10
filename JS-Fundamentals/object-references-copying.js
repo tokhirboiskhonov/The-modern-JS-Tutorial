@@ -42,3 +42,35 @@ admin.name = "Smith";
 
 console.log(user); // {name: "Smith"}
 
+//* Comparison by reference
+
+// Two objects are equal only if they are the same object.
+// For instance, here a and b reference the same object, thus they are equal:
+
+let a = {};
+
+let b = a;
+
+console.log(a == b); // true
+console.log(a === b); // true
+
+// And here two independent objects are not equal, even though they look alike (both are empty):
+
+let c = {};
+let d = {}; // two independent objects
+
+console.log(c == d); // false
+console.log(c === d); // false
+
+// Const objects can be modified
+
+// An important side effect of storing objects as references is that an object declared as const can be modified.
+
+const user1 = {
+  name: "John",
+};
+
+user1.name = "Pete";
+
+console.log(user1.name);
+

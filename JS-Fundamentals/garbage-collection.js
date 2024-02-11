@@ -87,3 +87,15 @@ family = null;
 
 console.log(family);
 
+//* Internal algorithms
+
+// The basic garbage collection algorithm is called “mark-and-sweep”.
+
+// The following “garbage collection” steps are regularly performed:
+
+//? 1. The garbage collector takes roots and “marks” (remembers) them.
+//? 2. Then it visits and “marks” all references from them.
+//? 3. Then it visits marked objects and marks their references. All visited objects are remembered, so as not to visit the same object twice in the future.
+//? 4. …And so on until every reachable (from the roots) references are visited.
+//? 5. All objects except marked ones are removed.
+

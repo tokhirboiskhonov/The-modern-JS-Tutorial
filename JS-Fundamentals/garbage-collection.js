@@ -81,3 +81,9 @@ delete family.mother.husband;
 
 // But if we delete both, then we can see that John has no incoming reference any more:
 
+//* Unreachable island
+
+family = null;
+
+console.log(family);
+

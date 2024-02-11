@@ -38,3 +38,18 @@
 
 // console.log(user);
 
+//* Two references
+
+let user = {
+  name: "Steve Jobs",
+};
+
+let admin = user;
+
+user = null;
+
+console.log(admin); // still have access
+console.log(user); // already unreachable
+
+// …Then the object is still reachable via admin global variable, so it must stay in memory. If we overwrite admin too, then it can be removed.
+

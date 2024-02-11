@@ -24,3 +24,17 @@
 
 // There’s a background process in the JavaScript engine that is called garbage collector. It monitors all objects and removes those that have become unreachable.
 
+//* A simple example
+
+// Here's the simplest example:
+
+//user has a reference to the object.
+
+// let user = {
+//   name: "John",
+// };
+
+// user = null; // this object becomes already unreachable object.
+
+// console.log(user);
+

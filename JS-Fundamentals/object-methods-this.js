@@ -71,3 +71,57 @@ obj.sayHi(); // Hello everybody!
 
 // To tell the truth, the notations are not fully identical. There are subtle differences related to object inheritance (to be covered later), but for now they do not matter. In almost all cases, the shorter syntax is preferred.
 
+//* "this" in methods
+
+// It’s common that an object method needs to access the information stored in the object to do its job.
+
+// For instance, the code inside user.sayHi() may need the name of the user.
+
+// To access the object, a method can use the this keyword.
+
+// The value of this is the object “before dot”, the one used to call the method.
+
+// For instance:
+
+// let user = {
+//   name: "John",
+//   age: 24,
+//   sayHi() {
+//     // "this" is the "current object"
+//     console.log(`My name is ${this.name}, I'm ${this.age} years old.`);
+//   },
+// };
+
+// user.sayHi();
+
+// Here during the execution of user.sayHi(), the value of this will be user.
+
+// Technically, it’s also possible to access the object without this, by referencing it via the outer variable:
+
+// let user1 = {
+//   name: "John",
+//   age: 30,
+
+//   sayHi() {
+//     alert(user1.name); // "user" instead of "this"
+//   },
+// };
+
+// …But such code is unreliable. If we decide to copy user to another variable, e.g. admin = user and overwrite user with something else, then it will access the wrong object.
+
+// That's demonstrated below:
+
+// let user2 = {
+//   name: "John",
+//   age: 30,
+//   sayHi() {
+//     console.log(user2.name); // leads to an error.
+//   },
+// };
+
+// let admin = user2;
+
+// user2 = null;
+
+// admin.sayHi(); // TypeError: Cannot read properties of null (reading 'name')
+

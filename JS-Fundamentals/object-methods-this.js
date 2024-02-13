@@ -189,3 +189,14 @@ user.sayHi(); // Ilya
 
 // That’s a special feature of arrow functions, it’s useful when we actually do not want to have a separate this, but rather to take it from the outer context. Later in the chapter Arrow functions revisited we’ll go more deeply into arrow functions.
 
+//* Summary
+//? 1. Functions that are stored in object properties are called “methods”.
+//? 2. Methods allow objects to “act” like object.doSomething().
+//? 3. Methods can reference the object as this.
+
+//! The value of this is defined at run-time.
+
+//? 1. When a function is declared, it may use this, but that this has no value until the function is called.
+//? 2. A function can be copied between objects.
+//? 3. When a function is called in the “method” syntax: object.method(), the value of this during the call is object.
+// Please note that arrow functions are special: they have no this. When this is accessed inside an arrow function, it is taken from outside.

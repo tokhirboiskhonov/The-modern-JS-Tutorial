@@ -171,3 +171,21 @@ admin["f"](); // Admin (dot or square brackets access the method – doesn't mat
 
 // Usually such call is a programming error. If there’s this inside a function, it expects to be called in an object context.
 
+//* Arrow functions have no "this"
+
+// Arrow functions are special: they don’t have their “own” this. If we reference this from such a function, it’s taken from the outer “normal” function.
+
+// For instance, here arrow() uses this from the outer user.sayHi() method:
+
+let user = {
+  firstName: "Ilya",
+  sayHi() {
+    let arrow = () => alert(this.firstName);
+    arrow();
+  },
+};
+
+user.sayHi(); // Ilya
+
+// That’s a special feature of arrow functions, it’s useful when we actually do not want to have a separate this, but rather to take it from the outer context. Later in the chapter Arrow functions revisited we’ll go more deeply into arrow functions.
+

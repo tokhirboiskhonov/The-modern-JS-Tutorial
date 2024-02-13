@@ -125,3 +125,49 @@ obj.sayHi(); // Hello everybody!
 
 // admin.sayHi(); // TypeError: Cannot read properties of null (reading 'name')
 
+//* "this" is not bound.
+
+// In JavaScript, keyword this behaves unlike most other programming languages. It can be used in any function, even if it’s not a method of an object.
+
+// There’s no syntax error in the following example:
+
+function sayHi() {
+  console.log(this.name);
+}
+
+// The value of this is evaluated during the run-time, depending on the context.
+
+// For instance, here the same function is assigned to two different objects and has different “this” in the calls:
+
+let user = { name: "John" };
+let admin = { name: "Admin" };
+
+function sayHi() {
+  console.log(this.name);
+}
+
+// use the same function in two objects
+user.f = sayHi;
+admin.f = sayHi;
+
+// these calls have different this
+// "this" inside the function is the object "before the dot"
+user.f(); // John  (this == user)
+admin.f(); // Admin  (this == admin)
+
+admin["f"](); // Admin (dot or square brackets access the method – doesn't matter)
+
+// Calling without an object: this == undefined
+// We can even call the function without an object at all:
+
+// function sayHi() {
+//   alert(this);
+// }
+
+// sayHi(); // undefined
+// In this case this is undefined in strict mode. If we try to access this.name, there will be an error.
+
+// In non-strict mode the value of this in such case will be the global object (window in a browser, we’ll get to it later in the chapter Global object). This is a historical behavior that "use strict" fixes.
+
+// Usually such call is a programming error. If there’s this inside a function, it expects to be called in an object context.
+

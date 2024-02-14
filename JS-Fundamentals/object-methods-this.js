@@ -36,16 +36,16 @@
 
 // Of course, we could use a pre-declared function as a method, like this:
 
-let obj = {};
+// let obj = {};
 
 // first declare
-function sayHi() {
-  console.log("Hello everybody!");
-}
+// function sayHi() {
+//   console.log("Hello everybody!");
+// }
 
-obj.sayHi = sayHi;
+// obj.sayHi = sayHi;
 
-obj.sayHi(); // Hello everybody!
+// obj.sayHi(); // Hello everybody!
 
 //* Method shorthand
 
@@ -131,31 +131,31 @@ obj.sayHi(); // Hello everybody!
 
 // There’s no syntax error in the following example:
 
-function sayHi() {
-  console.log(this.name);
-}
+// function sayHi() {
+//   console.log(this.name);
+// }
 
 // The value of this is evaluated during the run-time, depending on the context.
 
 // For instance, here the same function is assigned to two different objects and has different “this” in the calls:
 
-let user = { name: "John" };
-let admin = { name: "Admin" };
+// let user = { name: "John" };
+// let admin = { name: "Admin" };
 
-function sayHi() {
-  console.log(this.name);
-}
+// function sayHi() {
+//   console.log(this.name);
+// }
 
 // use the same function in two objects
-user.f = sayHi;
-admin.f = sayHi;
+// user.f = sayHi;
+// admin.f = sayHi;
 
 // these calls have different this
 // "this" inside the function is the object "before the dot"
-user.f(); // John  (this == user)
-admin.f(); // Admin  (this == admin)
+// user.f(); // John  (this == user)
+// admin.f(); // Admin  (this == admin)
 
-admin["f"](); // Admin (dot or square brackets access the method – doesn't matter)
+// admin["f"](); // Admin (dot or square brackets access the method – doesn't matter)
 
 // Calling without an object: this == undefined
 // We can even call the function without an object at all:
@@ -177,15 +177,15 @@ admin["f"](); // Admin (dot or square brackets access the method – doesn't mat
 
 // For instance, here arrow() uses this from the outer user.sayHi() method:
 
-let user = {
-  firstName: "Ilya",
-  sayHi() {
-    let arrow = () => alert(this.firstName);
-    arrow();
-  },
-};
+// let user = {
+//   firstName: "Ilya",
+//   sayHi() {
+//     let arrow = () => alert(this.firstName);
+//     arrow();
+//   },
+// };
 
-user.sayHi(); // Ilya
+// user.sayHi(); // Ilya
 
 // That’s a special feature of arrow functions, it’s useful when we actually do not want to have a separate this, but rather to take it from the outer context. Later in the chapter Arrow functions revisited we’ll go more deeply into arrow functions.
 
@@ -200,3 +200,111 @@ user.sayHi(); // Ilya
 //? 2. A function can be copied between objects.
 //? 3. When a function is called in the “method” syntax: object.method(), the value of this during the call is object.
 // Please note that arrow functions are special: they have no this. When this is accessed inside an arrow function, it is taken from outside.
+
+//* Tasks
+
+//! 1. Using "this" in object literal
+// Here the function makeUser returns an object.
+// What is the result of accessing its ref? Why?
+
+// function makeUser() {
+//   return {
+//  name: "John",
+//  ref: this,
+//   };
+// }
+
+// let user = makeUser();
+
+// console.log(user.ref.name); // What's the result?
+
+// let myUser = {};
+
+// function makeUser() {
+//   return {
+//     name: "John",
+//     ref: this,
+//   };
+// }
+
+// myUser.f = makeUser;
+
+// console.log(myUser.f().name); // John
+
+//! 2. Create a calculator
+
+// Create an object calculator with three methods:
+
+// read() prompts for two values and saves them as object properties with names a and b respectively.
+// sum() returns the sum of saved values.
+// mul() multiplies saved values and returns the result.
+
+// let calculator = {
+//   sum() {
+//     return this.a + this.b;
+//   },
+//   mul() {
+//     return this.a * this.b;
+//   },
+//   read() {
+//     this.a = +prompt("a?", 0);
+//     this.b = +prompt("b?", 0);
+//   },
+// };
+
+// calculator.read();
+// alert(calculator.sum());
+// alert(calculator.mul());
+
+// it is my version solving problem
+let calcObj = {
+  a: +prompt("a?", 0),
+  b: +prompt("b?", 0),
+  sum() {
+    return this.a + this.b;
+  },
+  mul() {
+    return this.a * this.b;
+  },
+  div() {
+    return this.a / this.b;
+  },
+  read() {
+    this.a;
+    this.b;
+  },
+};
+
+calcObj.read();
+
+alert(calcObj.sum());
+alert(calcObj.mul());
+alert(calcObj.div());
+
+//! 3. Chaining
+
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this.step;
+  },
+  down() {
+    this.step--;
+    return this.step;
+  },
+  showStep: function () {
+    // shows the current step
+    alert(this.step);
+    return this.step;
+  },
+};
+
+// ladder.up(); // 0
+// ladder.up(); // 1
+// ladder.down(); // 0
+// ladder.showStep(); // 1
+// ladder.down(); // 0
+// ladder.showStep(); // 0
+
+ladder.up().up().down().showStep().down().showStep();

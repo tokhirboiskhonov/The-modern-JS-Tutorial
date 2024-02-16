@@ -135,3 +135,13 @@ console.log(new SmallUser().name); // Tokhirkhuja
 
 // Usually constructors don’t have a return statement. Here we mention the special behavior with returning objects mainly for the sake of completeness.
 
+//! Omitting parentheses
+
+// By the way, we can omit parentheses after new:
+
+// let user = new User; // <-- no parentheses
+// same as
+// let user = new User();
+
+// Omitting parentheses here is not considered a “good style”, but the syntax is permitted by specification
+

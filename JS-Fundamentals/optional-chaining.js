@@ -52,3 +52,18 @@ console.log(user?.address?.street); // undefined
 // user?.address;
 // The variable must be declared (e.g. let/const/var user or as a function parameter). The optional chaining works only for declared variables.
 
+//* Short-circuiting
+
+// As it was said before, the ?. immediately stops (“short-circuits”) the evaluation if the left part doesn’t exist.
+
+// So, if there are any further function calls or operations to the right of ?., they won’t be made.
+
+// For instance:
+
+let user2 = null;
+let x = 0;
+
+user2?.sayHi(x++); // no "user", so the execution doesn't reach sayHi call and x++
+
+alert(x); // 0, value not incremented
+

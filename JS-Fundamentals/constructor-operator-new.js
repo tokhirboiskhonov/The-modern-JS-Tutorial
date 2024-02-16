@@ -100,3 +100,38 @@ console.log(john);
 
 // Probably not a good thing to use everywhere though, because omitting new makes it a bit less obvious what’s going on. With new we all know that the new object is being created.
 
+//* Return from consturctors
+
+// Usually, constructors do not have a return statement. Their task is to write all necessary stuff into this, and it automatically becomes the result.
+
+// But if there is a return statement, then the rule is simple:
+
+//? 1. If return is called with an object, then the object is returned instead of this.
+//? 2. If return is called with a primitive, it’s ignored.
+
+// In other words, return with an object returns that object, in all other cases this is returned.
+
+//! For instance, here return overrides this by returning an object:
+
+function BigUser() {
+  this.name = "John";
+
+  return {
+    name: "Smith", // <--returns this object
+  };
+}
+
+console.log(new BigUser().name); // Smith, got that object
+
+//! And here’s an example with an empty return (or we could place a primitive after it, doesn’t matter):
+
+function SmallUser() {
+  this.name = "Tokhirkhuja";
+
+  return; // <-- return this
+}
+
+console.log(new SmallUser().name); // Tokhirkhuja
+
+// Usually constructors don’t have a return statement. Here we mention the special behavior with returning objects mainly for the sake of completeness.
+

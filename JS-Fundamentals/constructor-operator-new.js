@@ -50,3 +50,19 @@ let user = {
 // Now if we want to create other users, we can call new User("Ann"), new User("Alice") and so on. Much shorter than using literals every time, and also easy to read.
 //! That’s the main purpose of constructors – to implement reusable object creation code.
 
+//* new function() { … }
+
+// If we have many lines of code all about creation of a single complex object, we can wrap them in an immediately called constructor function, like this:
+
+// create a function and immediately call it with new
+let user1 = new (function () {
+  this.name = "John";
+  this.isAdmin = false;
+
+  // ...other code for user creation
+  // maybe complex logic and statements
+  // local variables etc
+})();
+
+// This constructor can’t be called again, because it is not saved anywhere, just created and called. So this trick aims to encapsulate the code that constructs the single object, without future reuse.
+

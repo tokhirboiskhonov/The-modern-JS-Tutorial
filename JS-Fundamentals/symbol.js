@@ -120,3 +120,34 @@ console.log(user);
 
 // That’s because we need the value from the variable id as the key, not the string “id”.
 
+//* Symbols are skipped by for…in
+
+//! Symbolic properties do not participate in for..in loop.
+
+let id5 = Symbol("id");
+let user = {
+  name: "John",
+  age: 30,
+  [id5]: 123,
+};
+
+for (let key in user) alert(key); // name, age (no symbols)
+
+// the direct access by the symbol works
+alert("Direct: " + user[id5]); // Direct: 123
+
+// Object.keys(user) also ignores them. That’s a part of the general “hiding symbolic properties” principle. If another script or a library loops over our object, it won’t unexpectedly access a symbolic property.
+
+// In contrast, Object.assign copies both string and symbol properties:
+
+let id6 = Symbol("id");
+let user = {
+  [id6]: 123,
+};
+
+let clone = Object.assign({}, user);
+
+alert(clone[id6]); // 123
+
+// There’s no paradox here. That’s by design. The idea is that when we clone an object or merge objects, we usually want all properties to be copied (including symbols like id).
+

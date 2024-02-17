@@ -103,3 +103,20 @@ user.id = "Our id value";
 user.id = "Their id value";
 // Boom! overwritten by another script!
 
+//* Symbols in an object literal
+
+// If we want to use a symbol in an object literal {...}, we need square brackets around it.
+
+// Like this:
+
+let id4 = Symbol("id");
+
+let user = {
+  name: "John",
+  [id4]: 123, // not "id": 123
+};
+
+console.log(user);
+
+// That’s because we need the value from the variable id as the key, not the string “id”.
+

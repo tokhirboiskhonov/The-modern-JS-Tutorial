@@ -202,3 +202,19 @@ alert(Symbol.keyFor(localSymbol)); // undefined, not global
 
 alert(localSymbol.description); // name
 
+//* System symbols
+
+// There exist many “system” symbols that JavaScript uses internally, and we can use them to fine-tune various aspects of our objects.
+
+// They are listed in the specification in the Well-known symbols table:
+
+//? 1. Symbol.hasInstance
+//? 2. Symbol.isConcatSpreadable
+//? 3. Symbol.iterator
+//? 4. Symbol.toPrimitive
+
+// …and so on.
+// For instance, Symbol.toPrimitive allows us to describe object to primitive conversion. We’ll see its use very soon.
+
+// Other symbols will also become familiar when we study the corresponding language features.
+

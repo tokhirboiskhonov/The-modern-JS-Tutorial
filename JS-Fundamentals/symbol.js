@@ -37,3 +37,24 @@ alert(id1 == id2); // false
 
 // So, to summarize, a symbol is a “primitive unique value” with an optional description. Let’s see where we can use them.
 
+//! Symbols don’t auto-convert to a string
+
+// Most values in JavaScript support implicit conversion to a string. For instance, we can alert almost any value, and it will work. Symbols are special. They don’t auto-convert.
+
+// For instance, this alert will show an error:
+
+// let id = Symbol("id");
+// alert(id); // TypeError: Cannot convert a Symbol value to a string
+
+// That’s a “language guard” against messing up, because strings and symbols are fundamentally different and should not accidentally convert one into another.
+
+// If we really want to show a symbol, we need to explicitly call .toString() on it, like here:
+
+// let id = Symbol("id");
+// alert(id.toString()); // Symbol(id), now it works
+
+// Or get symbol.description property to show the description only:
+
+// let id = Symbol("id");
+// alert(id.description); // id
+

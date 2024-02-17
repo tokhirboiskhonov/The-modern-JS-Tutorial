@@ -174,3 +174,31 @@ alert(id === idAgain); // true
 
 // Symbols inside the registry are called global symbols. If we want an application-wide symbol, accessible everywhere in the code – that’s what they are for.
 
+//* Symbol.keyFor
+
+// We have seen that for global symbols, Symbol.for(key) returns a symbol by name. To do the opposite – return a name by global symbol – we can use: Symbol.keyFor(sym):
+
+// For instance:
+
+// get symbol by name
+let sym = Symbol.for("name");
+let sym2 = Symbol.for("id");
+
+// get name by symbol
+alert(Symbol.keyFor(sym)); // name
+alert(Symbol.keyFor(sym2)); // id
+
+// The Symbol.keyFor internally uses the global symbol registry to look up the key for the symbol. So it doesn’t work for non-global symbols. If the symbol is not global, it won’t be able to find it and returns undefined.
+
+// That said, all symbols have the description property.
+
+// For instance:
+
+let globalSymbol = Symbol.for("name");
+let localSymbol = Symbol("name");
+
+alert(Symbol.keyFor(globalSymbol)); // name, global symbol
+alert(Symbol.keyFor(localSymbol)); // undefined, not global
+
+alert(localSymbol.description); // name
+

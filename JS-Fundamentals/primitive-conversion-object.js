@@ -14,3 +14,8 @@
 
 // In this chapter we’ll cover how an object converts to primitive and how to customize it.
 
+//? We have two purposes:
+
+//! 1. It will allow us to understand what’s going on in case of coding mistakes, when such an operation happened accidentally.
+//! 2. There are exceptions, where such operations are possible and look good. E.g. subtracting or comparing dates (Date objects). We’ll come across them later.
+

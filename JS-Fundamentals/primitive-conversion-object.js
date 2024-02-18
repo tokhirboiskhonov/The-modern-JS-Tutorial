@@ -19,3 +19,14 @@
 //! 1. It will allow us to understand what’s going on in case of coding mistakes, when such an operation happened accidentally.
 //! 2. There are exceptions, where such operations are possible and look good. E.g. subtracting or comparing dates (Date objects). We’ll come across them later.
 
+//* Conversion rules
+
+// In the chapter Type Conversions we’ve seen the rules for numeric, string and boolean conversions of primitives. But we left a gap for objects. Now, as we know about methods and symbols it becomes possible to fill it.
+
+// 1. There’s no conversion to boolean. All objects are true in a boolean context, as simple as that. There exist only numeric and string conversions.
+// 2. The numeric conversion happens when we subtract objects or apply mathematical functions. For instance, Date objects (to be covered in the chapter Date and time) can be subtracted, and the result of date1 - date2 is the time difference between two dates.
+// 3. As for the string conversion – it usually happens when we output an object with alert(obj) and in similar contexts.
+
+// We can implement string and numeric conversion by ourselves, using special object methods.
+
+// Now let’s get into technical details, because it’s the only way to cover the topic in-depth.

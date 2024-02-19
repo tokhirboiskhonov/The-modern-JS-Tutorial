@@ -205,3 +205,36 @@ alert(user3 + 500); // toString -> John500
 
 // In contrast, Symbol.toPrimitive is stricter, it must return a primitive, otherwise there will be an error.
 
+//* Further conversions
+
+// As we know already, many operators and functions perform type conversions, e.g. multiplication * converts operands to numbers.
+
+// If we pass an object as an argument, then there are two stages of calculations:
+
+//? 1. The object is converted to a primitive (using the rules described above).
+//? 2. If necessary for further calculations, the resulting primitive is also converted.
+
+// For instance:
+
+let obj1 = {
+  // toString handles all conversions in the absence of other methods
+  toString() {
+    return "2";
+  },
+};
+
+alert(obj1 * 2); // 4, object converted to primitive "2", then multiplication made it a number
+
+//  The multiplication obj * 2 first converts the object to primitive (that’s a string "2").
+//  Then "2" * 2 becomes 2 * 2 (the string is converted to number).
+
+//  Binary plus will concatenate strings in the same situation, as it gladly accepts a string:
+
+let obj2 = {
+  toString() {
+    return "2";
+  },
+};
+
+alert(obj2 + 2); // 22 ("2" + 2), conversion to primitive returned a string => concatenation
+

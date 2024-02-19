@@ -47,3 +47,19 @@ alert(obj);
 // using object as a property key
 anotherObj[obj] = 123;
 
+//! "number"
+
+// For an object-to-number conversion, like when we’re doing maths:
+
+// explicit conversion
+let num = Number(obj);
+
+// maths (except binary plus)
+let n = +obj; // unary plus
+let delta = date1 - date2;
+
+// less/greater comparison
+let greater = user1 > user2;
+
+// Most built-in mathematical functions also include such conversion.
+

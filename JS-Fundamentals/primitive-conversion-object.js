@@ -125,3 +125,70 @@ alert(user1 + 500); // hint: default -> 1500
 
 // As we can see from the code, user becomes a self-descriptive string or a money amount, depending on the conversion. The single method user[Symbol.toPrimitive] handles all conversion cases.
 
+//* toString/valueOf
+
+// If there’s no Symbol.toPrimitive then JavaScript tries to find methods toString and valueOf:
+
+//! 1. For the "string" hint: call toString method, and if it doesn’t exist or if it returns an object instead of a primitive value, then call valueOf (so toString has the priority for string conversions).
+//! 2. For other hints: call valueOf, and if it doesn’t exist or if it returns an object instead of a primitive value, then call toString (so valueOf has the priority for maths).
+
+// Methods toString and valueOf come from ancient times. They are not symbols (symbols did not exist that long ago), but rather “regular” string-named methods. They provide an alternative “old-style” way to implement the conversion.
+
+// These methods must return a primitive value. If toString or valueOf returns an object, then it’s ignored (same as if there were no method).
+
+// By default, a plain object has following toString and valueOf methods:
+
+//? 1. The toString method returns a string "[object Object]".
+//? 2. The valueOf method returns the object itself.
+
+// Here’s the demo:
+
+let userInfo = { name: "John" };
+
+alert(userInfo); // [object Object]
+alert(userInfo.valueOf() === userInfo); // true
+
+// So if we try to use an object as a string, like in an alert or so, then by default we see [object Object].
+
+// The default valueOf is mentioned here only for the sake of completeness, to avoid any confusion. As you can see, it returns the object itself, and so is ignored. Don’t ask me why, that’s for historical reasons. So we can assume it doesn’t exist.
+
+// Let’s implement these methods to customize the conversion.
+
+// For instance, here user does the same as above using a combination of toString and valueOf instead of Symbol.toPrimitive:
+
+let user = {
+  name: "John",
+  money: 1000,
+
+  // for hint="string"
+  toString() {
+    return `{name: "${this.name}"}`;
+  },
+
+  // for hint="number" or "default"
+  valueOf() {
+    return this.money;
+  },
+};
+
+alert(user); // toString -> {name: "John"}
+alert(+user); // valueOf -> 1000
+alert(user + 500); // valueOf -> 1500
+
+// As we can see, the behavior is the same as the previous example with Symbol.toPrimitive.
+
+// Often we want a single “catch-all” place to handle all primitive conversions. In this case, we can implement toString only, like this:
+
+let user3 = {
+  name: "John",
+
+  toString() {
+    return this.name;
+  },
+};
+
+alert(user3); // toString -> John
+alert(user3 + 500); // toString -> John500
+
+// In the absence of Symbol.toPrimitive and valueOf, toString will handle all primitive conversions.
+

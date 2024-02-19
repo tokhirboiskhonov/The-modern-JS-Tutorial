@@ -192,3 +192,16 @@ alert(user3 + 500); // toString -> John500
 
 // In the absence of Symbol.toPrimitive and valueOf, toString will handle all primitive conversions.
 
+//* A conversion can return any primitive type
+
+// The important thing to know about all primitive-conversion methods is that they do not necessarily return the “hinted” primitive.
+
+// There is no control whether toString returns exactly a string, or whether Symbol.toPrimitive method returns a number for the hint "number".
+
+// The only mandatory thing: these methods must return a primitive, not an object.
+
+//! Historical notes
+// For historical reasons, if toString or valueOf returns an object, there’s no error, but such value is ignored (like if the method didn’t exist). That’s because in ancient times there was no good “error” concept in JavaScript.
+
+// In contrast, Symbol.toPrimitive is stricter, it must return a primitive, otherwise there will be an error.
+

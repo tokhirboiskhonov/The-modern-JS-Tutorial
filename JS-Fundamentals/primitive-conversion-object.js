@@ -63,3 +63,34 @@ let greater = user1 > user2;
 
 // Most built-in mathematical functions also include such conversion.
 
+//! "default";
+
+// Occurs in rare cases when the operator is “not sure” what type to expect.
+
+// For instance, binary plus + can work both with strings (concatenates them) and numbers (adds them). So if a binary plus gets an object as an argument, it uses the "default" hint to convert it.
+
+// Also, if an object is compared using == with a string, number or a symbol, it’s also unclear which conversion should be done, so the "default" hint is used.
+
+// binary plus uses the "default" hint
+let total = obj1 + obj2;
+
+// obj == number uses the "default" hint
+if (user == 1) {
+}
+
+// The greater and less comparison operators, such as < >, can work with both strings and numbers too. Still, they use the "number" hint, not "default". That’s for historical reasons.
+
+// In practice though, things are a bit simpler.
+
+// All built-in objects except for one case (Date object, we’ll learn it later) implement "default" conversion the same way as "number". And we probably should do the same.
+
+// Still, it’s important to know about all 3 hints, soon we’ll see why.
+
+// To do the conversion, JavaScript tries to find and call three object methods:
+
+//? 1. Call obj[Symbol.toPrimitive](hint) – the method with the symbolic key Symbol.toPrimitive (system symbol), if such method exists,
+//? 2. Otherwise if hint is "string"
+//? 2.1  try calling obj.toString() or obj.valueOf(), whatever exists.
+//? 3. Otherwise if hint is "number" or "default"
+//? 3.1 try calling obj.valueOf() or obj.toString(), whatever exists.
+

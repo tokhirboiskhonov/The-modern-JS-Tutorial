@@ -37,3 +37,13 @@
 
 // There are three variants of type conversion, that happen in various situations. They’re called “hints”, as described in the specification:
 
+//! "string"
+
+// For an object-to-string conversion, when we’re doing an operation on an object that expects a string, like alert:
+
+// output
+alert(obj);
+
+// using object as a property key
+anotherObj[obj] = 123;
+

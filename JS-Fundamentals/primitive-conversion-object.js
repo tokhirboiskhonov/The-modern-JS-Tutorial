@@ -94,3 +94,34 @@ if (user == 1) {
 //? 3. Otherwise if hint is "number" or "default"
 //? 3.1 try calling obj.valueOf() or obj.toString(), whatever exists.
 
+//* Symbol.toPrimitive
+
+// Let’s start from the first method. There’s a built-in symbol named Symbol.toPrimitive that should be used to name the conversion method, like this:
+
+obj[Symbol.toPrimitive] = function (hint) {
+  // here goes the code to convert this object to a primitive
+  // it must return a primitive value
+  // hint = one of "string", "number", "default"
+};
+
+// If the method Symbol.toPrimitive exists, it’s used for all hints, and no more methods are needed.
+
+// For instance, here user object implements it:
+
+let user1 = {
+  name: "John",
+  money: 1000,
+
+  [Symbol.toPrimitive](hint) {
+    alert(`hint: ${hint}`);
+    return hint == "string" ? `{name: "${this.name}"}` : this.money;
+  },
+};
+
+// conversions demo:
+alert(user1); // hint: string -> {name: "John"}
+alert(+user1); // hint: number -> 1000
+alert(user1 + 500); // hint: default -> 1500
+
+// As we can see from the code, user becomes a self-descriptive string or a money amount, depending on the conversion. The single method user[Symbol.toPrimitive] handles all conversion cases.
+

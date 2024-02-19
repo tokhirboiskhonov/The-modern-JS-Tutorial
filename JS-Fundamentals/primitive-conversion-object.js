@@ -30,3 +30,10 @@
 // We can implement string and numeric conversion by ourselves, using special object methods.
 
 // Now let’s get into technical details, because it’s the only way to cover the topic in-depth.
+
+//* Hints
+
+// How does JavaScript decide which conversion to apply?
+
+// There are three variants of type conversion, that happen in various situations. They’re called “hints”, as described in the specification:
+

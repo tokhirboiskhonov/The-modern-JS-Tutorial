@@ -84,3 +84,8 @@ let num = Number("123"); // convert a string to number
 
 alert(null.test); // error
 
+//* Summary
+
+// Primitives except null and undefined provide many helpful methods. We will study those in the upcoming chapters.
+
+// Formally, these methods work via temporary objects, but JavaScript engines are well tuned to optimize that internally, so they are not expensive to call.

@@ -59,3 +59,28 @@ let n = 1.23456;
 
 console.log(n.toFixed()); // 1
 
+//* Constructors String/Number/Boolean are for internal use only
+
+// Some languages like Java allow us to explicitly create “wrapper objects” for primitives using a syntax like new Number(1) or new Boolean(false).
+
+// In JavaScript, that’s also possible for historical reasons, but highly unrecommended. Things will go crazy in several places.
+
+// For instance:
+
+console.log(typeof 0); // data type: number
+console.log(typeof new Number(0)); // data type: object
+
+// On the other hand, using the same functions String/Number/Boolean without new is totally fine and useful thing. They convert a value to the corresponding type: to a string, a number, or a boolean (primitive).
+
+// For example, this is entirely valid:
+
+let num = Number("123"); // convert a string to number
+
+//! null/undefined have no methods
+
+// The special primitives null and undefined are exceptions. They have no corresponding “wrapper objects” and provide no methods. In a sense, they are “the most primitive”.
+
+// An attempt to access a property of such value would give the error:
+
+alert(null.test); // error
+

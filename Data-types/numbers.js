@@ -201,7 +201,6 @@ alert(0.1 + 0.2); // 0.30000000000000004
 
 // JavaScript doesn’t trigger an error in such events. It does its best to fit the number into the desired format, but unfortunately, this format is not big enough.
 
-
 //! Two zeroes
 
 // Another funny consequence of the internal representation of numbers is the existence of two zeroes: 0 and -0.

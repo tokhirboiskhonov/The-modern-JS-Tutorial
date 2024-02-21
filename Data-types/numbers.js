@@ -367,3 +367,11 @@ alert(Math.pow(2, 10)); // 2 in power 10 = 1024
 
 //? 1. See the Math object when you need them. The library is very small, but can cover basic needs.
 
+//* Tasks
+
+//! 1. Sum numbers from the visitor
+
+let a1 = +prompt("Please type a number", "");
+let b1 = +prompt("Please type a number", "");
+
+console.log(a1 + b1);

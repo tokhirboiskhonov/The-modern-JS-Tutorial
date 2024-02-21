@@ -103,3 +103,65 @@ console.log((123456).toString(36)); // 2n9c
 
 // Also could write (123456).toString(36).
 
+//* Rounding
+
+// One of the most used operations when working with numbers is rounding.
+
+// There are several built-in functions for rounding:
+
+//! Math.floor
+
+// Rounds down: 3.1 becomes 3, and -1.1 becomes -2.
+
+console.log(Math.floor(3.1)); // output is 3
+
+//! Math.ceil
+
+// Rounds up: 3.1 becomes 4, and -1.1 becomes -1.
+
+console.log(Math.ceil(3.1)); // output is 4
+
+//! Math.round
+
+// Rounds to the nearest integer: 3.1 becomes 3, 3.6 becomes 4, the middle case: 3.5 rounds up to 4 too.
+
+console.log(Math.round(3.3));
+console.log(Math.round(3.5));
+
+//! Math.trunc (not supported by Internet Explorer)
+
+// Removes anything after the decimal point without rounding: 3.1 becomes 3, -1.1 becomes -1.
+
+console.log(Math.trunc(3.9)); // output is 3
+
+//! These functions cover all of the possible ways to deal with the decimal part of a number. But what if we’d like to round the number to n-th digit after the decimal?
+
+// For instance, we have 1.2345 and want to round it to 2 digits, getting only 1.23.
+
+// There are two ways to do so:
+
+//? 1. Multiply-and-divide.
+
+// For example, to round the number to the 2nd digit after the decimal, we can multiply the number by 100, call the rounding function and then divide it back.
+
+let num1 = 1.23456;
+
+alert(Math.round(num1 * 100) / 100); // 1.23456 -> 123.456 -> 123 -> 1.23
+
+//? 2. The method toFixed(n) rounds the number to n digits after the point and returns a string representation of the result.
+
+let num2 = 12.34;
+alert(num2.toFixed(1)); // "12.3"
+
+// This rounds up or down to the nearest value, similar to Math.round:
+
+let num3 = 12.36;
+alert(num3.toFixed(1)); // "12.4"
+
+// Please note that the result of toFixed is a string. If the decimal part is shorter than required, zeroes are appended to the end:
+
+let num4 = 12.34;
+alert(num4.toFixed(5)); // "12.34000", added zeroes to make exactly 5 digits
+
+// We can convert it to a number using the unary plus or a Number() call, e.g write +num.toFixed(5).
+

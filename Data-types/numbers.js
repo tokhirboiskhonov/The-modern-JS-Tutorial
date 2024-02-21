@@ -310,3 +310,27 @@ alert(parseInt("0xff", 16)); // 255
 alert(parseInt("ff", 16)); // 255, without 0x also works
 alert(parseInt("2n9c", 36)); // 123456
 
+//* Other math functions
+
+// JavaScript has a built-in Math object which contains a small library of mathematical functions and constants.
+
+//! Math.random()
+// Returns a random number from 0 to 1 (not including 1).
+
+alert(Math.random()); // 0.1234567894322
+alert(Math.random()); // 0.5435252343232
+alert(Math.random()); // ... (any random numbers)
+
+console.log(Math.random());
+
+//! Math.max(a, b, c...) and Math.min(a, b, c...)
+// Returns the greatest and smallest from the arbitrary number of arguments.
+
+alert(Math.max(3, 5, -10, 0, 1)); // 5
+alert(Math.min(1, 2)); // 1
+
+//! Math.pow(n, power)
+// Returns n raised to the given power.
+
+alert(Math.pow(2, 10)); // 2 in power 10 = 1024
+

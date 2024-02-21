@@ -268,3 +268,14 @@ alert(isFinite("123")); // true, because isFinite converts string "123" into a n
 
 // In a way, Number.isNaN and Number.isFinite are simpler and more straightforward than isNaN and isFinite functions. In practice though, isNaN and isFinite are mostly used, as they’re shorter to write.
 
+//! Comparison with Object.is
+
+// There is a special built-in method Object.is that compares values like ===, but is more reliable for two edge cases:
+
+//? 1. It works with NaN: Object.is(NaN, NaN) === true, that’s a good thing.
+//? 2. Values 0 and -0 are different: Object.is(0, -0) === false, technically that’s correct, because internally the number has a sign bit that may be different even if all other bits are zeroes.
+
+// In all other cases, Object.is(a, b) is the same as a === b.
+
+// We mention Object.is here, because it’s often used in JavaScript specification. When an internal algorithm needs to compare two values for being exactly the same, it uses Object.is (internally called SameValue).
+

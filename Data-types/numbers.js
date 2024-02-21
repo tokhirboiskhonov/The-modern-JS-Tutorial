@@ -209,3 +209,37 @@ alert(0.1 + 0.2); // 0.30000000000000004
 // That’s because a sign is represented by a single bit, so it can be set or not set for any number including a zero.
 
 // In most cases the distinction is unnoticeable, because operators are suited to treat them as the same.
+
+//* Test: isFinite and isNaN
+
+// Remember these two special numeric values?
+
+//? 1. Infinity (and -Infinity) is a special numeric value that is greater (less) than anything.
+//? 2. NaN represents an error.
+
+// They belong to the type number, but are not “normal” numbers, so there are special functions to check for them:
+
+//? 1. isNaN(value) converts its argument to a number and then tests it for being NaN:
+
+console.log(isNaN(NaN)); // true
+console.log(isNaN("str")); // true
+
+// But do we need this function? Can’t we just use the comparison === NaN? Unfortunately not. The value NaN is unique in that it does not equal anything, including itself:
+
+console.log(NaN === NaN); // false
+
+//? 2. isFinite(value) converts its argument to a number and returns true if it’s a regular number, not NaN/Infinity/-Infinity:
+
+alert(isFinite("15")); // true
+alert(isFinite("str")); // false, because a special value: NaN
+alert(isFinite(Infinity)); // false, because a special value: Infinity
+
+// Sometimes isFinite is used to validate whether a string value is a regular number:
+
+let myNumber = +prompt("Enter a number", "");
+
+// will be true unless you enter Infinity, -Infinity or not a number
+console.log(isFinite(myNumber));
+
+// Please note that an empty or a space-only string is treated as 0 in all numeric functions including isFinite.
+

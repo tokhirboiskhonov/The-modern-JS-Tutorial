@@ -165,3 +165,47 @@ alert(num4.toFixed(5)); // "12.34000", added zeroes to make exactly 5 digits
 
 // We can convert it to a number using the unary plus or a Number() call, e.g write +num.toFixed(5).
 
+//* Imprecise calculations
+
+// Internally, a number is represented in 64-bit format IEEE-754, so there are exactly 64 bits to store a number: 52 of them are used to store the digits, 11 of them store the position of the decimal point, and 1 bit is for the sign.
+
+// If a number is really huge, it may overflow the 64-bit storage and become a special numeric value Infinity:
+
+alert(1e500); // Infinity
+
+// What may be a little less obvious, but happens quite often, is the loss of precision.
+
+// Consider this (falsy!) equality test:
+
+alert(0.1 + 0.2 == 0.3); // false
+
+// That’s right, if we check whether the sum of 0.1 and 0.2 is 0.3, we get false.
+
+// Strange! What is it then if not 0.3?
+
+alert(0.1 + 0.2); // 0.30000000000000004
+
+//! Not only JavaScript
+
+// The same issue exists in many other programming languages.
+
+// PHP, Java, C, Perl, Ruby give exactly the same result, because they are based on the same numeric format.
+
+//! The funny thing
+// Try running this:
+
+// Hello! I'm a self-increasing number!
+// alert( 9999999999999999 ); // shows 10000000000000000
+
+// This suffers from the same issue: a loss of precision. There are 64 bits for the number, 52 of them can be used to store digits, but that’s not enough. So the least significant digits disappear.
+
+// JavaScript doesn’t trigger an error in such events. It does its best to fit the number into the desired format, but unfortunately, this format is not big enough.
+
+
+//! Two zeroes
+
+// Another funny consequence of the internal representation of numbers is the existence of two zeroes: 0 and -0.
+
+// That’s because a sign is represented by a single bit, so it can be set or not set for any number including a zero.
+
+// In most cases the distinction is unnoticeable, because operators are suited to treat them as the same.

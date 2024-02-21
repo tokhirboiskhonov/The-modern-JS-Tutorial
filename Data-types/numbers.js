@@ -53,3 +53,22 @@ let mcs = 1e-6; // five zeroes to the left from 1
 
 // an example with a bigger number
 1234e-2 === 1234 / 100; // 12.34, decimal point moves 2 times
+
+//* Hex, binary and octal numbers
+
+// Hexadecimal numbers are widely used in JavaScript to represent colors, encode characters, and for many other things. So naturally, there exists a shorter way to write them: 0x and then the number.
+
+// For instance:
+
+alert(0xff); // 255
+alert(0xff); // 255 (the same, case doesn't matter)
+
+// Binary and octal numeral systems are rarely used, but also supported using the 0b and 0o prefixes:
+
+let a = 0b11111111; // binary form of 255
+let b = 0o377; // octal form of 255
+
+alert(a == b); // true, the same number 255 at both sides
+
+// There are only 3 numeral systems with such support. For other numeral systems, we should use the function parseInt (which we will see later in this chapter).
+

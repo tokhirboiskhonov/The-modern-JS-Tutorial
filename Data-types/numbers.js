@@ -374,3 +374,10 @@ let a1 = +prompt("Please type a number", "");
 let b1 = +prompt("Please type a number", "");
 
 console.log(a1 + b1);
+
+//! 2. Why 6.35.toFixed(1) == 6.3
+
+let numFixed = (6.35).toFixed(1);
+console.log(numFixed == 6.3); // true
+
+//! 3. Repeat until the input is a number

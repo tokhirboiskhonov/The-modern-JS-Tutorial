@@ -244,6 +244,8 @@ if (str6.indexOf("Widget") != -1) {
   alert("We found it"); // works now!
 }
 
+console.log("As web developer as work".lastIndexOf("as")); // 17
+
 //! includes, startsWith, endsWith
 
 // The more modern method str.includes(substr, pos) returns true/false depending on whether str contains substr within.

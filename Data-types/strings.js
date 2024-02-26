@@ -340,6 +340,12 @@ console.log(text.length); // now length of text is 28, because of empty spaces i
 
 console.log(text.trim()); // Hello, without any empty spaces
 
+//! trimStart()
+
+let textTrimStart = "             Hello          ";
+
+console.log(textTrimStart.trimStart()); // Hello          ;
+
 
 //* Comparing strings
 

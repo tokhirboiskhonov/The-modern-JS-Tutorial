@@ -170,3 +170,7 @@ alert("Interface".toLowerCase()); // interface
 
 alert("Interface"[0].toLowerCase()); // 'i'
 
+//* Searching for a substring
+
+// There are multiple ways to look for a substring within a string.
+

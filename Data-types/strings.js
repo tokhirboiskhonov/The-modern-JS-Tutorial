@@ -292,3 +292,23 @@ let str9 = "stringify";
 // start at the 4th position from the right, end at the 1st from the right
 alert(str9.slice(-4, -1)); // 'gif'
 
+//! str.substring(start [, end])
+
+// Returns the part of the string between start and end (not including end).
+
+// This is almost the same as slice, but it allows start to be greater than end (in this case it simply swaps start and end values).
+
+// For instance:
+
+let str10 = "stringify";
+
+// these are same for substring
+alert(str10.substring(2, 6)); // "ring"
+alert(str10.substring(6, 2)); // "ring"
+
+// ...but not for slice:
+alert(str10.slice(2, 6)); // "ring" (the same)
+alert(str10.slice(6, 2)); // "" (an empty string)
+
+//? Negative arguments are (unlike slice) not supported, they are treated as 0.
+

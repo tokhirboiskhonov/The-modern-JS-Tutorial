@@ -270,3 +270,25 @@ alert("Widget".endsWith("get")); // true, "Widget" ends with "get"
 
 // There are 3 methods in JavaScript to get a substring: substring, substr and slice.
 
+//! str.slice(start [, end])
+
+// Returns the part of the string from start to (but not including) end.
+
+// For instance:
+
+let str7 = "stringify";
+alert(str7.slice(0, 5)); // 'strin', the substring from 0 to 5 (not including 5)
+alert(str7.slice(0, 1)); // 's', from 0 to 1, but not including 1, so only character at 0
+
+// If there is no second argument, then slice goes till the end of the string:
+
+let str8 = "stringify";
+alert(str8.slice(2)); // 'ringify', from the 2nd position till the end
+
+// Negative values for start/end are also possible. They mean the position is counted from the string end:
+
+let str9 = "stringify";
+
+// start at the 4th position from the right, end at the 1st from the right
+alert(str9.slice(-4, -1)); // 'gif'
+

@@ -266,3 +266,7 @@ alert("Widget".startsWith("Wid")); // true, "Widget" starts with "Wid"
 
 alert("Widget".endsWith("get")); // true, "Widget" ends with "get"
 
+//* Getting a substring
+
+// There are 3 methods in JavaScript to get a substring: substring, substr and slice.
+

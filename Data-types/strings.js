@@ -368,10 +368,10 @@ console.log("Hello everyone, I'm Tokhir, 24 years old".search("2")); // 28
 
 let strPadStart = "1234";
 
-console.log(strPadStart.padStart(8, "0")); // 00001234
+console.log(strPadStart.padStart(8, "0")); // output: 00001234
 
 let abc = "abc".padStart(5);
-console.log(abc); //  abc;
+console.log(abc); // output:  abc;
 
 
 //* Comparing strings

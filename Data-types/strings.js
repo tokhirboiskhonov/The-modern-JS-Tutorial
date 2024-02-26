@@ -159,3 +159,14 @@ alert(newString); // hi
 
 // In the following sections we’ll see more examples of this.
 
+//* Changing the case
+
+// Methods toLowerCase() and toUpperCase() change the case:
+
+alert("Interface".toUpperCase()); // INTERFACE
+alert("Interface".toLowerCase()); // interface
+
+// Or, if we want a single character lowercased:
+
+alert("Interface"[0].toLowerCase()); // 'i'
+

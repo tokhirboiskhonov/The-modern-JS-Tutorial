@@ -326,3 +326,23 @@ alert(str11.substr(2, 4)); // 'ring', from the 2nd position get 4 characters
 let letstr = "stringify";
 console.log(letstr.substr(-4, 2)); // 'gi', from the 4th position get 2 characters
 
+//* Comparing strings
+
+// As we know from the chapter Comparisons, strings are compared character-by-character in alphabetical order.
+
+// Although, there are some oddities.
+
+//! 1. A lowercase letter is always greater than the uppercase:
+
+alert("a" > "Z"); // true
+
+//! 2. Letters with diacritical marks are “out of order”:
+
+alert("Österreich" > "Zealand"); // true
+
+// This may lead to strange results if we sort these country names. Usually people would expect Zealand to come after Österreich in the list.
+
+// To understand what happens, we should be aware that strings in Javascript are encoded using UTF-16. That is: each character has a corresponding numeric code.
+
+// There are special methods that allow to get the character for the code and back:
+

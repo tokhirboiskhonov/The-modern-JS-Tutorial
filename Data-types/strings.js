@@ -397,6 +397,32 @@ let newStrRegExpr = replaceStr.replace(/JS/g, "JavaScript");
 
 console.log(newStrRegExpr); // output: JavaScript will, JavaScript will rock you!
 
+//! replaceAll() replace all occurrences of a substring that matches a pattern with a new one.
+
+//? 1) Simple JavaScriptString replaceAll() example
+// The following example uses the String replaceAll() method to replace the string JS with the string JavaScript in the string ‘JS will, JS will, JS will rock you':
+
+let strReplaceAll = "JS will, JS will, JS will rock you!";
+
+let newStrReplaceAll = strReplaceAll.replaceAll("JS", "Rust");
+
+console.log(newStrReplaceAll); // Rust will, Rust will, Rust will rock you!
+
+//? 2) JavaScript String replaceAll() with a callback function example
+
+let str13 = "JS will, Js will, js will rock you.";
+
+let pattern = /js/gi;
+
+let newStringReplaceAll = str13.replaceAll(pattern, function (match) {
+  if (match === "JS") return "JavaScript";
+  if (match === "Js") return "Javascript";
+  if (match === "js") return "javascript";
+
+  return "";
+});
+
+console.log(newStringReplaceAll);
 
 //* Comparing strings
 

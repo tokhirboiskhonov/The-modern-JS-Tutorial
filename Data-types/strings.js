@@ -358,6 +358,10 @@ let strConcat = "Hello";
 
 console.log(strConcat.concat(" everyone")); // Hello everyone
 
+//! search()
+
+console.log("Hello everyone, I'm Tokhir, 24 years old".search("2")); // 28
+
 
 //* Comparing strings
 

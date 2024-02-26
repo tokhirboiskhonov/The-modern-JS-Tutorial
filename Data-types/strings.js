@@ -41,3 +41,22 @@ alert(guestList); // a list of guests, multiple lines
 // //   * John";
 
 // Single and double quotes come from ancient times of language creation, when the need for multiline strings was not taken into account. Backticks appeared much later and thus are more versatile.
+
+//* Special characters
+
+// It is still possible to create multiline strings with single and double quotes by using a so-called “newline character”, written as \n, which denotes a line break:
+
+let guestList1 = "Guests:\n * John\n * Pete\n * Mary";
+
+alert(guestList1); // a multiline list of guests, same as above
+
+// As a simpler example, these two lines are equal, just written differently:
+
+let str1 = "Hello\nWorld"; // two lines using a "newline symbol"
+
+// two lines using a normal newline and backticks
+let str2 = `Hello
+World`;
+
+alert(str1 == str2); // true
+

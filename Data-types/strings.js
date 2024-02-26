@@ -407,3 +407,16 @@ alert("Österreich".localeCompare("Zealand")); // -1
 
 // Also, as of now it’s important to know that strings are based on Unicode encoding, and hence there’re issues with comparisons. There’s more about Unicode in the chapter Unicode, String internals.
 
+//* Tasks
+
+//! 1. Uppercase the first character
+
+// Write a function ucFirst(str) that returns the string str with the uppercased first character, for instance:
+
+function ucFirst(str) {
+  let newStr = str[0].toUpperCase();
+  return (newStr += str.slice(1));
+}
+
+console.log(ucFirst("john"));
+

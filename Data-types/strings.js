@@ -352,6 +352,12 @@ let textTrimEnd = "          Hello          ";
 
 console.log(textTrimEnd.trimEnd());
 
+//! concat
+
+let strConcat = "Hello";
+
+console.log(strConcat.concat(" everyone")); // Hello everyone
+
 
 //* Comparing strings
 

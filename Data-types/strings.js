@@ -89,3 +89,19 @@ alert("I'm the Walrus!"); // I'm the Walrus!
 
 // Besides these special characters, there’s also a special notation for Unicode codes \u…, it’s rarely used and is covered in the optional chapter about Unicode.
 
+//*  String length
+
+// The length property has the string length
+
+console.log("My\n".length);
+
+console.log("Hello ".length); // this stirng's length is 6, because empty space also considered as one letter
+
+// Note that \n is a single “special” character, so the length is indeed 3.
+
+//! length is a property
+
+// People with a background in some other languages sometimes mistype by calling str.length() instead of just str.length. That doesn’t work.
+
+// Please note that str.length is a numeric property, not a function. There is no need to add parenthesis after it. Not .length(), but .length.
+

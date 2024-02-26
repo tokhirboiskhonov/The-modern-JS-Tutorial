@@ -105,3 +105,34 @@ console.log("Hello ".length); // this stirng's length is 6, because empty space 
 
 // Please note that str.length is a numeric property, not a function. There is no need to add parenthesis after it. Not .length(), but .length.
 
+//* Accessing characters
+
+// To get a character at position pos, use square brackets [pos] or call the method str.at(pos). The first character starts from the zero position:
+
+let str = `Hello`;
+
+// the first character
+console.log(str[0]); // H
+console.log(str.at(0)); // H
+
+// the last character
+console.log(str[str.length - 1]); // o
+console.log(str.at(-1));
+
+// As you can see, the .at(pos) method has a benefit of allowing negative position. If pos is negative, then it’s counted from the end of the string.
+
+// So .at(-1) means the last character, and .at(-2) is the one before it, etc.
+
+//! The square brackets always return undefined for negative indexes, for instance:
+
+let myStr = `Hello`;
+
+alert(myStr[-2]); // undefined
+alert(myStr.at(-2)); // l
+
+// We can also iterate over characters using for..of:
+
+for (let char of "Hello") {
+  alert(char); // H,e,l,l,o (char becomes "H", then "e", then "l" etc)
+}
+

@@ -373,6 +373,12 @@ console.log(strPadStart.padStart(8, "0")); // output: 00001234
 let abc = "abc".padStart(5);
 console.log(abc); // output:  abc;
 
+//! padEnd()
+
+let strPadEnd = "abc".padEnd(5, "*");
+
+console.log(strPadEnd); // output: abc**
+
 
 //* Comparing strings
 

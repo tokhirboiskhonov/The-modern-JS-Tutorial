@@ -136,3 +136,26 @@ for (let char of "Hello") {
   alert(char); // H,e,l,l,o (char becomes "H", then "e", then "l" etc)
 }
 
+//* Strings are immutable
+
+// Strings can’t be changed in JavaScript. It is impossible to change a character.
+
+// Let’s try it to show that it doesn’t work:
+
+let newstr = "Hi";
+
+newstr[0] = "h"; // error
+alert(newstr[0]); // doesn't work
+
+// The usual workaround is to create a whole new string and assign it to str instead of the old one.
+
+// For instance:
+
+let newString = "Hi";
+
+newString = "h" + newString[1]; // replace the string
+
+alert(newString); // hi
+
+// In the following sections we’ll see more examples of this.
+

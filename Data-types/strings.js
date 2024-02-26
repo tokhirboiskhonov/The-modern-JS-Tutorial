@@ -362,6 +362,17 @@ console.log(strConcat.concat(" everyone")); // Hello everyone
 
 console.log("Hello everyone, I'm Tokhir, 24 years old".search("2")); // 28
 
+//! padStart()
+
+// The padStart() method pads a string with another string to a certain length from the start of the string and returns a resulting string that reaches a certain length. The following illustrates the padStart() method:
+
+let strPadStart = "1234";
+
+console.log(strPadStart.padStart(8, "0")); // 00001234
+
+let abc = "abc".padStart(5);
+console.log(abc); //  abc;
+
 
 //* Comparing strings
 

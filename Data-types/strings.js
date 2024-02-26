@@ -379,6 +379,24 @@ let strPadEnd = "abc".padEnd(5, "*");
 
 console.log(strPadEnd); // output: abc**
 
+//! replace()  replace a substring in a string with a new one.
+
+// The following shows the syntex of the replace() method:
+
+// let newStr = str.replace(substr, newSubstr);
+
+let replaceStr = "JS will, JS will rock you!";
+
+let newStrReplace = replaceStr.replace("JS", "JavaScript");
+
+console.log(newStrReplace); // output: JavaScript will, JS will rock you!
+
+//? Using regular expressions
+
+let newStrRegExpr = replaceStr.replace(/JS/g, "JavaScript");
+
+console.log(newStrRegExpr); // output: JavaScript will, JavaScript will rock you!
+
 
 //* Comparing strings
 

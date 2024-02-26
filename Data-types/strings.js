@@ -328,6 +328,19 @@ alert(str11.substr(2, 4)); // 'ring', from the 2nd position get 4 characters
 let letstr = "stringify";
 console.log(letstr.substr(-4, 2)); // 'gi', from the 4th position get 2 characters
 
+//! trim()
+
+let text = "            Hello           ";
+
+console.log(text.length); // now length of text is 28, because of empty spaces in string.
+
+// so we can use trim method for remove empty space in strings.
+
+// For example:
+
+console.log(text.trim()); // Hello, without any empty spaces
+
+
 //* Comparing strings
 
 // As we know from the chapter Comparisons, strings are compared character-by-character in alphabetical order.

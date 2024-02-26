@@ -312,3 +312,17 @@ alert(str10.slice(6, 2)); // "" (an empty string)
 
 //? Negative arguments are (unlike slice) not supported, they are treated as 0.
 
+//! str.substr(start [, length])
+
+// Returns the part of the string from start, with the given length.
+
+// In contrast with the previous methods, this one allows us to specify the length instead of the ending position:
+
+let str11 = "stringify";
+alert(str11.substr(2, 4)); // 'ring', from the 2nd position get 4 characters
+
+// The first argument may be negative, to count from the end:
+
+let letstr = "stringify";
+console.log(letstr.substr(-4, 2)); // 'gi', from the 4th position get 2 characters
+

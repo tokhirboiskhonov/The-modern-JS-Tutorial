@@ -436,3 +436,17 @@ console.log(checkSpam("buy VIAGRA now")); // true
 console.log(checkSpam("free xxxxx")); // true
 console.log(checkSpam("innocent rabbit")); // false
 
+//! 3. Truncate the text
+
+// Create a function truncate(str, maxlength) that checks the length of the str and, if it exceeds maxlength – replaces the end of str with the ellipsis character "…", to make its length equal to maxlength.
+
+// The result of the function should be the truncated (if needed) string.
+
+function truncate(str, maxlength) {
+  return str.length > maxlength ? str.slice(0, maxlength - 1) + "..." : str;
+}
+
+console.log(
+  truncate("Hello everyone! How are you doing? How is your family?", 20)
+);
+

@@ -220,3 +220,27 @@ while ((pos3 = str3.indexOf(target3, pos3 + 1)) != -1) {
   alert(pos3);
 }
 
+//! str.lastIndexOf(substr, position)
+
+// There is also a similar method str.lastIndexOf(substr, position) that searches from the end of a string to its beginning.
+
+// It would list the occurrences in the reverse order.
+
+// There is a slight inconvenience with indexOf in the if test. We can’t put it in the if like this:
+
+let str5 = "Widget with id";
+
+if (str5.indexOf("Widget")) {
+  alert("We found it"); // doesn't work!
+}
+
+// The alert in the example above doesn’t show because str.indexOf("Widget") returns 0 (meaning that it found the match at the starting position). Right, but if considers 0 to be false.
+
+// So, we should actually check for -1, like this:
+
+let str6 = "Widget with id";
+
+if (str6.indexOf("Widget") != -1) {
+  alert("We found it"); // works now!
+}
+

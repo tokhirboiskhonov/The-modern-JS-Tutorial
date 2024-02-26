@@ -346,6 +346,12 @@ let textTrimStart = "             Hello          ";
 
 console.log(textTrimStart.trimStart()); // Hello          ;
 
+//! trimEnd()
+
+let textTrimEnd = "          Hello          ";
+
+console.log(textTrimEnd.trimEnd());
+
 
 //* Comparing strings
 

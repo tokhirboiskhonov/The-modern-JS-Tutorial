@@ -244,3 +244,25 @@ if (str6.indexOf("Widget") != -1) {
   alert("We found it"); // works now!
 }
 
+//! includes, startsWith, endsWith
+
+// The more modern method str.includes(substr, pos) returns true/false depending on whether str contains substr within.
+
+// It’s the right choice if we need to test for the match, but don’t need its position:
+
+alert("Widget with id".includes("Widget")); // true
+
+alert("Hello".includes("Bye")); // false
+
+// The optional second argument of str.includes is the position to start searching from:
+
+alert("Widget".includes("id")); // true
+
+alert("Widget".includes("id", 3)); // false, from position 3 there is no "id"
+
+// The methods str.startsWith and str.endsWith do exactly what they say:
+
+alert("Widget".startsWith("Wid")); // true, "Widget" starts with "Wid"
+
+alert("Widget".endsWith("get")); // true, "Widget" ends with "get"
+

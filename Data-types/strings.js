@@ -60,3 +60,32 @@ World`;
 
 alert(str1 == str2); // true
 
+//? There are other, less common special characters:
+
+// \n	New line
+// \r	In Windows text files a combination of two characters \r\n represents a new break, while on non-Windows OS it’s just \n. That’s for historical reasons, most Windows software also understands \n.
+// \', \", \`	Quotes
+// \\	Backslash
+// \t	Tab
+// \b, \f, \v	Backspace, Form Feed, Vertical Tab – mentioned for completeness, coming from old times, not used nowadays (you can forget them right now).
+
+// As you can see, all special characters start with a backslash character \. It is also called an “escape character”.
+
+// Because it’s so special, if we need to show an actual backslash \ within the string, we need to double it:
+
+alert(`The backslash: \\`); // The backslash: \
+
+// So-called “escaped” quotes \', \", \` are used to insert a quote into the same-quoted string.
+
+// For instance:
+
+alert("I'm the Walrus!"); // I'm the Walrus!
+
+// As you can see, we have to prepend the inner quote by the backslash \', because otherwise it would indicate the string end.
+
+// Of course, only the quotes that are the same as the enclosing ones need to be escaped. So, as a more elegant solution, we could switch to double quotes or backticks instead:
+
+alert("I'm the Walrus!"); // I'm the Walrus!
+
+// Besides these special characters, there’s also a special notation for Unicode codes \u…, it’s rarely used and is covered in the optional chapter about Unicode.
+

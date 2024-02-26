@@ -361,3 +361,23 @@ alert("z".codePointAt(0).toString(16)); // 7a (if we need a hexadecimal value)
 alert(String.fromCodePoint(90)); // Z
 alert(String.fromCodePoint(0x5a)); // Z (we can also use a hex value as an argument)
 
+//* Correct comparisons
+
+// The “right” algorithm to do string comparisons is more complex than it may seem, because alphabets are different for different languages.
+
+// So, the browser needs to know the language to compare.
+
+// Luckily, modern browsers support the internationalization standard ECMA-402.
+
+// It provides a special method to compare strings in different languages, following their rules.
+
+// The call str.localeCompare(str2) returns an integer indicating whether str is less, equal or greater than str2 according to the language rules:
+
+// 1. Returns a negative number if str is less than str2.
+// 2. Returns a positive number if str is greater than str2.
+// 3. Returns 0 if they are equivalent.
+
+// For instance:
+
+alert("Österreich".localeCompare("Zealand")); // -1
+

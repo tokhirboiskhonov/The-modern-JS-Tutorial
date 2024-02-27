@@ -155,3 +155,25 @@ alert(fruits); // Apple, Orange, Pear
 
 // The call fruits.push(...) is equal to fruits[fruits.length] = ....
 
+//! Methods that work with the beginning of the array:
+
+//* shift
+
+// Extracts the first element of the array and returns it:
+
+let fruits = ["Apple", "Orange", "Pear"];
+
+alert(fruits.shift()); // remove Apple and alert it
+
+alert(fruits); // Orange, Pear
+
+//* unshift
+
+// Add the element to the beginning of the array:
+
+let fruits = ["Orange", "Pear"];
+
+fruits.unshift("Apple");
+
+alert(fruits); // Apple, Orange, Pear
+

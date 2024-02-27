@@ -111,3 +111,23 @@ alert(fruits.at(-1)); // Plum
 //? 1. is exactly the same as arr[i], if i >= 0.
 //? 2. for negative values of i, it steps back from the end of the array.
 
+//* Methods pop/push, shift/unshift
+
+// A queue is one of the most common uses of an array. In computer science, this means an ordered collection of elements which supports two operations:
+
+//? 1. push appends an element to the end.
+//? 2. shift get an element from the beginning, advancing the queue, so that the 2nd element becomes the 1st.
+
+// Arrays support both operations.
+
+// In practice we need it very often. For example, a queue of messages that need to be shown on-screen.
+
+// There’s another use case for arrays – the data structure named stack.
+
+// It supports two operations:
+
+//? 1. push adds an element to the end.
+//? 2. pop takes an element from the end.
+
+// So new elements are added or taken always from the “end”.
+

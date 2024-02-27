@@ -177,3 +177,12 @@ fruits.unshift("Apple");
 
 alert(fruits); // Apple, Orange, Pear
 
+//! Methods push and unshift can add multiple elements at once:
+
+let fruits = ["Apple"];
+
+fruits.push("Orange", "Peach");
+fruits.unshift("Pineapple", "Lemon");
+
+// ["Pineapple", "Lemon", "Apple", "Orange", "Peach"]
+alert(fruits);

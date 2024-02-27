@@ -75,3 +75,11 @@ alert(arr[1].name); // John
 // get the function at index 3 and run it
 arr[3](); // hello
 
+//! Trailing comma
+
+// An array, just like an object, may end with a comma:
+
+let fruits = ["Apple", "Orange", "Plum"];
+
+// The “trailing comma” style makes it easier to insert/remove items, because all lines become alike.
+

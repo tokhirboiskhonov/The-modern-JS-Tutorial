@@ -64,3 +64,16 @@ arr4.splice(2, 0, "complex", "language");
 
 alert(arr4); // "I", "study", "complex", "language", "JavaScript"
 
+//! Negative indexes allowed
+
+// Here and in other array methods, negative indexes are allowed. They specify the position from the end of the array, like here:
+
+let arr5 = [1, 2, 5];
+
+// from index -1 (one step from the end)
+// delete 0 elements,
+// then insert 3 and 4
+arr5.splice(-1, 0, 3, 4);
+
+alert(arr5); // 1,2,3,4,5
+

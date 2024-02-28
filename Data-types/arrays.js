@@ -295,3 +295,23 @@ alert(arr6[3]); // undefined: the values do not return
 
 // So, the simplest way to clear the array is: arr.length = 0;
 
+//* new Array()
+
+// There is one more syntax to create an array:
+
+let arr7 = new Array("Apple", "Pear", "etc");
+
+// It’s rarely used, because square brackets [] are shorter. Also, there’s a tricky feature with it.
+
+// If new Array is called with a single argument which is a number, then it creates an array without items, but with the given length.
+
+// Let’s see how one can shoot themselves in the foot:
+
+let arr8 = new Array(2); // will it create an array of [2] ?
+
+alert(arr8[0]); // undefined! no elements.
+
+alert(arr8.length); // length 2
+
+// To avoid such surprises, we usually use square brackets, unless we really know what we’re doing.
+

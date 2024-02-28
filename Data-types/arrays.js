@@ -315,3 +315,15 @@ alert(arr8.length); // length 2
 
 // To avoid such surprises, we usually use square brackets, unless we really know what we’re doing.
 
+//* Multidimensional arrays
+
+// Arrays can have items that are also arrays. We can use it for multidimensional arrays, for example to store matrices:
+
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+console.log(matrix[1][1]); // 5, the central element
+

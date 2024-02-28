@@ -99,3 +99,54 @@ alert(arr6.slice(-2)); // s,t (copy from -2 till the end)
 
 // We can also call it without arguments: arr.slice() creates a copy of arr. That’s often used to obtain a copy for further transformations that should not affect the original array.
 
+//! concat
+
+// The method arr.concat creates a new array that includes values from other arrays and additional items.
+
+// The syntax is:
+
+//? arr.concat(arg1, arg2...)
+
+// It accepts any number of arguments – either arrays or values.
+
+// The result is a new array containing items from arr, then arg1, arg2 etc.
+
+// If an argument argN is an array, then all its elements are copied. Otherwise, the argument itself is copied.
+
+// For instance:
+
+let arr7 = [1, 2];
+
+// create an array from: arr and [3,4]
+alert(arr7.concat([3, 4])); // 1,2,3,4
+
+// create an array from: arr and [3,4] and [5,6]
+alert(arr7.concat([3, 4], [5, 6])); // 1,2,3,4,5,6
+
+// create an array from: arr and [3,4], then add values 5 and 6
+alert(arr7.concat([3, 4], 5, 6)); // 1,2,3,4,5,6
+
+// Normally, it only copies elements from arrays. Other objects, even if they look like arrays, are added as a whole:
+
+let arr8 = [1, 2];
+
+let arrayLike = {
+  0: "something",
+  length: 1,
+};
+
+alert(arr8.concat(arrayLike)); // 1,2,[object Object]
+
+// …But if an array-like object has a special Symbol.isConcatSpreadable property, then it’s treated as an array by concat: its elements are added instead:
+
+let arr9 = [1, 2];
+
+let arrayLike1 = {
+  0: "something",
+  1: "else",
+  [Symbol.isConcatSpreadable]: true,
+  length: 2,
+};
+
+alert(arr9.concat(arrayLike1)); // 1,2,something,else
+

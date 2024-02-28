@@ -396,3 +396,92 @@ let arr11 = new Array(item1, item2);
 
 // We will continue with arrays and study more methods to add, remove, extract elements and sort arrays in the next chapter Array methods.
 
+//* Tasks
+
+//! 1. Is array copied?
+
+// What is this code going to show?
+
+let fruits = ["Apples", "Pear", "Orange"];
+
+// push a new value into the "copy"
+let shoppingCart = fruits;
+shoppingCart.push("Banana");
+
+// what's in fruits?
+alert(fruits.length); // output is 4
+
+//! 2. Array operations
+
+// Let’s try 5 array operations.
+
+// 1. Create an array styles with items “Jazz” and “Blues”.
+// 2. Append “Rock-n-Roll” to the end.
+// 3. Replace the value in the middle with “Classics”. Your code for finding the middle value should work for any arrays with odd length.
+// 4. Strip off the first value of the array and show it.
+// 5. Prepend Rap and Reggae to the array.
+
+// The array in the process:
+
+// Jazz, Blues
+// Jazz, Blues, Rock-n-Roll
+// Jazz, Classics, Rock-n-Roll
+// Classics, Rock-n-Roll
+// Rap, Reggae, Classics, Rock-n-Roll
+
+// Solution:
+
+let styles = ["Jazz", "Blues"];
+
+styles.push("Rock-n-Roll");
+
+styles[1] = "Classics";
+
+styles.shift();
+
+styles.unshift("Rap", "Reggae");
+
+console.log(styles);
+
+//! 3. Calling in an array context
+
+// What is the result? Why?
+
+let newArr = ["a", "b"];
+
+newArr.push(function () {
+  console.log(this);
+});
+
+newArr[2](); // [ 'a', 'b', [Function (anonymous)] ]
+
+//! 4. Sum input numbers
+
+// Write the function sumInput() that:
+
+// Asks the user for values using prompt and stores the values in the array.
+// Finishes asking when the user enters a non-numeric value, an empty string, or presses “Cancel”.
+// Calculates and returns the sum of array items.
+// P.S. A zero 0 is a valid number, please don’t stop the input on zero.
+
+function sumInput() {
+  let numbers = [];
+
+  while (1) {
+    let value = prompt("A number please", 0);
+
+    if (value == "" || value == null || !isFinite(value)) break;
+
+    numbers.push(+value);
+  }
+
+  let sum = 0;
+
+  for (let number of numbers) {
+    sum += number;
+  }
+
+  return sum;
+}
+
+console.log(sumInput());

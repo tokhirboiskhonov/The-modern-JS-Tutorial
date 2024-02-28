@@ -327,3 +327,26 @@ let matrix = [
 
 console.log(matrix[1][1]); // 5, the central element
 
+//* toString
+
+// Arrays have their own implementation of toString method that returns a comma-separated list of elements.
+
+let arr9 = [1, 2, 3];
+
+alert(arr9); // 1,2,3
+alert(String(arr9) === "1,2,3"); // true
+
+// Also, let’s try this:
+
+alert([] + 1); // "1"
+alert([1] + 1); // "11"
+alert([1, 2] + 1); // "1,21"
+
+// Arrays do not have Symbol.toPrimitive, neither a viable valueOf, they implement only toString conversion, so here [] becomes an empty string, [1] becomes "1" and [1,2] becomes "1,2".
+
+// When the binary plus "+" operator adds something to a string, it converts it to a string as well, so the next step looks like this:
+
+alert("" + 1); // "1"
+alert("1" + 1); // "11"
+alert("1,2" + 1); // "1,21"
+

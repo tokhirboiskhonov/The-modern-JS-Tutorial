@@ -172,3 +172,8 @@ alert(arr9.concat(arrayLike1)); // 1,2,something,else
 });
 
 // The result of the function (if it returns any) is thrown away and ignored.
+
+//* Searching in array
+
+// Now let's cover methods that search in an array
+

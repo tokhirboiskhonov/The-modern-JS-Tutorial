@@ -490,3 +490,8 @@ alert(soldiers[1].age); // 23
 // split/join – convert a string to array and back.
 // reduce/reduceRight(func, initial) – calculate a single value over the array by calling func for each element and passing an intermediate result between the calls.
 
+//? Additionally:
+
+// Array.isArray(value) checks value for being an array, if so returns true, otherwise false.
+
+//? Please note that methods sort, reverse and splice modify the array itself.

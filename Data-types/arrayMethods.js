@@ -301,3 +301,12 @@ let result = arr.map(function (item, index, array) {
 let lengths = ["Bilbo", "Gandalf", "Nazgul"].map((item) => item.length);
 alert(lengths); // 5,7,6
 
+//! sort(fn)
+
+let arr12 = [1, 2, 15];
+
+// the method reorders the content of arr
+arr12.sort((a, b) => a - b);
+
+console.log(arr12); // 1, 2, 15
+

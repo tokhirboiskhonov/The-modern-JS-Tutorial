@@ -316,3 +316,14 @@ let countries = ["Österreich", "Andorra", "Vietnam"];
 
 console.log(countries.sort((a, b) => a.localeCompare(b)));
 
+//! reverse()
+
+// The method arr.reverse reverses the order of elements in arr.
+
+let arr13 = [1, 2, 3, 4, 5];
+arr13.reverse();
+
+console.log(arr13); // 5,4,3,2,1
+
+// It also returns the array arr after the reversal.
+

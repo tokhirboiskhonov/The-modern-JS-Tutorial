@@ -327,3 +327,19 @@ console.log(arr13); // 5,4,3,2,1
 
 // It also returns the array arr after the reversal.
 
+//! split and join
+
+let names = "Bilbo, Gandalf, Nazgul";
+
+let arr14 = names.split(", ");
+
+for (let name of arr14) {
+  console.log(`A message to ${name}.`); // A message to Bilbo  (and other names)
+}
+
+// The split method has an optional second numeric argument – a limit on the array length. If it is provided, then the extra elements are ignored. In practice it is rarely used though:
+
+let arr15 = "Bilbo, Gandalf, Nazgul, Saruman".split(", ", 2);
+
+console.log(arr15); // Bilbo, Gandalf
+

@@ -405,6 +405,11 @@ console.log(result1); // 15
 
 //? The function passed to reduce uses only 2 arguments, that’s typically enough.
 
+//! every
+
+console.log([1, 2, 3].every((num) => num < 3)); // false
+
+
 //* Array.isArray()
 
 // Arrays do not form a separate language type. They are based on objects.

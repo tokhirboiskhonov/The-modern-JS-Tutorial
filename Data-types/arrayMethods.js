@@ -343,3 +343,21 @@ let arr15 = "Bilbo, Gandalf, Nazgul, Saruman".split(", ", 2);
 
 console.log(arr15); // Bilbo, Gandalf
 
+//! Split into letters
+
+// The call to split(s) with an empty s would split the string into an array of letters:
+
+let str1 = "test";
+
+alert(str1.split("")); // t,e,s,t
+
+// The call arr.join(glue) does the reverse to split. It creates a string of arr items joined by glue between them.
+
+// For instance:
+
+let arr16 = ["Bilbo", "Gandalf", "Nazgul"];
+
+let str = arr16.join(";"); // glue the array into a string using ;
+
+alert(str); // Bilbo;Gandalf;Nazgul
+

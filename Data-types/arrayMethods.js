@@ -361,3 +361,47 @@ let str = arr16.join(";"); // glue the array into a string using ;
 
 alert(str); // Bilbo;Gandalf;Nazgul
 
+//! reduce/reduceRight
+
+// When we need to iterate over an array – we can use forEach, for or for..of.
+
+// When we need to iterate and return the data for each element – we can use map.
+
+// The methods arr.reduce and arr.reduceRight also belong to that breed, but are a little bit more intricate. They are used to calculate a single value based on the array.
+
+// The syntax is:
+
+let value = arr.reduce(
+  function (accumulator, item, index, array) {
+    // ...
+  },
+  [initial]
+);
+
+// The function is applied to all array elements one after another and “carries on” its result to the next call.
+
+//? Arguments:
+
+// accumulator – is the result of the previous function call, equals initial the first time (if initial is provided).
+// item – is the current array item.
+// index – is its position.
+// array – is the array.
+
+// As function is applied, the result of the previous function call is passed to the next one as the first argument.
+
+// So, the first argument is essentially the accumulator that stores the combined result of all previous executions. And at the end it becomes the result of reduce.
+
+// Sounds complicated?
+
+// The easiest way to grasp that is by example.
+
+// Here we get a sum of an array in one line:
+
+let arr17 = [1, 2, 3, 4, 5];
+
+let result1 = arr17.reduce((sum, current) => sum + current, 0);
+
+console.log(result1); // 15
+
+//? The function passed to reduce uses only 2 arguments, that’s typically enough.
+

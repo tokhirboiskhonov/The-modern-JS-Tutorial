@@ -280,3 +280,7 @@ let someUsers = users2.filter((item) => item.id < 3);
 
 alert(someUsers.length); // 2
 
+//* Transform an array
+
+// Let’s move on to methods that transform and reorder an array.
+

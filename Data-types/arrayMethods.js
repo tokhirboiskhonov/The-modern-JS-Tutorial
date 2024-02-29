@@ -310,3 +310,9 @@ arr12.sort((a, b) => a - b);
 
 console.log(arr12); // 1, 2, 15
 
+//! localCompare()
+
+let countries = ["Österreich", "Andorra", "Vietnam"];
+
+console.log(countries.sort((a, b) => a.localeCompare(b)));
+

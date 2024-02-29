@@ -409,6 +409,10 @@ console.log(result1); // 15
 
 console.log([1, 2, 3].every((num) => num < 3)); // false
 
+//! some
+
+console.log([1, 2, 3].some((num) => num < 3)); // true
+
 
 //* Array.isArray()
 

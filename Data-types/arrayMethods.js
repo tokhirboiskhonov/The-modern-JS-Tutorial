@@ -457,3 +457,7 @@ alert(soldiers[1].age); // 23
 
 // A call to users.filter(army.canJoin, army) can be replaced with users.filter(user => army.canJoin(user)), that does the same. The latter is used more often, as it’s a bit easier to understand for most people.
 
+//* Summary
+
+//! A cheat sheet of array methods:
+

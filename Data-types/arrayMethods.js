@@ -482,3 +482,11 @@ alert(soldiers[1].age); // 23
 
 // forEach(func) – calls func for every element, does not return anything.
 
+//? To transform the array:
+
+// map(func) – creates a new array from results of calling func for every element.
+// sort(func) – sorts the array in-place, then returns it.
+// reverse() – reverses the array in-place, then returns it.
+// split/join – convert a string to array and back.
+// reduce/reduceRight(func, initial) – calculate a single value over the array by calling func for each element and passing an intermediate result between the calls.
+

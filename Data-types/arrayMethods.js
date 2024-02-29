@@ -522,3 +522,15 @@ arrSort.sort((a, b) => b - a);
 
 console.log(arrSort); // 8, 5, 2, 1, -10
 
+// 2. Copy and sort array
+
+let arrString = ["HTML", "JavaScript", "CSS"];
+
+function copySorted(arrStr) {
+  return arrStr.slice().sort((a, b) => a.localeCompare(b));
+}
+
+let arrSorted = copySorted(arrString);
+
+console.log(arrSorted); // CSS, HTML, JavaScript
+console.log(arrString); // HTML, JavaScript, CSS (no changes)

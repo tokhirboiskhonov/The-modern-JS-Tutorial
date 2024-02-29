@@ -461,3 +461,13 @@ alert(soldiers[1].age); // 23
 
 //! A cheat sheet of array methods:
 
+//? To add/remove elements:
+
+// push(...items) – adds items to the end,
+// pop() – extracts an item from the end,
+// shift() – extracts an item from the beginning,
+// unshift(...items) – adds items to the beginning.
+// splice(pos, deleteCount, ...items) – at index pos deletes deleteCount elements and inserts items.
+// slice(start, end) – creates a new array, copies elements from index start till end (not inclusive) into it.
+// concat(...items) – returns a new array: copies all members of the current one and adds items to it. If any of items is an array, then its elements are taken.
+

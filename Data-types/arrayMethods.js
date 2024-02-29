@@ -431,6 +431,10 @@ console.log(Array.isArray({})); // false
 
 console.log(Array.isArray([])); // true
 
+//* Array.from()
+
+console.log(Array.from("123")); // ["1", "2", "3"]
+
 //* Most methods support “thisArg”
 
 // Almost all array methods that call functions – like find, filter, map, with a notable exception of sort, accept an optional additional parameter thisArg.

@@ -413,6 +413,9 @@ console.log([1, 2, 3].every((num) => num < 3)); // false
 
 console.log([1, 2, 3].some((num) => num < 3)); // true
 
+//! flat
+
+console.log([1, 2, [3]].flat()); // [1, 2, 3]
 
 //* Array.isArray()
 

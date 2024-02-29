@@ -177,3 +177,30 @@ alert(arr9.concat(arrayLike1)); // 1,2,something,else
 
 // Now let's cover methods that search in an array
 
+//* indexOf/lastIndexOf and includes
+
+let arr10 = [1, 0, false];
+
+console.log(arr10.indexOf(0)); // 1
+console.log(arr10.indexOf(false)); // 2
+console.log(arr10.indexOf(null)); // -1
+console.log(arr10.includes(1)); // true
+
+// Please note that indexOf uses the strict equality === for comparison. So, if we look for false, it finds exactly false and not the zero.
+
+// The method arr.lastIndexOf is the same as indexOf, but looks for from right to left.
+
+let fruits = ["Apple", "Orange", "Apple"];
+
+alert(fruits.indexOf("Apple")); // 0 (first Apple)
+alert(fruits.lastIndexOf("Apple")); // 2 (last Apple)
+
+//! The includes method handles NaN correctly
+// A minor, but noteworthy feature of includes is that it correctly handles NaN, unlike indexOf:
+
+const arr11 = [NaN];
+alert(arr11.indexOf(NaN)); // -1 (wrong, should be 0)
+alert(arr11.includes(NaN)); // true (correct)
+
+// That’s because includes was added to JavaScript much later and uses the more up to date comparison algorithm internally.
+

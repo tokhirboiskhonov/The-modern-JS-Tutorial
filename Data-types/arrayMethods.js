@@ -511,3 +511,14 @@ alert(soldiers[1].age); // 23
 // Array.isArray(value) checks value for being an array, if so returns true, otherwise false.
 
 //? Please note that methods sort, reverse and splice modify the array itself.
+
+//* Tasks
+
+// 1. Sort in decreasing order
+
+let arrSort = [5, 2, 1, -10, 8];
+
+arrSort.sort((a, b) => b - a);
+
+console.log(arrSort); // 8, 5, 2, 1, -10
+

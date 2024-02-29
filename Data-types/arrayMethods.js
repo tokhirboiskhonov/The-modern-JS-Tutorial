@@ -478,3 +478,7 @@ alert(soldiers[1].age); // 23
 // find/filter(func) – filter elements through the function, return first/all values that make it return true.
 // findIndex is like find, but returns the index instead of a value.
 
+//? To iterate over elements:
+
+// forEach(func) – calls func for every element, does not return anything.
+

@@ -589,3 +589,20 @@ let usersMapped = userMap2.map((user) => ({
 console.log(usersMapped[0].id); // 1
 console.log(usersMapped[0].fullName); // John Smith
 
+// 7. Sort users by age
+
+const sortByAge = (arr) => {
+  arr.sort((a, b) => a.age - b.age);
+};
+
+let john3 = { name: "John", age: 25 };
+let pete3 = { name: "Pete", age: 30 };
+let mary3 = { name: "Mary", age: 28 };
+
+let arrSortByAge = [pete3, john3, mary3];
+
+sortByAge(arrSortByAge);
+
+console.log(arrSortByAge[0].name); // John
+console.log(arrSortByAge[1].name); // Mary
+console.log(arrSortByAge[2].name); // Pete

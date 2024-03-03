@@ -573,3 +573,19 @@ let namesUser = userMap1.map((item) => item.age);
 
 console.log(namesUser); // 25 30 28
 
+// 6. Map to objects
+
+let john2 = { name: "John", surname: "Smith", id: 1 };
+let pete2 = { name: "Pete", surname: "Hunt", id: 2 };
+let mary2 = { name: "Mary", surname: "Key", id: 3 };
+
+let userMap2 = [john2, pete2, mary2];
+
+let usersMapped = userMap2.map((user) => ({
+  fullName: `${user.name} ${user.surname}`,
+  id: user.id,
+}));
+
+console.log(usersMapped[0].id); // 1
+console.log(usersMapped[0].fullName); // John Smith
+

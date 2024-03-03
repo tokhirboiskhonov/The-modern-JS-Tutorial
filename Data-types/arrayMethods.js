@@ -550,3 +550,15 @@ console.log(camelize("background-color")); // backgroundColor
 console.log(camelize("list-style-image")); // listStyleImage
 console.log(camelize("-webkit-transition")); // WebkitTransition
 
+// 4. Filter range
+
+const filterRange = (arr, a, b) => {
+  return arr.filter((item) => item >= a && item <= b);
+};
+
+let arrFilter = [5, 3, 8, 1];
+
+console.log(filterRange(arrFilter, 1, 4));
+
+console.log(arrFilter); // 5,3,8,1 (not modified)
+

@@ -562,3 +562,14 @@ console.log(filterRange(arrFilter, 1, 4));
 
 console.log(arrFilter); // 5,3,8,1 (not modified)
 
+// 5. Map to names
+
+let john1 = { name: "John", age: 25 };
+let pete1 = { name: "Pete", age: 30 };
+let mary1 = { name: "Mary", age: 28 };
+
+let userMap1 = [john1, pete1, mary1];
+let namesUser = userMap1.map((item) => item.age);
+
+console.log(namesUser); // 25 30 28
+

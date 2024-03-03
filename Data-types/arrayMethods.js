@@ -534,3 +534,19 @@ let arrSorted = copySorted(arrString);
 
 console.log(arrSorted); // CSS, HTML, JavaScript
 console.log(arrString); // HTML, JavaScript, CSS (no changes)
+
+//3. Translate border-left-width to BorderLeftWidth
+
+const camelize = (str) => {
+  return str
+    .split("-")
+    .map((letter, index) =>
+      index == 0 ? letter : letter[0].toUpperCase() + letter.slice(1)
+    )
+    .join("");
+};
+
+console.log(camelize("background-color")); // backgroundColor
+console.log(camelize("list-style-image")); // listStyleImage
+console.log(camelize("-webkit-transition")); // WebkitTransition
+

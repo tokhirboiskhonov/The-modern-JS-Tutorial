@@ -606,3 +606,27 @@ sortByAge(arrSortByAge);
 console.log(arrSortByAge[0].name); // John
 console.log(arrSortByAge[1].name); // Mary
 console.log(arrSortByAge[2].name); // Pete
+
+const staffsDetails = [
+  { name: "Jam Josh", age: 44, salary: 4000, currency: "USD" },
+  { name: "Justina Kap", age: 34, salary: 3000, currency: "USD" },
+  { name: "Chris Colt", age: 37, salary: 3700, currency: "USD" },
+  { name: "Jane Doe", age: 24, salary: 4200, currency: "USD" },
+];
+
+staffsDetails.forEach((staffDetail) => {
+  let sentence = `I'm ${staffDetail.name} a staff of Royal Suites.`;
+  console.log(sentence);
+});
+
+const numbers = [1, 2, 3, 4];
+
+numbers.forEach((num) => {
+  console.log(num * 2);
+});
+
+console.log(numbers);
+
+const doubleNumbers = numbers.map((num) => num * 2);
+
+console.log(doubleNumbers);

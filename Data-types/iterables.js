@@ -115,3 +115,24 @@ for (let char of str) {
   alert(char); // 𝒳, and then 😂
 }
 
+//* Calling an iterator explicitly
+
+// For deeper understanding, let’s see how to use an iterator explicitly.
+
+// We’ll iterate over a string in exactly the same way as for..of, but with direct calls. This code creates a string iterator and gets values from it “manually”:
+
+let newStr = "Hello";
+
+// does the same as
+// for (let char of str) alert(char);
+
+let iterator = newStr[Symbol.iterator]();
+
+while (true) {
+  let result = iterator.next();
+  if (result.done) break;
+  alert(result.value); // outputs characters one by one
+}
+
+// That is rarely needed, but gives us more control over the process than for..of. For instance, we can split the iteration process: iterate a bit, then stop, do something else, and then resume later.
+

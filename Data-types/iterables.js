@@ -89,3 +89,11 @@ for (let num of range) {
 
 // The downside is that now it’s impossible to have two for..of loops running over the object simultaneously: they’ll share the iteration state, because there’s only one iterator – the object itself. But two parallel for-ofs is a rare thing, even in async scenarios.
 
+//! Infinite iterators
+
+// Infinite iterators are also possible. For instance, the range becomes infinite for range.to = Infinity. Or we can make an iterable object that generates an infinite sequence of pseudorandom numbers. Also can be useful.
+
+// There are no limitations on next, it can return more and more values, that’s normal.
+
+// Of course, the for..of loop over such an iterable would be endless. But we can always stop it using break.
+

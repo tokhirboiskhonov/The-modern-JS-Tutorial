@@ -164,3 +164,43 @@ while (true) {
 
 // Both iterables and array-likes are usually not arrays, they don’t have push, pop etc. That’s rather inconvenient if we have such an object and want to work with it as with an array. E.g. we would like to work with range using array methods. How to achieve that?
 
+//* Array.from
+
+// There’s a universal method Array.from that takes an iterable or array-like value and makes a “real” Array from it. Then we can call array methods on it.
+
+// For instance:
+
+let arrayLike = {
+  0: "Hello",
+  1: "World",
+  length: 2,
+};
+
+let arr = Array.from(arrayLike); // (*)
+console.log(arr.pop()); // World (method works)
+
+// Array.from at the line (*) takes the object, examines it for being an iterable or array-like, then makes a new array and copies all items to it.
+
+// Here we use Array.from to turn a string into an array of characters:
+
+let str1 = "𝒳😂";
+
+// splits str into array of characters
+let chars = Array.from(str1);
+
+console.log(chars[0]); // 𝒳
+console.log(chars[1]); // 😂
+console.log(chars.length); // 2
+
+// Same with loop
+
+let str2 = "𝒳😂";
+
+let chars1 = [];
+
+for (let char of str2) {
+  chars1.push(char);
+}
+
+console.log(chars1);
+

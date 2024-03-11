@@ -97,3 +97,21 @@ for (let num of range) {
 
 // Of course, the for..of loop over such an iterable would be endless. But we can always stop it using break.
 
+//* String is iterable
+
+// Arrays and strings are most widely used built-in iterables.
+
+// For a string, for..of loops over its characters:
+
+for (let char of "test") {
+  // triggers 4 times: once for each character
+  console.log(char); // t, then e, then s, then t
+}
+
+// And it works correctly with surrogate pairs!
+
+let str = "𝒳😂";
+for (let char of str) {
+  alert(char); // 𝒳, and then 😂
+}
+

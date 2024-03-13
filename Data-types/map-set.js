@@ -39,3 +39,34 @@ console.log(map.size); // 3
 
 // So we should use map methods: set, get and so on.
 
+//! Map can also use objects as keys.
+
+// For example:
+
+let john = { name: "John" };
+
+// for every user, let's store their visits count
+let visitsCountMap = new Map();
+
+// john is the key for the map
+visitsCountMap.set(john, 123);
+
+alert(visitsCountMap.get(john)); // 123
+
+// Using objects as keys is one of the most notable and important Map features. The same does not count for Object. String as a key in Object is fine, but we can’t use another Object as a key in Object.
+
+// Let’s try:
+
+let steve = { name: "Steve" };
+let ben = { name: "Ben" };
+
+let visitsCountObj = {}; // try to use an object
+
+visitsCountObj[ben] = 234; // try to use ben object as the key
+visitsCountObj[steve] = 123; // try to use steve object as the key, ben object will get replaced
+
+// That's what got written!
+alert(visitsCountObj["[object Object]"]); // 123
+
+// As visitsCountObj is an object, it converts all Object keys, such as john and ben above, to same string "[object Object]". Definitely not what we want.
+

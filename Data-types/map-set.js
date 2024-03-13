@@ -70,3 +70,9 @@ alert(visitsCountObj["[object Object]"]); // 123
 
 // As visitsCountObj is an object, it converts all Object keys, such as john and ben above, to same string "[object Object]". Definitely not what we want.
 
+//! How Map compares keys
+
+// To test keys for equivalence, Map uses the algorithm SameValueZero. It is roughly the same as strict equality ===, but the difference is that NaN is considered equal to NaN. So NaN can be used as the key as well.
+
+// This algorithm can’t be changed or customized.
+

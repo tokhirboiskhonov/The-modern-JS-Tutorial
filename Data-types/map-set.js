@@ -76,3 +76,8 @@ alert(visitsCountObj["[object Object]"]); // 123
 
 // This algorithm can’t be changed or customized.
 
+//! Chaining
+
+// Every map.set call returns the map itself, so we can “chain” the calls:
+
+map.set("1", "str1").set(1, "num1").set(true, "bool1");

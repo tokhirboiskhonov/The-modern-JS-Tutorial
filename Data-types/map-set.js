@@ -340,3 +340,14 @@ let array = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 
 console.log(aclean(array));
 
+//! 3. Iterable keys
+
+let newMap = new Map();
+
+newMap.set("name", "John");
+
+let keys = Array.from(newMap.keys());
+
+keys.push("more");
+
+console.log(keys);

@@ -87,3 +87,47 @@ alert(visitsCountObj["[object Object]"]); // 123
 // Every map.set call returns the map itself, so we can “chain” the calls:
 
 map.set("1", "str1").set(1, "num1").set(true, "bool1");
+
+//* Iteration over Map
+
+// For looping over a map, there are 3 methods:
+
+//? map.keys() – returns an iterable for keys,
+//? map.values() – returns an iterable for values,
+//? map.entries() – returns an iterable for entries [key, value], it’s used by default in for..of.
+
+// For exapmle
+
+let recipeMap = new Map([
+  ["cucumber", 500],
+  ["tomatoes", 350],
+  ["onion", 50],
+]);
+
+// iterate over keys (vegetables)
+for (let vegetable of recipeMap.keys()) {
+  console.log(vegetable); // cucumber, tomatoes, onion
+}
+
+// iterate over values (amounts)
+for (let amount of recipeMap.values()) {
+  console.log(amount); // 500, 350, 50
+}
+
+// iterate over [key, value] entries
+for (let entry of recipeMap) {
+  // the same as of recipeMap.entries()
+  console.log(entry); // cucumber,500 (and so on)
+}
+
+//! The insertion order is used
+
+// The iteration goes in the same order as the values were inserted. Map preserves this order, unlike a regular Object.
+
+//! Besides that, Map has a built-in forEach method, similar to Array:
+
+// runs the function for each (key, value) pair
+recipeMap.forEach((value, key, map) => {
+  console.log(`${key}: ${value}`); // cucumber: 500 etc
+});
+

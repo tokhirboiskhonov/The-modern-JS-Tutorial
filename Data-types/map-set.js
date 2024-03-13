@@ -6,6 +6,12 @@
 
 //? Arrays are used for storing ordered collections.
 
+//! But that’s not enough for real life. That’s why Map and Set also exist.
+
+//* Map
+
+// Map is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type.Map is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type.
+
 //! Methods and properties are:
 
 // new Map() – creates the map.

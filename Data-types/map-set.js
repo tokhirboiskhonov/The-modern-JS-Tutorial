@@ -319,3 +319,24 @@ let values = [
 ];
 
 console.log(unique(values)); // 'Hare', 'Krishna', ':-O'
+
+//!  2. Filter anagrams
+
+function aclean(arr) {
+  let result = [];
+
+  let unique = new Set();
+
+  for (let i = 0; i < arr.length; i++) {
+    let sorted = arr[i].toLowerCase().split("").sort().join("");
+
+    if (unique.add(sorted)) result.push(arr[i]);
+  }
+
+  return result;
+}
+
+let array = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+console.log(aclean(array));
+

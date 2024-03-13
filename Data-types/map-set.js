@@ -242,3 +242,26 @@ for (let user of set) {
 
 // The alternative to Set could be an array of users, and the code to check for duplicates on every insertion using arr.find. But the performance would be much worse, because this method walks through the whole array checking every element. Set is much better optimized internally for uniqueness checks.
 
+//* Iteration over Set
+
+// We can loop over a set either with for..of or using forEach:
+
+let newSet = new Set(["oranges", "apples", "bananas"]);
+
+for (let value of newSet) console.log(value);
+
+// the same with forEach:
+newSet.forEach((value, valueAgain, set) => {
+  console.log(value);
+});
+
+// Note the funny thing. The callback function passed in forEach has 3 arguments: a value, then the same value valueAgain, and then the target object. Indeed, the same value appears in the arguments twice.
+
+// That’s for compatibility with Map where the callback passed forEach has three arguments. Looks a bit strange, for sure. But this may help to replace Map with Set in certain cases with ease, and vice versa.
+
+//! The same methods Map has for iterators are also supported:
+
+// set.keys() – returns an iterable object for values,
+// set.values() – same as set.keys(), for compatibility with Map,
+// set.entries() – returns an iterable object for entries [value, value], exists for compatibility with Map.
+

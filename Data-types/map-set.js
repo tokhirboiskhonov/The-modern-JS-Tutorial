@@ -131,3 +131,31 @@ recipeMap.forEach((value, key, map) => {
   console.log(`${key}: ${value}`); // cucumber: 500 etc
 });
 
+//* Object.entries: Map from Object
+
+// When a Map is created, we can pass an array (or another iterable) with key/value pairs for initialization, like this:
+
+// array of [key, value] pairs
+let map1 = new Map([
+  ["1", "str1"],
+  [1, "num1"],
+  [true, "bool1"],
+]);
+
+alert(map1.get("1")); // str1
+
+// If we have a plain object, and we’d like to create a Map from it, then we can use built-in method Object.entries(obj) that returns an array of key/value pairs for an object exactly in that format.
+
+// So we can create a map from an object like this:
+
+let obj2 = {
+  name: "John",
+  age: 30,
+};
+
+let map2 = new Map(Object.entries(obj2));
+
+console.log(map2.get("name")); // John
+
+// Here, Object.entries returns the array of key/value pairs: [ ["name","John"], ["age", 30] ]. That’s what Map needs.
+

@@ -296,3 +296,26 @@ newSet.forEach((value, valueAgain, set) => {
 //? set.size – is the elements count.
 
 // Iteration over Map and Set is always in the insertion order, so we can’t say that these collections are unordered, but we can’t reorder elements or directly get an element by its number.
+
+//* Tasks
+
+//! 1. Filter unique array members
+
+function unique(arr) {
+  /* your code */
+  return new Set(arr);
+}
+
+let values = [
+  "Hare",
+  "Krishna",
+  "Hare",
+  "Krishna",
+  "Krishna",
+  "Krishna",
+  "Hare",
+  "Hare",
+  ":-O",
+];
+
+console.log(unique(values)); // 'Hare', 'Krishna', ':-O'

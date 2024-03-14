@@ -56,3 +56,10 @@ let user = {
 for (let value of Object.values(user)) {
   console.log(value); // John, then 30
 }
+
+//! Object.keys/values/entries ignore symbolic properties
+
+// Just like a for..in loop, these methods ignore properties that use Symbol(...) as keys.
+
+// Usually that’s convenient. But if we want symbolic keys too, then there’s a separate method Object.getOwnPropertySymbols that returns an array of only symbolic keys. Also, there exist a method Reflect.ownKeys(obj) that returns all keys.
+

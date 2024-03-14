@@ -92,3 +92,14 @@ console.log(weakMap1); // WeakMap { <items unknown> }
 
 // Now, where do we need such a data structure?
 
+//* Use Case: additional data
+
+// The main area of application for WeakMap is an additional data storage.
+
+// If we’re working with an object that “belongs” to another code, maybe even a third-party library, and would like to store some data associated with it, that should only exist while the object is alive – then WeakMap is exactly what’s needed.
+
+// We put the data to a WeakMap, using the object as the key, and when the object is garbage collected, that data will automatically disappear as well.
+
+weakMap.set(john, "secret documents");
+// if john dies, secret documents will be destroyed automatically
+

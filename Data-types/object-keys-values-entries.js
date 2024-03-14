@@ -91,3 +91,36 @@ console.log(doublePrices.meat); // 8
 
 // It may look difficult at first sight, but becomes easy to understand after you use it once or twice. We can make powerful chains of transforms this way.
 
+//* Tasks
+
+//! 1. Sum the properties
+
+const sumSalaries = (salaries) => {
+  let sum = 0;
+  for (let salary of Object.values(salaries)) {
+    sum += salary;
+  }
+
+  return sum;
+};
+
+let salaries = {
+  John: 100,
+  Pete: 300,
+  Mary: 250,
+};
+
+console.log(sumSalaries(salaries)); // 650
+
+//! 2. Count properties
+
+let user1 = {
+  name: "John",
+  age: 30,
+};
+
+function count(item) {
+  return Object.keys(item).length;
+}
+
+console.log(count(user1));

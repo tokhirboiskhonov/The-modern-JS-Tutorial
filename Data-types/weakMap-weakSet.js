@@ -223,3 +223,37 @@ john = null;
 
 // WeakMap and WeakSet are used as “secondary” data structures in addition to the “primary” object storage. Once the object is removed from the primary storage, if it is only found as the key of WeakMap or in a WeakSet, it will be cleaned up automatically.
 
+//*  Tasks
+
+//! 1. Store "unread" flags
+
+let messages = [
+  { text: "Hello", from: "John" },
+  { text: "How goes?", from: "John" },
+  { text: "See you soon", from: "Alice" },
+];
+
+let readMessages = new WeakSet();
+
+readMessages.add(messages[0]);
+readMessages.add(messages[1]);
+readMessages.add(messages[0]);
+
+// console.log(`Read message 0: ${readMessages.has(messages[0])}`);
+
+messages.shift();
+// now readMessages has 1 element (technically memory may be cleaned later)
+
+//! 2. Store reads dates
+
+let messages1 = [
+  { text: "Hello", from: "John" },
+  { text: "How goes?", from: "John" },
+  { text: "See you soon", from: "Alice" },
+];
+
+let readMap = new WeakMap();
+
+readMap.set(messages1[0], new Date(2024, 14, 3));
+
+console.log(readMap.get(messages1[0]));

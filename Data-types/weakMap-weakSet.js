@@ -103,3 +103,75 @@ console.log(weakMap1); // WeakMap { <items unknown> }
 weakMap.set(john, "secret documents");
 // if john dies, secret documents will be destroyed automatically
 
+//* Use Case: caching
+
+// Another common example is caching. We can store (“cache”) results from a function, so that future calls on the same object can reuse it.
+
+// To achieve that, we can use Map (not optimal scenario):
+
+// 📁 cache.js
+let cache = new Map();
+
+// calculate and remember the result
+function process(obj) {
+  if (!cache.has(obj)) {
+    let result = /* calculations of the result for */ obj;
+
+    cache.set(obj, result);
+    return result;
+  }
+
+  return cache.get(obj);
+}
+
+// Now we use process() in another file:
+
+// 📁 main.js
+let newObj = {
+  /* let's say we have an object */
+};
+
+let result1 = process(newObj); // calculated
+
+// ...later, from another place of the code...
+let result2 = process(newObj); // remembered result taken from cache
+
+// ...later, when the object is not needed any more:
+newObj = null;
+
+alert(cache.size); // 1 (Ouch! The object is still in cache, taking memory!)
+
+// For multiple calls of process(obj) with the same object, it only calculates the result the first time, and then just takes it from cache. The downside is that we need to clean cache when the object is not needed any more.
+
+// If we replace Map with WeakMap, then this problem disappears. The cached result will be removed from memory automatically after the object gets garbage collected.
+
+// 📁 cache.js
+let newCache = new WeakMap();
+
+// calculate and remember the result
+function process(obj) {
+  if (!newCache.has(obj)) {
+    let result = /* calculate the result for */ obj;
+
+    newCache.set(obj, result);
+    return result;
+  }
+
+  return newCache.get(obj);
+}
+
+// 📁 main.js
+let newObj1 = {
+  /* some object */
+};
+
+let newResult1 = process(newObj1);
+let newResult2 = process(newObj1);
+
+// ...later, when the object is not needed any more:
+newObj1 = null;
+
+// Can't get cache.size, as it's a WeakMap,
+// but it's 0 or soon be 0
+// When obj gets garbage collected, cached data will be removed as well
+

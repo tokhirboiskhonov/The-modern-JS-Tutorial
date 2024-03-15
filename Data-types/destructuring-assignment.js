@@ -72,3 +72,16 @@ let [one, two, three] = new Set([1, 2, 3]);
 
 // That works, because internally a destructuring assignment works by iterating over the right value. It’s a kind of syntax sugar for calling for..of over the value to the right of = and assigning the values.
 
+//! Assign to anything at the left-side
+
+// We can use any “assignables” on the left side.
+
+// For instance, an object property:
+
+let user = {};
+
+[user.name, user.surname] = "John Smith".split(" ");
+
+console.log(user.name);
+console.log(user.surname);
+

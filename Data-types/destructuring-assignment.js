@@ -85,3 +85,28 @@ let user = {};
 console.log(user.name);
 console.log(user.surname);
 
+//! Looping with .entries()
+
+// We can use it with destructuring to loop over the keys-and-values of an object:
+
+let user1 = {
+  name: "John",
+  age: 30,
+};
+
+// loop over the keys-and-values
+for (let [key, value] of Object.entries(user1)) {
+  alert(`${key}:${value}`); // name:John, then age:30
+}
+
+// The similar code for a Map is simpler, as it’s iterable:
+
+let user2 = new Map();
+user2.set("name", "John");
+user2.set("age", "30");
+
+// Map iterates as [key, value] pairs, very convenient for destructuring
+for (let [key, value] of user2) {
+  alert(`${key}:${value}`); // name:John, then age:30
+}
+

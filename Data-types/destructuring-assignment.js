@@ -299,3 +299,25 @@ let { title6 } = options5;
 
 console.log(title6); // Menu
 
+//* The rest pattern "..."
+
+// What if the object has more properties than we have variables? Can we take some and then assign the “rest” somewhere?
+
+// We can use the rest pattern, just like we did with arrays. It’s not supported by some older browsers (IE, use Babel to polyfill it), but works in modern ones.
+
+// It looks like this:
+
+let options6 = {
+  title: "Menu",
+  height: 200,
+  width: 100,
+};
+
+// title = property named title
+// rest = object with the rest of properties
+let { titleObj, ...restObject } = options6;
+
+// now titleObj="Menu", restObject={height: 200, width: 100}
+console.log(restObject.height); // 200
+console.log(restObject.width); // 100
+

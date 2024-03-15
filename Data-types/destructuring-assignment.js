@@ -126,3 +126,43 @@ console.log(`${guest} ${admin}`); // Pete Jane (successfully swapped!)
 
 // We can swap more than two variables this way.
 
+//* The rest '...'
+
+// Usually, if the array is longer than the list at the left, the “extra” items are omitted.
+
+// For example, here only two items are taken, and the rest is just ignored:
+
+let [name1, name2] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+
+console.log(name1); // Julius
+console.log(name2); // Caesar
+// Further items aren't assigned anywhere
+
+// If we’d like also to gather all that follows – we can add one more parameter that gets “the rest” using three dots "...":
+
+let [名字1, 名字2, ...rest] = [
+  "Julius",
+  "Caesar",
+  "Consul",
+  "of the Roman Republic",
+];
+
+console.log(名字1); //Julius
+
+// rest is an array of items, starting from the 3rd one
+console.log(rest[0]); // Consul
+console.log(rest[1]); // of the Roman Republic
+console.log(rest.length); // 2
+
+// The value of rest is the array of the remaining array elements.
+
+// We can use any other variable name in place of rest, just make sure it has three dots before it and goes last in the destructuring assignment.
+
+let [name3, name4, ...titles] = [
+  "Julius",
+  "Caesar",
+  "Consul",
+  "of the Roman Republic",
+];
+// now titles = ["Consul", "of the Roman Republic"]
+

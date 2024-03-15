@@ -63,3 +63,12 @@ console.log(title); // Consul
 
 // In the code above, the second element of the array is skipped, the third one is assigned to title, and the rest of the array items are also skipped (as there are no variables for them).
 
+//! Works with any iterable on the right-side
+
+// …Actually, we can use it with any iterable, not only arrays:
+
+let [a, b, c] = "abc"; // ["a", "b", "c"]
+let [one, two, three] = new Set([1, 2, 3]);
+
+// That works, because internally a destructuring assignment works by iterating over the right value. It’s a kind of syntax sugar for calling for..of over the value to the right of = and assigning the values.
+

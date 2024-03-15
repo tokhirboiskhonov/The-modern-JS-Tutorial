@@ -166,3 +166,31 @@ let [name3, name4, ...titles] = [
 ];
 // now titles = ["Consul", "of the Roman Republic"]
 
+//* Default values
+
+// If the array is shorter than the list of variables on the left, there will be no errors. Absent values are considered undefined:
+
+let [firstName1, surname1] = [];
+
+console.log(firstName1); // undefined
+console.log(surname1); // undefined
+
+// If we want a “default” value to replace the missing one, we can provide it using =:
+
+// default values
+let [name5 = "Guest", surname2 = "Anonymous"] = ["Julius"];
+
+console.log(name5); // Julius (from array)
+console.log(surname2); // Anonymous (default used)
+
+// Default values can be more complex expressions or even function calls. They are evaluated only if the value is not provided.
+
+// For instance, here we use the prompt function for two defaults:
+
+// runs only prompt for surname
+let [name = prompt("name?"), surname3 = prompt("surname?")] = ["Julius"];
+
+console.log(name); // Julius (from array)
+console.log(surname3); // whatever prompt gets
+
+//? Please note: the prompt will run only for the missing value (surname).

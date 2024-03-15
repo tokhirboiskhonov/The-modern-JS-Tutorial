@@ -321,3 +321,38 @@ let { titleObj, ...restObject } = options6;
 console.log(restObject.height); // 200
 console.log(restObject.width); // 100
 
+//! Gotcha if there’s no let
+
+// In the examples above variables were declared right in the assignment: let {…} = {…}. Of course, we could use existing variables too, without let. But there’s a catch.
+
+//? This will not work:
+
+// let title, width, height;
+
+// error in this line
+// {title, width, height} = {title: "Menu", width: 200, height: 100};
+
+// The problem is that JavaScript treats {...} in the main code flow (not inside another expression) as a code block. Such code blocks can be used to group statements, like this:
+
+// {
+//   // a code block
+//   let message = "Hello";
+//   // ...
+//   console.log(message);
+// }
+
+// So here JavaScript assumes that we have a code block, that’s why there’s an error. We want destructuring instead.
+
+// To show JavaScript that it’s not a code block, we can wrap the expression in parentheses (...):
+
+let titleNew, widthNew, heightNew;
+
+// okay now
+({ titleNew, widthNew, heightNew } = {
+  title: "Menu",
+  width: 200,
+  height: 100,
+});
+
+console.log(titleNew); // Menu
+

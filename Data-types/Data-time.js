@@ -8,3 +8,10 @@
 
 // To create a new Date object call new Date() with one of the following arguments:
 
+//! new Date()
+
+// Without arguments – create a Date object for the current date and time:
+
+let now = new Date();
+console.log(now); // shows current date/time
+

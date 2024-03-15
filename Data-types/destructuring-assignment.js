@@ -110,3 +110,19 @@ for (let [key, value] of user2) {
   alert(`${key}:${value}`); // name:John, then age:30
 }
 
+//! Swap variables trick
+
+// There’s a well-known trick for swapping values of two variables using a destructuring assignment:
+
+let guest = "Jane";
+let admin = "Pete";
+
+// Let's swap the values: make guest=Pete, admin=Jane
+[guest, admin] = [admin, guest];
+
+console.log(`${guest} ${admin}`); // Pete Jane (successfully swapped!)
+
+// Here we create a temporary array of two variables and immediately destructure it in swapped order.
+
+// We can swap more than two variables this way.
+

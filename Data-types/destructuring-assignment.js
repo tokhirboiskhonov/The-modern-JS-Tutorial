@@ -96,7 +96,7 @@ let user1 = {
 
 // loop over the keys-and-values
 for (let [key, value] of Object.entries(user1)) {
-  alert(`${key}:${value}`); // name:John, then age:30
+  console.log(`${key}:${value}`); // name:John, then age:30
 }
 
 // The similar code for a Map is simpler, as it’s iterable:
@@ -107,7 +107,7 @@ user2.set("age", "30");
 
 // Map iterates as [key, value] pairs, very convenient for destructuring
 for (let [key, value] of user2) {
-  alert(`${key}:${value}`); // name:John, then age:30
+  console.log(`${key}:${value}`); // name:John, then age:30
 }
 
 //! Swap variables trick
@@ -158,13 +158,13 @@ console.log(rest.length); // 2
 
 // We can use any other variable name in place of rest, just make sure it has three dots before it and goes last in the destructuring assignment.
 
-let [name3, name4, ...titles] = [
+let [name3, name4, ...title1] = [
   "Julius",
   "Caesar",
   "Consul",
   "of the Roman Republic",
 ];
-// now titles = ["Consul", "of the Roman Republic"]
+// now title1 = ["Consul", "of the Roman Republic"]
 
 //* Default values
 

@@ -495,3 +495,41 @@ showMenu(); // Menu 100 200
 
 // It’s possible to extract data from nested arrays/objects, for that the left side must have the same structure as the right one.
 
+//* Tasks
+
+//! 1. Destructuring assignment
+
+let objUser = {
+  name: "John",
+  years: 30,
+};
+
+({ name, years, isAdmin = false } = objUser);
+
+console.log(name); // John
+console.log(years); // 30
+console.log(isAdmin); // false
+
+//! 2. The maximal salary
+
+let salaries = {
+  John: 100,
+  Pete: 300,
+  Mary: 250,
+};
+
+function topSalary(salaries) {
+  let maxSalary = 0;
+  let maxName = null;
+
+  for (let [name, salary] of Object.entries(salaries)) {
+    if (maxSalary < salary) {
+      maxSalary = salary;
+      maxName = name;
+    }
+  }
+
+  return maxName;
+}
+
+console.log(topSalary(salaries));

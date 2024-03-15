@@ -70,3 +70,61 @@ new Date(2011, 0, 1); // the same, hours etc are 0 by default
 let date1 = new Date(2011, 0, 1, 2, 3, 4, 567);
 console.log(date1); // 1.01.2011, 02:03:04.567
 
+//* Access date components
+
+// There are methods to access the year, month and so on from the Date object:
+
+//? getFullYear()
+
+// Get the year (4 digits)
+
+//? getMonth()
+
+// Get the month, from 0 to 11.
+
+//? getDate()
+
+// Get the day of month, from 1 to 31, the name of the method does look a little bit strange.
+
+//? getHours(), getMinutes(), getSeconds(), getMilliseconds()
+
+// Get the corresponding time components.
+
+//! Not getYear(), but getFullYear()
+// Many JavaScript engines implement a non-standard method getYear(). This method is deprecated. It returns 2-digit year sometimes. Please never use it. There is getFullYear() for the year.
+
+//! Additionally, we can get a day of week:
+
+//? getDay()
+
+// Get the day of week, from 0 (Sunday) to 6 (Saturday). The first day is always Sunday, in some countries that’s not so, but can’t be changed.
+
+// All the methods above return the components relative to the local time zone.
+
+// There are also their UTC-counterparts, that return day, month, year and so on for the time zone UTC+0: getUTCFullYear(), getUTCMonth(), getUTCDay(). Just insert the "UTC" right after "get".
+
+// If your local time zone is shifted relative to UTC, then the code below shows different hours:
+
+// current date
+let date2 = new Date();
+
+// the hour in your current time zone
+console.log(date2.getHours());
+
+// the hour in UTC+0 time zone (London time without daylight savings)
+console.log(date2.getUTCHours());
+
+// Besides the given methods, there are two special ones that do not have a UTC-variant:
+
+//? getTime()
+
+// Returns the timestamp for the date – a number of milliseconds passed from the January 1st of 1970 UTC+0.
+
+//? getTimezoneOffset()
+
+// Returns the difference between UTC and the local time zone, in minutes:
+
+// if you are in timezone UTC-1, outputs 60
+// if you are in timezone UTC+3, outputs -180
+console.log(new Date().getTimezoneOffset());
+

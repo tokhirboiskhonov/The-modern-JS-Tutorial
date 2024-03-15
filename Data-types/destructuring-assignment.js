@@ -356,3 +356,33 @@ let titleNew, widthNew, heightNew;
 
 console.log(titleNew); // Menu
 
+//* Nested destructuring
+
+// If an object or an array contains other nested objects and arrays, we can use more complex left-side patterns to extract deeper portions.
+
+// In the code below options has another object in the property size and an array in the property items. The pattern on the left side of the assignment has the same structure to extract values from them:
+
+let obj = {
+  size: {
+    width: 100,
+    height: 200,
+  },
+  items: ["Cake", "Donut"],
+  extra: true,
+};
+
+let {
+  size: { width: wid, height: heigh },
+  items: [item1, item2],
+  title: head = "Menu",
+} = obj;
+
+console.log(wid); // 100
+console.log(heigh); // 200
+console.log(item1); // Cake
+console.log(item2); // Donut
+console.log(head); // Menu
+
+// Finally, we have width, height, item1, item2 and title from the default value.
+
+// Note that there are no variables for size and items, as we take their content instead.

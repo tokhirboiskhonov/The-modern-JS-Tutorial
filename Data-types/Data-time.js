@@ -51,3 +51,22 @@ console.log(date);
 // or
 // Wed Jan 25 2017 16:00:00 GMT-0800 (Pacific Standard Time)
 
+//! new Date(year, month, date, hours, minutes, seconds, ms)
+
+// Create the date with the given components in the local time zone. Only the first two arguments are obligatory.
+
+//? The year should have 4 digits. For compatibility, 2 digits are also accepted and considered 19xx, e.g. 98 is the same as 1998 here, but always using 4 digits is strongly encouraged.
+//? The month count starts with 0 (Jan), up to 11 (Dec).
+//? The date parameter is actually the day of month, if absent then 1 is assumed.
+//? If hours/minutes/seconds/ms is absent, they are assumed to be equal 0.
+
+// For instance:
+
+new Date(2011, 0, 1, 0, 0, 0, 0); // 1 Jan 2011, 00:00:00
+new Date(2011, 0, 1); // the same, hours etc are 0 by default
+
+// The maximal precision is 1 ms (1/1000 sec):
+
+let date1 = new Date(2011, 0, 1, 2, 3, 4, 567);
+console.log(date1); // 1.01.2011, 02:03:04.567
+

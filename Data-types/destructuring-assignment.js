@@ -37,3 +37,13 @@ console.log(surname); // Smith
 
 // As you can see, the syntax is simple. There are several peculiar details though. Let’s see more examples to understand it better.
 
+//! “Destructuring” does not mean “destructive”.
+
+// It’s called “destructuring assignment,” because it “destructurizes” by copying items into variables. However, the array itself is not modified.
+
+// It’s just a shorter way to write:
+
+// let [firstName, surname] = arr;
+let ism = arr[0];
+let familiya = arr[1];
+

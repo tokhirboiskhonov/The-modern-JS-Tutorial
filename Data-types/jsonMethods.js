@@ -424,4 +424,18 @@ alert(schedule.meetups[1].date.getDate()); // works!
 
 //? If an object has toJSON, then it is called by JSON.stringify.
 
+//* Task
+
+//! 1. Turn the object into JSON and back
+
+// Turn the user into JSON and then read it back into another variable.
+
+let newUser = {
+  name: "John Smith",
+  age: 35,
+};
+
+let newJSON = JSON.parse(JSON.stringify(newUser));
+
+console.log(newJSON)
 

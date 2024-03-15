@@ -37,3 +37,17 @@ console.log(Jan02_1970);
 let Dec31_1969 = new Date(-24 * 3600 * 1000);
 console.log(Dec31_1969);
 
+//! new Date(datestring)
+
+// If there is a single argument, and it’s a string, then it is parsed automatically. The algorithm is the same as Date.parse uses, we’ll cover it later.
+
+let date = new Date("2017-01-26");
+console.log(date);
+
+// The time is not set, so it's assumed to be midnight GMT and
+// is adjusted according to the timezone the code is run in
+// So the result could be
+// Thu Jan 26 2017 11:00:00 GMT+1100 (Australian Eastern Daylight Time)
+// or
+// Wed Jan 25 2017 16:00:00 GMT-0800 (Pacific Standard Time)
+

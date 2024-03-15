@@ -47,3 +47,19 @@ console.log(surname); // Smith
 let ism = arr[0];
 let familiya = arr[1];
 
+//! Ignore elements using commas
+
+// Unwanted elements of the array can also be thrown away via an extra comma:
+
+// second element is not needed
+let [birinchiIsm, , title] = [
+  "Julius",
+  "Caesar",
+  "Consul",
+  "of the Roman Republic",
+];
+
+console.log(title); // Consul
+
+// In the code above, the second element of the array is skipped, the third one is assigned to title, and the rest of the array items are also skipped (as there are no variables for them).
+

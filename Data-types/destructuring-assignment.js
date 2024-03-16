@@ -282,7 +282,7 @@ let options4 = {
 
 let { width: w1 = 100, height: h1 = 200, title5 } = options4;
 
-console.log(titl5); // Menu
+console.log(title5); // Menu
 console.log(w1); // 100
 console.log(h1); // 200
 

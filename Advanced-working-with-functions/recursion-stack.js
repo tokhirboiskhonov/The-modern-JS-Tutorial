@@ -104,3 +104,66 @@ alert(pow(2, 3)); // 8
 
 // Let’s see what happens during the pow(2, 3) call.
 
+//* pow(2, 3);
+
+// In the beginning of the call pow(2, 3) the execution context will store variables: x = 2, n = 3, the execution flow is at line 1 of the function.
+
+// We can sketch it as:
+
+//? Context: { x: 2, n: 3, at line 1 } pow(2, 3)
+
+// That’s when the function starts to execute. The condition n == 1 is falsy, so the flow continues into the second branch of if:
+
+function pow(x, n) {
+  if (n == 1) {
+    return x;
+  } else {
+    return x * pow(x, n - 1);
+  }
+}
+
+alert(pow(2, 3));
+
+// The variables are same, but the line changes, so the context is now:
+
+//? Context: { x: 2, n: 3, at line 5 } pow(2, 3)
+
+// To calculate x * pow(x, n - 1), we need to make a subcall of pow with new arguments pow(2, 2).
+
+//* pow(2, 2)
+
+// To do a nested call, JavaScript remembers the current execution context in the execution context stack.
+
+// Here we call the same function pow, but it absolutely doesn’t matter. The process is the same for all functions:
+
+// 1. The current context is “remembered” on top of the stack.
+// 2. The new context is created for the subcall.
+// 3. When the subcall is finished – the previous context is popped from the stack, and its execution continues.
+
+// Here’s the context stack when we entered the subcall pow(2, 2):
+
+//? Context: { x: 2, n: 2, at line 1 } pow(2, 2)
+//? Context: { x: 2, n: 3, at line 5 } pow(2, 3)
+
+// The new current execution context is on top (and bold), and previous remembered contexts are below.
+
+// When we finish the subcall – it is easy to resume the previous context, because it keeps both variables and the exact place of the code where it stopped.
+
+//! Please note:
+
+// Here in the picture we use the word “line”, as in our example there’s only one subcall in line, but generally a single line of code may contain multiple subcalls, like pow(…) + pow(…) + somethingElse(…).
+
+// So it would be more precise to say that the execution resumes “immediately after the subcall”.
+
+//* pow(2, 1)
+
+// The process repeats: a new subcall is made at line 5, now with arguments x=2, n=1.
+
+// A new execution context is created, the previous one is pushed on top of the stack:
+
+//? Context: { x: 2, n: 1, at line 1 } pow(2, 1)
+//? Context: { x: 2, n: 2, at line 5 } pow(2, 2)
+//? Context: { x: 2, n: 3, at line 5 } pow(2, 3)
+
+// There are 2 old contexts now and 1 currently running for pow(2, 1).
+

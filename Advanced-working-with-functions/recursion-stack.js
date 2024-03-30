@@ -69,3 +69,19 @@ alert(pow(2, 3)); // 8
 
 // So, the recursion reduces a function call to a simpler one, and then – to even more simpler, and so on, until the result becomes obvious.
 
+//! Recursion is usually shorter
+
+// A recursive solution is usually shorter than an iterative one.
+
+// Here we can rewrite the same using the conditional operator ? instead of if to make pow(x, n) more terse and still very readable:
+
+// function pow(x, n) {
+//   return n == 1 ? x : x * pow(x, n - 1);
+// }
+
+// The maximal number of nested calls (including the first one) is called recursion depth. In our case, it will be exactly n.
+
+// The maximal recursion depth is limited by JavaScript engine. We can rely on it being 10000, some engines allow more, but 100000 is probably out of limit for the majority of them. There are automatic optimizations that help alleviate this (“tail calls optimizations”), but they are not yet supported everywhere and work only in simple cases.
+
+// That limits the application of recursion, but it still remains very wide. There are many tasks where recursive way of thinking gives simpler code, easier to maintain.
+

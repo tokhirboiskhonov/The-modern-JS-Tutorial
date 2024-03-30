@@ -167,3 +167,56 @@ alert(pow(2, 3));
 
 // There are 2 old contexts now and 1 currently running for pow(2, 1).
 
+//* The exit
+
+// During the execution of pow(2, 1), unlike before, the condition n == 1 is truthy, so the first branch of if works:
+
+function pow(x, n) {
+  if (n == 1) {
+    return x;
+  } else {
+    return x * pow(x, n - 1);
+  }
+}
+
+// There are no more nested calls, so the function finishes, returning 2.
+
+// As the function finishes, its execution context is not needed anymore, so it’s removed from the memory. The previous one is restored off the top of the stack:
+
+//? Context: { x: 2, n: 2, at line 5 } pow(2, 2)
+//? Context: { x: 2, n: 3, at line 5 } pow(2, 3)
+
+// The execution of pow(2, 2) is resumed. It has the result of the subcall pow(2, 1), so it also can finish the evaluation of x * pow(x, n - 1), returning 4.
+
+// Then the previous context is restored:
+
+//? Context: { x: 2, n: 3, at line 5 } pow(2, 3)
+
+// When it finishes, we have a result of pow(2, 3) = 8.
+
+// The recursion depth in this case was: 3.
+
+// As we can see from the illustrations above, recursion depth equals the maximal number of context in the stack.
+
+// Note the memory requirements. Contexts take memory. In our case, raising to the power of n actually requires the memory for n contexts, for all lower values of n.
+
+// A loop-based algorithm is more memory-saving:
+
+function pow(x, n) {
+  let result = 1;
+
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+
+// The iterative pow uses a single context changing i and result in the process. Its memory requirements are small, fixed and do not depend on n.
+
+//? Any recursion can be rewritten as a loop. The loop variant usually can be made more effective.
+
+// …But sometimes the rewrite is non-trivial, especially when a function uses different recursive subcalls depending on conditions and merges their results or when the branching is more intricate. And the optimization may be unneeded and totally not worth the efforts.
+
+// Recursion can give a shorter code, easier to understand and support. Optimizations are not required in every place, mostly we need a good code, that’s why it’s used.
+

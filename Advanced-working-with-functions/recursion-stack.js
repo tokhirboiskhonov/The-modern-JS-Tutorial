@@ -349,3 +349,53 @@ console.log(sumSalaries(company)); // 7700
 
 // For better understanding, we’ll cover one more recursive structure named “Linked list” that might be a better alternative for arrays in some cases.
 
+//* Linked list
+
+// Imagine, we want to store an ordered list of objects.
+
+// The natural choice would be an array:
+
+let arr = [obj1, obj2, obj3];
+
+// …But there’s a problem with arrays. The “delete element” and “insert element” operations are expensive. For instance, arr.unshift(obj) operation has to renumber all elements to make room for a new obj, and if the array is big, it takes time. Same with arr.shift().
+
+// The only structural modifications that do not require mass-renumbering are those that operate with the end of array: arr.push/pop. So an array can be quite slow for big queues, when we have to work with the beginning.
+
+// Alternatively, if we really need fast insertion/deletion, we can choose another data structure called a linked list.
+
+// The linked list element is recursively defined as an object with:
+
+//? value.
+//? next property referencing the next linked list element or null if that’s the end.
+
+// For instance:
+
+let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null,
+      },
+    },
+  },
+};
+
+// An alternative code for creation:
+
+let list1 = { value: 1 };
+list1.next = { value: 2 };
+list1.next.next = { value: 3 };
+list1.next.next.next = { value: 4 };
+list1.next.next.next.next = null;
+
+// Here we can even more clearly see that there are multiple objects, each one has the value and next pointing to the neighbour. The list variable is the first object in the chain, so following next pointers from it we can reach any element.
+
+// The list can be easily split into multiple parts and later joined back:
+
+let secondList = list1.next.next;
+list1.next.next = null;
+

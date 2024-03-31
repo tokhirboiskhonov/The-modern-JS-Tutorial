@@ -110,3 +110,84 @@ f(1); // 1
 
 // As we remember, arrow functions don’t have their own this. Now we know they don’t have the special arguments object either.
 
+//* Spread syntax
+
+// We’ve just seen how to get an array from the list of parameters.
+
+// But sometimes we need to do exactly the reverse.
+
+// For instance, there’s a built-in function Math.max that returns the greatest number from a list:
+
+alert(Math.max(3, 5, 1)); // 5
+
+// Now let’s say we have an array [3, 5, 1]. How do we call Math.max with it?
+
+// Passing it “as is” won’t work, because Math.max expects a list of numeric arguments, not a single array:
+
+let arr = [3, 5, 1];
+
+alert(Math.max(arr)); // NaN
+
+// And surely we can’t manually list items in the code Math.max(arr[0], arr[1], arr[2]), because we may be unsure how many there are. As our script executes, there could be a lot, or there could be none. And that would get ugly.
+
+// Spread syntax to the rescue! It looks similar to rest parameters, also using ..., but does quite the opposite.
+
+// When ...arr is used in the function call, it “expands” an iterable object arr into the list of arguments.
+
+// For Math.max:
+
+let arrN = [3, 5, 1];
+
+alert(Math.max(...arrN)); // 5 (spread turns array into a list of arguments)
+
+//? We also can pass multiple iterables this way:
+
+let arr1 = [1, -2, 3, 4];
+let arr2 = [8, 3, -8, 1];
+
+alert(Math.max(...arr1, ...arr2)); // 8
+
+//? We can even combine the spread syntax with normal values:
+
+let arr3 = [1, -2, 3, 4];
+let arr4 = [8, 3, -8, 1];
+
+alert(Math.max(1, ...arr3, 2, ...arr4, 25)); // 25
+
+//? Also, the spread syntax can be used to merge arrays:
+
+let arr5 = [3, 5, 1];
+let arr6 = [8, 9, 15];
+
+let merged = [0, ...arr5, 2, ...arr6];
+
+alert(merged); // 0,3,5,1,2,8,9,15 (0, then arr, then 2, then arr2)
+
+// In the examples above we used an array to demonstrate the spread syntax, but any iterable will do.
+
+// For instance, here we use the spread syntax to turn the string into array of characters:
+
+let str1 = "Hello";
+
+alert([...str1]); // H,e,l,l,o
+
+// The spread syntax internally uses iterators to gather elements, the same way as for..of does.
+
+// So, for a string, for..of returns characters and ...str becomes "H","e","l","l","o". The list of characters is passed to array initializer [...str].
+
+// For this particular task we could also use Array.from, because it converts an iterable (like a string) into an array:
+
+let str2 = "Hello";
+
+// Array.from converts an iterable into an array
+alert(Array.from(str2)); // H,e,l,l,o
+
+// The result is the same as [...str].
+
+// But there’s a subtle difference between Array.from(obj) and [...obj]:
+
+//? 1. Array.from operates on both array-likes and iterables.
+//? 2. The spread syntax works only with iterables.
+
+// So, for the task of turning something into an array, Array.from tends to be more universal.
+

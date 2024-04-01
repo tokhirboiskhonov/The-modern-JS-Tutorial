@@ -140,6 +140,75 @@ function outer() {
 }
 outer();
 
+//* Garbage collection
+
+// Usually, a Lexical Environment is removed from memory with all the variables after the function call finishes. That’s because there are no references to it. As any JavaScript object, it’s only kept in memory while it’s reachable.
+
+// However, if there’s a nested function that is still reachable after the end of a function, then it has [[Environment]] property that references the lexical environment.
+
+// In that case the Lexical Environment is still reachable even after the completion of the function, so it stays alive.
+
+//! Here be dragons!
+
+// The in-depth technical explanation lies ahead.
+
+// As far as I’d like to avoid low-level language details, any understanding without them would be lacking and incomplete, so get ready.
+
+// A lexical environment in JavaScript is a data structure that stores the variables and functions that are defined in the current scope and all of the outer scopes. It is also known as the lexical scope or the lexical closure.
+
+// The lexical environment is created when a function is called and destroyed when the function returns.
+
+// The lexical environment is used to resolve variable names. When the JavaScript interpreter encounters a variable name, it first searches for the variable in the lexical environment of the current scope. If the variable is not found in the current scope, the interpreter searches the lexical environment of the outer scope, and so on.
+
+// The interpreter continues searching the lexical environment until it finds the variable or it reaches the global scope. If the variable is not found anywhere in the lexical environment, the interpreter throws a ReferenceError exception.
+
+//! Real-life optimizations
+
+// As we’ve seen, in theory while a function is alive, all outer variables are also retained.
+
+// But in practice, JavaScript engines try to optimize that. They analyze variable usage and if it’s obvious from the code that an outer variable is not used – it is removed.
+
+// An important side effect in V8 (Chrome, Edge, Opera) is that such variable will become unavailable in debugging.
+
+// Try running the example below in Chrome with the Developer Tools open.
+
+// When it pauses, in the console type alert(value).
+
+function f() {
+  let value = Math.random();
+
+  function g() {
+    debugger; // in console: type alert(value); No such variable!
+  }
+
+  return g;
+}
+
+let g = f();
+g();
+// As you could see – there is no such variable! In theory, it should be accessible, but the engine optimized it out.
+
+// That may lead to funny (if not such time-consuming) debugging issues. One of them – we can see a same-named outer variable instead of the expected one:
+
+let value = "Surprise!";
+
+function f() {
+  let value = "the closest value";
+
+  function g() {
+    debugger; // in console: type alert(value); Surprise!
+  }
+
+  return g;
+}
+
+let g = f();
+
+g();
+
+// This feature of V8 is good to know. If you are debugging with Chrome/Edge/Opera, sooner or later you will meet it.
+
+// That is not a bug in the debugger, but rather a special feature of V8. Perhaps it will be changed sometime. You can always check for it by running the examples on this page.
 
 //* Tasks
 

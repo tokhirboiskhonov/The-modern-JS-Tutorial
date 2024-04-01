@@ -82,3 +82,14 @@ if (true) {
 
 sayHi(); // Hello, John
 
+//! 6. Sum with closures
+
+function sum(a) {
+  return function (b) {
+    console.log(a + b);
+  };
+}
+
+sum(1)(2); // 3
+sum(5)(-1); // 4
+

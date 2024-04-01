@@ -68,3 +68,17 @@ console.log(counter.up()); // 1
 console.log(counter.up()); // 2
 console.log(counter.down()); // 1
 
+//! 5. Function in if
+
+let phrase = "Hello";
+
+if (true) {
+  let user = "John";
+
+  function sayHi() {
+    console.log(`${phrase}, ${user}`);
+  }
+}
+
+sayHi(); // Hello, John
+

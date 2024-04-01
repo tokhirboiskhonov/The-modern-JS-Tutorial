@@ -126,3 +126,23 @@ console.log(arr.filter(inBetween(3, 6))); // 3,4,5,6
 
 console.log(arr.filter(inArray([1, 2, 10]))); // 1,2
 
+//! 9. Sort by field
+
+function byField(fieldName) {
+  return (a, b) => (a[fieldName] > b[fieldName] ? 1 : -1);
+}
+
+let users = [
+  { name: "John", age: 20, surname: "Johnson" },
+  { name: "Pete", age: 18, surname: "Peterson" },
+  { name: "Ann", age: 19, surname: "Hathaway" },
+];
+
+// Sort by name
+users.sort(byField("name"));
+console.log(users); // Output: [{ name: "Ann", age: 19, surname: "Hathaway" }, { name: "John", age: 20, surname: "Johnson" }, { name: "Pete", age: 18, surname: "Peterson" }]
+
+// Sort by age
+users.sort(byField("age"));
+console.log(users);
+

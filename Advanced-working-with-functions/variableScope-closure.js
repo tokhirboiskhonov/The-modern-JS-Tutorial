@@ -93,3 +93,15 @@ function sum(a) {
 sum(1)(2); // 3
 sum(5)(-1); // 4
 
+//! 7. Is variable visible?
+
+let x = 1;
+
+function func() {
+  console.log(x); // ReferenceError: Cannot access 'x' before initialization
+
+  let x = 2;
+}
+
+func();
+

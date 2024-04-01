@@ -128,6 +128,18 @@ alert(counter1()); // 2
 
 // Understanding such things is great for the overall knowledge of JavaScript and beneficial for more complex scenarios. So let’s go a bit in-depth.
 
+//* Lexical Environment
+
+function outer() {
+  var x = 10;
+  function inner() {
+    // The lexical environment of `inner()` contains the variable `x` from `outer()`.
+    console.log(x);
+  }
+  inner();
+}
+outer();
+
 
 //* Tasks
 

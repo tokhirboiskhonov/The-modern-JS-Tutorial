@@ -146,6 +146,10 @@ console.log(users); // Output: [{ name: "Ann", age: 19, surname: "Hathaway" }, {
 users.sort(byField("age"));
 console.log(users);
 
+// Sort by surname
+users.sort(byField("surname"));
+console.log(users);
+
 //! 10. Army of functions
 
 function makeArmy() {

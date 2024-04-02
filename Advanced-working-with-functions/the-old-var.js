@@ -70,3 +70,19 @@ alert(phrase); // ReferenceError: phrase is not defined
 
 // As we can see, var pierces through if, for or other code blocks. That’s because a long time ago in JavaScript, blocks had no Lexical Environments, and var is a remnant of that.
 
+//* “var” tolerates redeclarations
+
+// If we declare the same variable with let twice in the same scope, that’s an error:
+
+let userLet1;
+let userLet2; // SyntaxError: 'userLet' has already been declared
+
+// With var, we can redeclare a variable any number of times. If we use var with an already-declared variable, it’s just ignored:
+
+var user2 = "Pete";
+
+var user2 = "John"; // this "var" does nothing (already declared)
+// ...it doesn't trigger an error
+
+alert(user2); // John
+

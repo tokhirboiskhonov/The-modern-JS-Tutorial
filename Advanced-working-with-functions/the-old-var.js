@@ -131,3 +131,36 @@ sayHi();
 
 // So in the example above, if (false) branch never executes, but that doesn’t matter. The var inside it is processed in the beginning of the function, so at the moment of (*) the variable exists.
 
+//! Declarations are hoisted, but assignments are not.
+
+// That’s best demonstrated with an example:
+
+function sayHi() {
+  alert(phrase);
+
+  var phrase = "Hello";
+}
+
+sayHi();
+
+// The line var phrase = "Hello" has two actions in it:
+
+// 1. Variable declaration var
+// 2. Variable assignment =.
+
+// The declaration is processed at the start of function execution (“hoisted”), but the assignment always works at the place where it appears. So the code works essentially like this:
+
+function sayHi() {
+  var phrase; // declaration works at the start...
+
+  alert(phrase); // undefined
+
+  phrase = "Hello"; // ...assignment - when the execution reaches it.
+}
+
+sayHi();
+
+// Because all var declarations are processed at the function start, we can reference them at any place. But variables are undefined until the assignments.
+
+// In both examples above, alert runs without an error, because the variable phrase exists. But its value is not yet assigned, so it shows undefined.
+

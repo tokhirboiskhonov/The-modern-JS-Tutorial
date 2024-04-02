@@ -178,3 +178,109 @@ console.log(counter1()); // 10
 
 // So the choice of implementation depends on our aims.
 
+//* Named Function Expression
+
+// Named Function Expression, or NFE, is a term for Function Expressions that have a name.
+
+// For instance, let’s take an ordinary Function Expression:
+
+let sayHi = function (who) {
+  alert(`Hello, ${who}`);
+};
+
+// And add a name to it:
+
+let sayHi = function func(who) {
+  alert(`Hello, ${who}`);
+};
+
+// Did we achieve anything here? What’s the purpose of that additional "func" name?
+
+// First let’s note, that we still have a Function Expression. Adding the name "func" after function did not make it a Function Declaration, because it is still created as a part of an assignment expression.
+
+// Adding such a name also did not break anything.
+
+// The function is still available as sayHi():
+
+let sayHi = function func(who) {
+  alert(`Hello, ${who}`);
+};
+
+sayHi("John"); // Hello, John
+
+//! There are two special things about the name func, that are the reasons for it:
+
+//? 1. It allows the function to reference itself internally.
+//? 2. It is not visible outside of the function.
+
+// For instance, the function sayHi below calls itself again with "Guest" if no who is provided:
+
+let sayHi = function func(who) {
+  if (who) {
+    alert(`Hello, ${who}`);
+  } else {
+    func("Guest"); // use func to re-call itself
+  }
+};
+
+sayHi(); // Hello, Guest
+
+// But this won't work:
+func(); // Error, func is not defined (not visible outside of the function)
+
+// Why do we use func? Maybe just use sayHi for the nested call?
+
+// Actually, in most cases we can:
+
+let sayHi = function (who) {
+  if (who) {
+    alert(`Hello, ${who}`);
+  } else {
+    sayHi("Guest");
+  }
+};
+
+// The problem with that code is that sayHi may change in the outer code. If the function gets assigned to another variable instead, the code will start to give errors:
+
+let sayHi = function (who) {
+  if (who) {
+    alert(`Hello, ${who}`);
+  } else {
+    sayHi("Guest"); // Error: sayHi is not a function
+  }
+};
+
+let welcome = sayHi;
+sayHi = null;
+
+welcome(); // Error, the nested sayHi call doesn't work any more!
+
+// That happens because the function takes sayHi from its outer lexical environment. There’s no local sayHi, so the outer variable is used. And at the moment of the call that outer sayHi is null.
+
+// The optional name which we can put into the Function Expression is meant to solve exactly these kinds of problems.
+
+// Let’s use it to fix our code:
+
+let sayHi = function func(who) {
+  if (who) {
+    alert(`Hello, ${who}`);
+  } else {
+    func("Guest"); // Now all fine
+  }
+};
+
+let welcome1 = sayHi;
+sayHi = null;
+
+welcome1(); // Hello, Guest (nested call works)
+
+//  Now it works, because the name "func" is function-local. It is not taken from outside (and not visible there). The specification guarantees that it will always reference the current function.
+
+//  The outer code still has its variable sayHi or welcome. And func is an “internal function name”, the way for the function to can call itself reliably.
+
+//! There’s no such thing for Function Declaration
+
+// The “internal name” feature described here is only available for Function Expressions, not for Function Declarations. For Function Declarations, there is no syntax for adding an “internal” name.
+
+// Sometimes, when we need a reliable internal name, it’s the reason to rewrite a Function Declaration to Named Function Expression form.
+

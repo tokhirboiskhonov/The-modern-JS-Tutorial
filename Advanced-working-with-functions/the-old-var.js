@@ -86,3 +86,48 @@ var user2 = "John"; // this "var" does nothing (already declared)
 
 alert(user2); // John
 
+//* “var” variables can be declared below their use
+
+// var declarations are processed when the function starts (or script starts for globals).
+
+// In other words, var variables are defined from the beginning of the function, no matter where the definition is (assuming that the definition is not in the nested function).
+
+// So this code:
+
+function sayHi() {
+  phrase = "Hello";
+
+  alert(phrase);
+
+  var phrase;
+}
+sayHi();
+
+// …Is technically the same as this (moved var phrase above):
+
+function sayHi() {
+  var phrase;
+
+  phrase = "Hello";
+
+  alert(phrase);
+}
+sayHi();
+
+// …Or even as this (remember, code blocks are ignored):
+
+function sayHi() {
+  phrase = "Hello"; // (*)
+
+  if (false) {
+    var phrase;
+  }
+
+  alert(phrase);
+}
+sayHi();
+
+// People also call such behavior “hoisting” (raising), because all var are “hoisted” (raised) to the top of the function.
+
+// So in the example above, if (false) branch never executes, but that doesn’t matter. The var inside it is processed in the beginning of the function, so at the moment of (*) the variable exists.
+

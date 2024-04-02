@@ -174,18 +174,18 @@ outer();
 
 // When it pauses, in the console type alert(value).
 
-function f() {
-  let value = Math.random();
+// function f() {
+//   let value = Math.random();
 
-  function g() {
-    debugger; // in console: type alert(value); No such variable!
-  }
+//   function g() {
+//     debugger; // in console: type alert(value); No such variable!
+//   }
 
-  return g;
-}
+//   return g;
+// }
 
-let g = f();
-g();
+// let g = f();
+// g();
 // As you could see – there is no such variable! In theory, it should be accessible, but the engine optimized it out.
 
 // That may lead to funny (if not such time-consuming) debugging issues. One of them – we can see a same-named outer variable instead of the expected one:

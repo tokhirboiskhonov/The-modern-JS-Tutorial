@@ -227,3 +227,25 @@ setTimeout(function run() {
 
 // For server-side JavaScript, that limitation does not exist, and there exist other ways to schedule an immediate asynchronous job, like setImmediate for Node.js. So this note is browser-specific.
 
+//* Summary
+
+//? 1. Methods setTimeout(func, delay, ...args) and setInterval(func, delay, ...args) allow us to run the func once/regularly after delay milliseconds.
+
+//? 2. To cancel the execution, we should call clearTimeout/clearInterval with the value returned by setTimeout/setInterval.
+
+//? 3. Nested setTimeout calls are a more flexible alternative to setInterval, allowing us to set the time between executions more precisely.
+
+//? 4. Zero delay scheduling with setTimeout(func, 0) (the same as setTimeout(func)) is used to schedule the call “as soon as possible, but after the current script is complete”.
+
+//? 5. The browser limits the minimal delay for five or more nested calls of setTimeout or for setInterval (after 5th call) to 4ms. That’s for historical reasons.
+
+// Please note that all scheduling methods do not guarantee the exact delay.
+
+// For example, the in-browser timer may slow down for a lot of reasons:
+
+//? 1. The CPU is overloaded.
+//? 2. The browser tab is in the background mode.
+//? 3. The laptop is on battery saving mode.
+
+// All that may increase the minimal timer resolution (the minimal delay) to 300ms or even 1000ms depending on the browser and OS-level performance settings.
+

@@ -249,3 +249,44 @@ setTimeout(function run() {
 
 // All that may increase the minimal timer resolution (the minimal delay) to 300ms or even 1000ms depending on the browser and OS-level performance settings.
 
+//* Tasks
+
+//! 1. Output every second
+
+function printNumbers(from, to) {
+  let current = from;
+
+  let timer = setInterval(function () {
+    console.log(current);
+    if (current == to) {
+      clearInterval(timer);
+    }
+    current++;
+  }, 1000);
+}
+
+printNumbers(5, 10);
+
+function printNums(from, to) {
+  let printTime = setTimeout(function int() {
+    console.log(from);
+    printTime = setTimeout(int, to);
+  }, to);
+}
+
+printNums(1000, 2000);
+
+function printNumbers(from, to) {
+  let current = from;
+
+  setTimeout(function go() {
+    console.log(current);
+    if (current < to) {
+      setTimeout(go, 1000);
+    }
+    current++;
+  }, 1000);
+}
+
+// usage:
+printNumbers(5, 10);

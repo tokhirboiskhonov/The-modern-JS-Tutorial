@@ -160,3 +160,83 @@ console.log(user); // { name: 'John', surname: 'Smith' }
 
 console.log(void (1 + 1)); // undefined
 console.log(void 1); // undefined
+
+//*  ========================================================================================================================================================================
+
+// Functions
+
+// 1. Function declaration
+
+function funcDec(param1, param2) {
+  console.log("Function declaration"); // it works, then output is Function declaration
+  console.log(`${param1 + param2}`); // 100
+}
+
+// funcDec();
+funcDec(10, 90);
+
+// fD(); // Demakki, function declaration hoist bo'lgan payit u faqatgina declaration (ya'ni e'lon qilinishi) o'zi emas, balki qiymati blan birga hoist bo'ladi.
+
+fD(); // output: fD2 // When you create a function declaration so that you can overwrite it with the same name of the function, it will not produce an error.
+
+function fD() {
+  console.log("fD1");
+}
+
+function fD() {
+  console.log("fD2");
+}
+
+// 2. Function expression
+
+// g(); // ReferenceError: Cannot access 'g' before initialization
+
+const g = function f() {
+  console.log("f");
+};
+
+g();
+
+const e = function () {
+  console.log("eLog");
+};
+
+console.log(e.name); // e
+
+console.log(function () {}.name); // no output, empty
+
+// 3. Arrow function expression
+// funcArrow(); // ReferenceError: Cannot access 'funcArrow' before initialization
+
+const funcArrow = (param1, param2) => console.log("It's Arrow function");
+funcArrow(); // It's Arrow function
+console.log(funcArrow.name); //output: funcArrow. (Function.name property)
+
+// Parameters: default values, rest
+
+const paramFunc = (param1 = 1, param2, ...rest) => {
+  console.log(`${param1}, ${param2}`);
+  console.log(rest);
+};
+
+paramFunc(
+  "Hello",
+  "How are you doing?",
+  "What's up?",
+  "What are you doing man?"
+);
+
+// Function calling and arguments
+// function call, method call, constructor call
+
+function fa() {
+  console.log("1");
+}
+
+const obj = {
+  b: fa,
+};
+
+let obj1 = new obj.b();
+// console.log(obj.b());
+console.log(obj1);

@@ -21,3 +21,10 @@ f();
 
 // var c = 4; // nearest function scope;
 
+//? Identifier: binding, property
+// Identifier means name of binding or property
+
+let d = 1;
+let $ = 2;
+let _ = 3;
+

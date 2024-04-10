@@ -240,3 +240,11 @@ const obj = {
 let obj1 = new obj.b();
 // console.log(obj.b());
 console.log(obj1);
+
+//6. Function scope
+
+function fff() {
+  // scope
+  console.log("Smth");
+}
+

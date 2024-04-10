@@ -105,3 +105,14 @@ console.log(8 ** 3); // 512 // 8 ni 3chi darajasi
 console.log("abc" + "efg"); // abcefg
 console.log("1" + 1); // 11, typeof is a string
 
+//! Boolean
+//. !operand = logical not, negation
+console.log(!1); // false number convert  to boolean automatically, it means coersion.
+console.log(!!1); // true
+console.log(!"abc"); // false
+console.log(!!"abc"); // true
+console.log(Boolean(0)); // false
+console.log(!0); // true
+console.log(!NaN); // true
+console.log(!!NaN); // false
+

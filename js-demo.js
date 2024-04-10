@@ -128,3 +128,20 @@ console.log(function () {} instanceof Object); // true
 console.log([] instanceof Array); // true
 console.log("smth" instanceof Object); // false
 
+//! typeof
+console.log(typeof undefined); // undefined
+console.log(typeof 1); // number
+console.log(typeof "abc"); // string
+console.log(typeof ""); // string
+console.log(typeof true); // boolean
+console.log(typeof false); // boolean
+console.log(typeof 123n); // bigint
+console.log(typeof null); // object
+console.log(typeof {}); // object
+console.log(typeof []); // object
+console.log(typeof function () {}); // function
+console.log(typeof Symbol()); // symbol
+
+// typeof always returns string, for example:
+console.log(typeof typeof 1); // string
+

@@ -156,3 +156,7 @@ delete user.job;
 
 console.log(user); // { name: 'John', surname: 'Smith' }
 
+//! void always returns undfined
+
+console.log(void (1 + 1)); // undefined
+console.log(void 1); // undefined

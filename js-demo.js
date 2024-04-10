@@ -116,3 +116,7 @@ console.log(!0); // true
 console.log(!NaN); // true
 console.log(!!NaN); // false
 
+//! Ternary
+console.log(1 === 1 ? "YES" : "NO"); // YES, because of condition is true
+console.log(1 === 10 ? "YES" : "NO"); // NO, because of condition is false
+

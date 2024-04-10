@@ -248,3 +248,36 @@ function fff() {
   console.log("Smth");
 }
 
+//7. Calling context and overriding it
+// this keyword is implicit
+// explicit
+
+// call, apply, bind
+
+function fiftilion(p1, p2) {
+  //   console.log(this);
+  console.log(p1 + p2);
+}
+
+fiftilion(1, 2);
+
+const aObj = {
+  b: fiftilion,
+};
+
+console.log(aObj.b(1, 2));
+
+function Car(type, fuelType) {
+  this.type = type;
+  this.fuelType = fuelType;
+}
+
+function setBrand(brand) {
+  Car.call(this, "convertible", "petrol");
+  this.brand = brand;
+  //   console.log(`Car details = `, this);
+}
+
+const newBrand = new setBrand("Merc");
+console.log(newBrand.type);
+

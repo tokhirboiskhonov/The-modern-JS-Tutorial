@@ -145,3 +145,14 @@ console.log(typeof Symbol()); // symbol
 // typeof always returns string, for example:
 console.log(typeof typeof 1); // string
 
+//! delete
+const user = {
+  name: "John",
+  surname: "Smith",
+  job: "Doctor",
+};
+
+delete user.job;
+
+console.log(user); // { name: 'John', surname: 'Smith' }
+

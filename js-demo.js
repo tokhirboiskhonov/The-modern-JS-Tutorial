@@ -281,3 +281,31 @@ function setBrand(brand) {
 const newBrand = new setBrand("Merc");
 console.log(newBrand.type);
 
+//8. Closure = a function with it's environment
+
+function func1(p1) {
+  // scope of func1
+  return function func2(p2) {
+    // scope of func2
+    return function func3(p3) {
+      //scope of func3
+      return p1 + p2 + p3;
+    };
+  };
+}
+
+console.log(func1(1)(2)(3));
+
+function fn1(p1) {
+  return function fn2(p2) {
+    p1 = p1 + 1;
+    return p1;
+  };
+}
+
+const count = fn1(0);
+
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());

@@ -99,3 +99,9 @@ console.log(10 % 3); // 1
 // operand1 ** operand2
 console.log(8 ** 3); // 512 // 8 ni 3chi darajasi
 
+//! String
+
+// operand1 + operand2 =  concatenate strings
+console.log("abc" + "efg"); // abcefg
+console.log("1" + 1); // 11, typeof is a string
+

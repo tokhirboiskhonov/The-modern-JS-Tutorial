@@ -52,3 +52,33 @@ function fNum() {
 
 fNum();
 
+//*  ========================================================================================================================================================================
+
+//* Operators and operands
+//* Unary, binary, ternary
+//* Conversion and coersion
+
+// +operand = operand * (+1)
+console.log(+"1"); // 1
+console.log(typeof +"1"); // number
+// -operand = operand * (-1)
+console.log(-"1"); // -1
+console.log(typeof -"1"); // number
+// ++operand = increment then evaluate
+let i = 1;
+console.log(++i); // 2
+// --operand = decrement then evaluate
+let j = 1;
+console.log(--j); // 0
+// operand++ = evaluate then increment
+let k = 1;
+console.log(k++); // 1
+console.log(k); // 2
+// operand-- = evaluate then decrement
+let n = 1;
+console.log(n--); // 1
+console.log(n); // 0
+
+// ++ and -- operands only work with variable, we can't use straightly with value, For instance: you can write variable++ or variable-- to increment or decrement the value of variable by 1, but you cannot write 5++ or 10-- directly.
+// console.log(10++); // SyntaxError: Invalid left-hand side expression in postfix operation
+

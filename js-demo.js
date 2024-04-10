@@ -120,3 +120,11 @@ console.log(!!NaN); // false
 console.log(1 === 1 ? "YES" : "NO"); // YES, because of condition is true
 console.log(1 === 10 ? "YES" : "NO"); // NO, because of condition is false
 
+//! instanceof
+
+console.log({} instanceof Object); // true
+console.log([] instanceof Object); // true
+console.log(function () {} instanceof Object); // true
+console.log([] instanceof Array); // true
+console.log("smth" instanceof Object); // false
+

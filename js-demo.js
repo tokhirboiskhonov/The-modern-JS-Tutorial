@@ -163,9 +163,9 @@ console.log(void 1); // undefined
 
 //*  ========================================================================================================================================================================
 
-// Functions
+//Functions
 
-// 1. Function declaration
+//1. Function declaration
 
 function funcDec(param1, param2) {
   console.log("Function declaration"); // it works, then output is Function declaration
@@ -187,7 +187,7 @@ function fD() {
   console.log("fD2");
 }
 
-// 2. Function expression
+//2. Function expression
 
 // g(); // ReferenceError: Cannot access 'g' before initialization
 
@@ -205,14 +205,14 @@ console.log(e.name); // e
 
 console.log(function () {}.name); // no output, empty
 
-// 3. Arrow function expression
+//3. Arrow function expression
 // funcArrow(); // ReferenceError: Cannot access 'funcArrow' before initialization
 
 const funcArrow = (param1, param2) => console.log("It's Arrow function");
 funcArrow(); // It's Arrow function
 console.log(funcArrow.name); //output: funcArrow. (Function.name property)
 
-// Parameters: default values, rest
+//4. Parameters: default values, rest
 
 const paramFunc = (param1 = 1, param2, ...rest) => {
   console.log(`${param1}, ${param2}`);
@@ -226,7 +226,7 @@ paramFunc(
   "What are you doing man?"
 );
 
-// Function calling and arguments
+//5. Function calling and arguments
 // function call, method call, constructor call
 
 function fa() {

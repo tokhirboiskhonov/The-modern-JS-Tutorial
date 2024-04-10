@@ -28,3 +28,27 @@ let d = 1;
 let $ = 2;
 let _ = 3;
 
+//? Statement and expression
+
+console.log(1); // statement
+
+let a = 1;
+if (a == 1) {
+  //condition is equal true
+  console.log("Alright"); // output is Alright
+}
+
+var num1 = 1;
+let num2 = 2;
+const num3 = 3;
+// console.log(num3); // right hand side
+
+function fNum() {
+  if (1) {
+    num2 = 5;
+    console.log(num2);
+  }
+}
+
+fNum();
+

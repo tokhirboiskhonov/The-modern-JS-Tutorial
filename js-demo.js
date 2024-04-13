@@ -309,3 +309,40 @@ console.log(count());
 console.log(count());
 console.log(count());
 console.log(count());
+
+// Examples from a book
+
+// FD
+
+function printProps(o) {
+  for (let p in o) {
+    console.log(`${p}: ${o[p]}\n`);
+  }
+}
+
+printProps("Tokhirkhuja");
+// printProps("Boiskhonov");
+// printProps("FrontendDeveloper");
+
+function hypotenuse(a, b) {
+  function square(x) {
+    return x * x;
+  }
+
+  return Math.sqrt(square(a) + square(b));
+}
+
+console.log(hypotenuse(5, 10));
+
+let scope = "Global scope";
+
+function checkScope() {
+  let scope = "Local scope";
+  function f() {
+    return scope;
+  }
+  return f;
+}
+
+let s = checkScope()();
+console.log(s);
